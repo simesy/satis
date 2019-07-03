@@ -1,0 +1,7 @@
+ahoyapi: v2
+usage: CLI utilities
+commands:
+
+  build:
+    cmd: |
+      php ./bin/satis build ./package-mirror.json ./package-mirror

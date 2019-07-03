@@ -1,0 +1,13 @@
+{
+    "name": "govcms/satis",
+    "homepage": "http://localhost:4680",
+    "repositories": [
+        { "type": "composer", "url": "https://packagist.org" },
+        { "type": "composer", "url": "https://packages.drupal.org/8" }
+    ],
+    "require": {
+        "drupal/webform": "*",
+        "drupal/core": "*"
+    },
+    "require-dependencies": true
+}
