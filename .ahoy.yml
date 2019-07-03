@@ -4,8 +4,8 @@ commands:
 
   build:
     cmd: |
-      php ./bin/satis build ./package-mirror.json ./package-mirror
+      php ./bin/satis -vvv build ./package-mirror.json ./build
 
   server:
     cmd: |
-      php -S localhost:4680 -t ./package-mirror
+      php -S localhost:4680 -t ./build
