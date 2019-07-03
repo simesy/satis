@@ -5,3 +5,7 @@ commands:
   build:
     cmd: |
       php ./bin/satis build ./package-mirror.json ./package-mirror
+
+  server:
+    cmd: |
+      php -S localhost:4680 -t ./package-mirror
