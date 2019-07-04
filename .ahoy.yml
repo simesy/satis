@@ -4,7 +4,7 @@ commands:
 
   build:
     cmd: |
-      php ./bin/satis -vvv build ./package-mirror.json ./build
+      php ./bin/satis -vvv build ./govcms-package-mirror.json ./build
 
   server:
     cmd: |

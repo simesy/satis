@@ -1,105 +1,52 @@
-# Satis
+# NAMESAREHARD Satis
 
-Simple static Composer repository generator.
+A Satis implementation which provides a static packagist repo from a list of whitelisted
+composer packages.
 
-[![Build Status](https://travis-ci.org/composer/satis.svg?branch=master)](https://travis-ci.org/composer/satis)
+## Overview
 
+### About Satis
 
-## Run from source
+This project is built on [composer/satis](https://github.com/composer/satis),
+and you can read the [original README](https://github.com/composer/satis/blob/master/README.md)
+about this product.
 
-- Install satis: `composer create-project composer/satis:dev-master --keep-vcs`
-- Build a repository: `php bin/satis build <configuration-file> <output-dir>`
+The only modifications from the upstream solution should be:
 
-Read the more detailed instructions in the [documentation][].
+- govcms-package-mirror.json
+- .ahoy.yml
+- .gitignore tweaks, etc
 
+### Usage / build
 
-## Run as Docker container
+The key commands are found in .ahoy.yml - whether you want to use Ahoy or run them manually.
 
-Pull the image:
+1. The webroot of packagist repo is /build. We commit the build directory 
 
-``` sh
-docker pull composer/satis
-```
+### Strategy
 
-Run the image:
+The goals:
+ 
+- Composer packagist repo which you can point to *exclusively* and build GovCMS
+SaaS or PaaS.
 
-``` sh
-docker run --rm -it -v /build:/build composer/satis
-```
+- Simple and transparent configuration - demonstrated via the base Satis product.
 
- > Note: by default it will look for a configuration file named `satis.json`
-    inside the `/build` directory and dump the generated output files in
-    `/build/output`.
+- Could provide dependency resolution with no internet access (security principle).
 
-Run the image (with Composer cache from host):
+- Process for inclusion of new packages through PR and issue template.
 
-``` sh
-docker run --rm -it -v /build:/build -v $COMPOSER_HOME:/composer composer/satis
-```
-
-If you want to run the image without implicitly running Satis, you have to
-override the entrypoint specified in the `Dockerfile`:
-
-``` sh
-docker run --rm -it --entrypoint /bin/sh composer/satis
-```
+- (Medium term big picture goals) package hashing, warm cache etc.
 
 
-## Purge
+## Request a new package
 
-If you choose to archive packages as part of your build, over time you can be
-left with useless files. With the `purge` command, you can delete these files.
+All packages and their dependencies defined in govcms are automatically available.
 
-``` sh
-php bin/satis purge <configuration-file> <output-dir>
-```
+For new package (eg a new Drupal module).
 
- > Note: don't do this unless you are certain your projects no longer reference
-    any of these archives in their `composer.lock` files.
+1. create an issue with the "new package" template"
+1. Modify the package-mirror.json
+1. Create a PR with this modification against the issue
+1. 
 
-
-## Updating
-
-Updating Satis is as simple as running `git pull && composer update` in the
-Satis directory.
-
-If you are running Satis as a Docker container, simply pull the latest image.
-
-
-## Contributing
-
-Please note that this project is released with a [Contributor Code of Conduct][].
-By participating in this project you agree to abide by its terms.
-
-Fork the project, create a feature branch, and send us a pull request.
-
-
-## Authors
-
-See the list of [contributors][] who participate(d) in this project.
-
-
-## Community Tools
-
-- [satis-go][] - A simple web server for managing Satis configuration and
-    hosting the generated Composer repository.
-- [satisfy][] - Symfony based composer repository manager with a simple web UI.
-- [satis-control-panel][] - Simple web UI for managing your Satis Repository
-    with optional CI integration.
-- [composer-satis-builder][] - Simple tool for updating the Satis configuration
-    (satis.json) "require" key on the basis of the project composer.json.
-
-
-## License
-
-Satis is licensed under the MIT License - see the [LICENSE][] file for details
-
-
-[documentation]: https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md
-[Contributor Code of Conduct]: http://contributor-covenant.org/version/1/4/
-[contributors]: https://github.com/composer/satis/contributors
-[satis-go]: https://github.com/benschw/satis-go
-[satisfy]: https://github.com/ludofleury/satisfy
-[satis-control-panel]: https://github.com/realshadow/satis-control-panel
-[composer-satis-builder]: https://github.com/AOEpeople/composer-satis-builder
-[LICENSE]: https://github.com/composer/satis/blob/master/LICENSE
