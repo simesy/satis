@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  nginx:
+    networks:
+      - amazeeio-network
+      - default
+    build:
+      context: .
+      dockerfile: Dockerfile
+    labels:
+      lagoon.type: nginx
+      lagoon.deployment.strategy: Recreate
+    volumes:
+      - ./build:/build:delegated
+    expose:
+      - "8080"
+    environment:
+      LAGOON_LOCALDEV_URL: http://satis.docker.amazee.io
+
+networks:
+  amazeeio-network:
+    external: true
