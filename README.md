@@ -1,7 +1,7 @@
 # NAMESAREHARD Satis
 
 A Satis implementation which provides a static packagist repo from a list of whitelisted
-composer packages.
+composer packages. It has a 
 
 ## Overview
 
@@ -11,12 +11,13 @@ This project is built on [composer/satis](https://github.com/composer/satis),
 and you can read the [original README](https://github.com/composer/satis/blob/master/README.md)
 about this product.
 
-The only modifications from the upstream solution should be:
+Some modifications from the upstream solution should be:
 
-- govcms-package-mirror.json
-- .ahoy.yml
-- .gitignore tweaks, etc
-- Dockerfile is changed for Lagoon
+- remove test files and such
+- add govcms-package-mirror.json
+- add .ahoy.yml
+- add .gitignore tweaks, etc
+- change Dockerfile is changed for Lagoon
 
 ### Usage / build
 
