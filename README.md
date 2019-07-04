@@ -16,6 +16,7 @@ The only modifications from the upstream solution should be:
 - govcms-package-mirror.json
 - .ahoy.yml
 - .gitignore tweaks, etc
+- Dockerfile is changed for Lagoon
 
 ### Usage / build
 

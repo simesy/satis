@@ -12,7 +12,7 @@ services:
       lagoon.type: nginx
       lagoon.deployment.strategy: Recreate
     volumes:
-      - ./build:/build:delegated
+      - ./app:/app:delegated
     expose:
       - "8080"
     environment:

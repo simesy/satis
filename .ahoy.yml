@@ -4,8 +4,8 @@ commands:
 
   build:
     cmd: |
-      php ./bin/satis -vvv build ./govcms-package-mirror.json ./build
+      php ./bin/satis -vvv build ./govcms-package-mirror.json ./app
 
   server:
     cmd: |
-      php -S localhost:4680 -t ./build
+      php -S localhost:4680 -t ./app
