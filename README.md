@@ -13,7 +13,7 @@ about this product.
 
 Some modifications from the upstream solution should be:
 
-- remove test files and such
+- remove upstream test files and such
 - add govcms-package-mirror.json
 - add .ahoy.yml
 - add .gitignore tweaks, etc
@@ -21,11 +21,14 @@ Some modifications from the upstream solution should be:
 
 ### Usage / build
 
-The key commands are found in .ahoy.yml - whether you want to use Ahoy or run them manually.
+The key commands are found in .ahoy.yml - whether you want to use Ahoy or run
+them manually.
 
-1. The webroot of packagist repo is /build. We commit the build directory 
+The webroot of packagist repo is /app which is generated (and updated) by `ahoy build`.
+This is then committed and served statically at https://satis.govcms.gov.au
 
-### Strategy
+
+### Road map
 
 The goals:
  
@@ -36,9 +39,9 @@ SaaS or PaaS.
 
 - Could provide dependency resolution with no internet access (security principle).
 
-- Process for inclusion of new packages through PR and issue template.
+- Provide a process for inclusion of new packages through PR and issue template.
 
-- (Medium term big picture goals) package hashing, warm cache etc.
+- (To be explored) package hashing, warm cache etc.
 
 
 ## Request a new package
@@ -50,5 +53,13 @@ For new package (eg a new Drupal module).
 1. create an issue with the "new package" template"
 1. Modify the package-mirror.json
 1. Create a PR with this modification against the issue
-1. 
+
+Favourable features
+
+1. Security team coverage
+1. Code is maintained
+1. Functionality is admin-only
+1. Functionility does not alter content model
+1. Functionality is unique
+1. Demonstrated reduction in theme code
 
