@@ -27,6 +27,23 @@ them manually.
 The webroot of packagist repo is /app which is generated (and updated) by `ahoy build`.
 This is then committed and served statically at https://satis.govcms.gov.au
 
+To use this in your composer, add
+
+```
+"repositories": {
+    "govcms": {
+        "type": "composer",
+        "url": "https://satis.govcms.gov.au"
+    }
+}
+```
+
+You can disable the default packagist this also in the respositories section:
+```
+    "packagist.org": false
+
+```
+
 
 ### Road map
 
