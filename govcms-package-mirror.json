@@ -27,5 +27,6 @@
         "phpunit/phpunit": "^7.4",
         "simesy/whitelist": "1.0.0"
     },
-    "require-dependencies": true
+    "require-dependencies": true,
+    "only-best-candidates": true
 }
