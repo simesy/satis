@@ -19,6 +19,7 @@ use Composer\Package\BasePackage;
 use Composer\Package\Link;
 use Composer\Package\Loader\ArrayLoader;
 use Composer\Package\PackageInterface;
+use Composer\Package\Version\VersionSelector;
 use Composer\Repository\ComposerRepository;
 use Composer\Repository\ConfigurableRepositoryInterface;
 use Composer\Repository\PlatformRepository;
@@ -194,7 +195,15 @@ class PackageSelection
             $link = $links[$i];
             ++$i;
             $name = $link->getTarget();
-            $matches = $pool->whatProvides($name, $link->getConstraint(), true);
+
+            // initial test forcing best candidates only
+            if (1 == 1) {
+                $selector = new VersionSelector($pool);
+                $matches = [$selector->findBestCandidate($name, $link->getConstraint()->getPrettyString())];
+            }
+            else {
+                $matches = $pool->whatProvides($name, $link->getConstraint(), true);
+            }
 
             foreach ($matches as $index => $package) {
                 // skip aliases
