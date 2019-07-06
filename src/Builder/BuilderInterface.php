@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of composer/satis.
  *
@@ -13,11 +15,6 @@ namespace Composer\Satis\Builder;
 
 use Composer\Package\PackageInterface;
 
-/**
- * Builder interface.
- *
- * @author James Hautot <james@rezo.net>
- */
 interface BuilderInterface
 {
     /**

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of composer/satis.
  *
@@ -11,10 +13,7 @@
 
 namespace Composer\Satis;
 
-/**
- * @author Jordi Boggiano <j.boggiano@seld.be>
- */
 class Satis
 {
-    const VERSION = '1.0.0';
+    const VERSION = '2.0.0-dev';
 }

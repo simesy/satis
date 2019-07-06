@@ -80,6 +80,10 @@
                 "override-dist-type": {
                     "type": "boolean",
                     "description": "If true, archive format will be used to substitute dist type when generating archive file name."
+                },
+                "rearchive": {
+                    "type": "boolean",
+                    "description": "Create new archives for packages with a tar or zip dist, defaults to true"
                 }
             }
         },
@@ -88,10 +92,25 @@
             "description": "A set of additional repositories where packages can be found.",
             "additionalProperties": true
         },
+        "repositories-dep": {
+            "type": ["object", "array"],
+            "description": "A set of additional repositories where packages for dependencies can be found.",
+            "additionalProperties": true
+        },
         "minimum-stability": {
             "type": "string",
             "description": "The minimum stability the packages must have to be install-able. Possible values are: dev, alpha, beta, RC, stable.",
             "enum": [ "dev", "alpha", "beta", "rc", "RC", "stable" ]
+        },
+        "minimum-stability-per-package": {
+            "type": "object",
+            "description": "This is a hash of package name (keys) and minimum stability (values).",
+            "minProperties": 1,
+            "additionalProperties": {
+                "type": "string",
+                "description": "The minimum stability the package must have to be install-able. Possible values are: dev, alpha, beta, RC, stable. This overrides the \"minimum-stability\" global option for the specified package.",
+                "enum": [ "dev", "alpha", "beta", "rc", "RC", "stable" ]
+            }
         },
         "abandoned": {
             "type": "object",
@@ -112,6 +131,21 @@
         "require-dev-dependencies": {
             "type": "boolean",
             "description": "If true, resolve and add all Dev dependencies of each required package."
+        },
+        "only-dependencies": {
+            "type": "boolean",
+            "description": "If true, will not require the root dependencies only their dependencies."
+        },
+        "require-dependency-filter": {
+            "type": "boolean",
+            "description": "If false, will include all versions matching a dependency."
+        },
+        "strip-hosts": {
+            "type": ["array", "boolean"],
+            "description": "List of domains, IPs, CIDR notations, '/local' (=localnet and other reserved) or '/private' (=private IPs) to be stripped from the output. If set and non-false, local file paths are removed too.",
+            "items": {
+                "type": "string"
+            }
         },
         "include-filename": {
             "type": "string",
@@ -205,7 +239,7 @@
                 },
                 "cache-vcs-dir": {
                     "type": "string",
-                    "description": "The location where vcs infos (git clones, github api calls, etc. when reading vcs repos) are cached, defaults to \"{$cache-dir}/vcs\"."
+                    "description": "The location where vcs info (git clones, github api calls, etc. when reading vcs repos) are cached, defaults to \"{$cache-dir}/vcs\"."
                 },
                 "cache-ttl": {
                     "type": "integer",
@@ -264,6 +298,10 @@
         "_comment": {
             "type": ["array", "string"],
             "description": "A key to store comments in"
+        },
+        "pretty-print": {
+            "type": "boolean",
+            "description": "Defaults to true. When false, the JSON_PRETTY_PRINT option will not be used on encoding."
         }
     }
 }
