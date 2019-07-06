@@ -8,8 +8,24 @@
         { "type": "vcs", "url": "https://github.com/simesy/whitelist" }
     ],
     "require": {
-        "simesy/whitelist": "1.0.1"
+        "cweagans/composer-patches": "^1.6",
+        "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/clamav": "^1.1",
+        "drupal/console": "^1.0.2",
+        "drupal/fast_404": "^1.0@alpha",
+        "drupal/lagoon_logs": "^1.0",
+        "drush/drush": "^9.0.0",
+        "govcms/govcms": "*",
+        "webflo/drupal-finder": "^1.0.0",
+        "webmozart/path-util": "^2.3",
+        "behat/behat": "^3.5",
+        "behat/gherkin": "^4.5",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+        "drupal/coder": "^8.3",
+        "drupal/drupal-extension": "^3.4",
+        "integratedexperts/behat-screenshot": "^0.7.2",
+        "phpunit/phpunit": "^7.4",
+        "simesy/whitelist": "1.0.0"
     },
-    "require-all": false,
     "require-dependencies": true
 }
