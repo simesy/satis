@@ -15,7 +15,7 @@
         "drupal/fast_404": "^1.0@alpha",
         "drupal/lagoon_logs": "^1.0",
         "drush/drush": "^9.0.0",
-        "govcms/govcms": "*",
+        "govcms/govcms": ">1.0-beta5",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
         "behat/behat": "^3.5",
