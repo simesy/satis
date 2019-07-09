@@ -1,0 +1,16 @@
+{
+    "name": "govcms/satis-beta5",
+    "homepage": "https://satis.govcms.gov.au/beta5",
+    "repositories": [
+        { "type": "composer", "url": "https://packagist.org" },
+        { "type": "composer", "url": "https://packages.drupal.org/8" },
+        { "type": "composer", "url": "https://asset-packagist.org" },
+        { "type": "vcs", "url": "https://github.com/simesy/whitelist" }
+    ],
+    "require": {
+        "govcms/govcms": "1.0-beta5",
+        "simesy/require": "1.0.0"
+    },
+    "require-dependencies": true,
+    "only-best-candidates": true
+}
