@@ -13410,19 +13410,19 @@
             }
         },
         "simesy/require": {
-            "1.0.1": {
+            "dev-master": {
                 "name": "simesy/require",
-                "version": "1.0.1",
-                "version_normalized": "1.0.1.0",
+                "version": "dev-master",
+                "version_normalized": "9999999-dev",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/simesy/require.git",
-                    "reference": "721b13b01fa454fa6efe19643e3b5b2e80c332c5"
+                    "reference": "870d8008474e09629c58927b382b6b2a274a2351"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/simesy/require/zipball/721b13b01fa454fa6efe19643e3b5b2e80c332c5",
-                    "reference": "721b13b01fa454fa6efe19643e3b5b2e80c332c5",
+                    "url": "https://api.github.com/repos/simesy/require/zipball/870d8008474e09629c58927b382b6b2a274a2351",
+                    "reference": "870d8008474e09629c58927b382b6b2a274a2351",
                     "shasum": ""
                 },
                 "require": {
@@ -13441,11 +13441,11 @@
                     "webflo/drupal-finder": "^1.0.0",
                     "webmozart/path-util": "^2.3"
                 },
-                "time": "2019-07-09T04:32:29+00:00",
+                "time": "2019-07-09T05:41:19+00:00",
                 "type": "library",
                 "description": "Allow satis to get some things required for the platform, but not in the distribution.",
                 "support": {
-                    "source": "https://github.com/simesy/require/tree/1.0.1",
+                    "source": "https://github.com/simesy/require/tree/master",
                     "issues": "https://github.com/simesy/require/issues"
                 }
             }
