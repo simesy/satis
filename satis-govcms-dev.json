@@ -10,8 +10,8 @@
     ],
     "require": {
         "govcms/govcms": "*",
-        "simesy/whitelist": "1.0.7",
-        "simesy/require": "1.0.0"
+        "simesy/whitelist": "*",
+        "simesy/require": "*"
     },
     "require-dependencies": true,
     "only-best-candidates": false

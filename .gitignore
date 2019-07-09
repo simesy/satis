@@ -1,9 +1,3 @@
-# By committing the build directory (which is the packagist web root) we
-# make this easier to deploy. And I suspect a CI job will update the
-# packages and test that the update can build govcms, committing the changes
-# as a result, and causing a new build of Satis.
-# /build/
-
 /vendor/
 /.php_cs.cache
 /composer.phar

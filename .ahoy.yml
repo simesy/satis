@@ -4,9 +4,9 @@ commands:
 
   build:
     cmd: |
-      php ./bin/satis -vvv build ./satis-govcms-beta5.json ./app/beta5
-      php ./bin/satis -vvv build ./satis-govcms-beta6.json ./app/beta6
       php ./bin/satis -vvv build ./satis-govcms-dev.json ./app/dev
+      php ./bin/satis -vvv build ./satis-govcms-beta6.json ./app/beta6
+      # php ./bin/satis -vvv build ./satis-govcms-beta5.json ./app/beta5
 
   server:
     cmd: |

@@ -11,7 +11,7 @@
     "require": {
         "govcms/govcms": "1.0-beta6",
         "simesy/whitelist": "dev-beta6",
-        "simesy/require": "1.0.0"
+        "simesy/require": "1.0.1"
     },
     "require-dependencies": true,
     "only-best-candidates": true
