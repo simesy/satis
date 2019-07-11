@@ -13421,12 +13421,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/simesy/scaffold-tooling.git",
-                    "reference": "73072c2a019ebc1d347cfc84faaa8f87fc326e9e"
+                    "reference": "b78815d6cff164839b6692fa59593dab5759db9b"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/simesy/scaffold-tooling/zipball/73072c2a019ebc1d347cfc84faaa8f87fc326e9e",
-                    "reference": "73072c2a019ebc1d347cfc84faaa8f87fc326e9e",
+                    "url": "https://api.github.com/repos/simesy/scaffold-tooling/zipball/b78815d6cff164839b6692fa59593dab5759db9b",
+                    "reference": "b78815d6cff164839b6692fa59593dab5759db9b",
                     "shasum": ""
                 },
                 "require": {
@@ -13445,7 +13445,7 @@
                     "webflo/drupal-finder": "^1.0.0",
                     "webmozart/path-util": "^2.3"
                 },
-                "time": "2019-07-11T13:17:56+00:00",
+                "time": "2019-07-11T14:11:57+00:00",
                 "bin": [
                     "scripts/lagoon-tests-setup.sh",
                     "scripts/integrity-checks.sh",
