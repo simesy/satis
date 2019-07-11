@@ -13421,12 +13421,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/simesy/scaffold-tooling.git",
-                    "reference": "07683d41df021007bba7354347f938a8a0ca3090"
+                    "reference": "89be7f3d08cc5e9778271877926e95edfeb0e8ab"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/simesy/scaffold-tooling/zipball/07683d41df021007bba7354347f938a8a0ca3090",
-                    "reference": "07683d41df021007bba7354347f938a8a0ca3090",
+                    "url": "https://api.github.com/repos/simesy/scaffold-tooling/zipball/89be7f3d08cc5e9778271877926e95edfeb0e8ab",
+                    "reference": "89be7f3d08cc5e9778271877926e95edfeb0e8ab",
                     "shasum": ""
                 },
                 "require": {
@@ -13445,11 +13445,16 @@
                     "webflo/drupal-finder": "^1.0.0",
                     "webmozart/path-util": "^2.3"
                 },
-                "time": "2019-07-11T02:57:56+00:00",
+                "time": "2019-07-11T04:09:32+00:00",
+                "bin": [
+                    "scripts/lagoon-test-setup.sh",
+                    "scripts/integrity-checks.sh",
+                    "scripts/quickstart-init.sh"
+                ],
                 "type": "library",
                 "description": "A variety of standard config, scripts and packages to support GovCMS scaffold.",
                 "support": {
-                    "source": "https://github.com/simesy/scaffold-tooling/tree/1.0.4",
+                    "source": "https://github.com/simesy/scaffold-tooling/tree/master",
                     "issues": "https://github.com/simesy/scaffold-tooling/issues"
                 }
             }
