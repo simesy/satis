@@ -40050,201 +40050,6 @@
                     "govCMS8"
                 ]
             },
-            "dev-feature/drupal873": {
-                "name": "govcms/govcms",
-                "version": "dev-feature/drupal873",
-                "version_normalized": "dev-feature/drupal873",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/govCMS/govCMS8.git",
-                    "reference": "5e242c1b2f3ae7836a023672624a0e2dec180ed8"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/govCMS/govCMS8/zipball/5e242c1b2f3ae7836a023672624a0e2dec180ed8",
-                    "reference": "5e242c1b2f3ae7836a023672624a0e2dec180ed8",
-                    "shasum": ""
-                },
-                "require": {
-                    "bower-asset/chosen": "1.8.7",
-                    "bower-asset/dropzone": "5.5.0",
-                    "cweagans/composer-patches": "^1.6",
-                    "drupal-composer/drupal-scaffold": "^2.4",
-                    "drupal/admin_toolbar": "1.26",
-                    "drupal/adminimal_admin_toolbar": "1.9.0",
-                    "drupal/adminimal_theme": "1.4",
-                    "drupal/chosen": "2.6.0",
-                    "drupal/components": "1.0.0",
-                    "drupal/config_filter": "1.4",
-                    "drupal/config_ignore": "2.1",
-                    "drupal/config_perms": "^1.1",
-                    "drupal/config_split": "1.4",
-                    "drupal/config_update": "1.6",
-                    "drupal/consumers": "1.9",
-                    "drupal/contact_storage": "1.0-beta9",
-                    "drupal/context": "4.0-beta2",
-                    "drupal/core": "8.7.3",
-                    "drupal/ctools": "3.0.0",
-                    "drupal/devel": "2.0",
-                    "drupal/dropzonejs": "2.0.0-alpha3",
-                    "drupal/ds": "3.2",
-                    "drupal/entity_browser": "2.1",
-                    "drupal/entity_class_formatter": "1.1.0",
-                    "drupal/entity_embed": "1.0-beta2",
-                    "drupal/entity_reference_display": "1.2.0",
-                    "drupal/entity_reference_revisions": "1.6",
-                    "drupal/environment_indicator": "3.5",
-                    "drupal/events_log_track": "1.1",
-                    "drupal/facets": "1.3",
-                    "drupal/features": "3.8",
-                    "drupal/field_group": "3.0-beta1",
-                    "drupal/focal_point": "1.0-beta6",
-                    "drupal/google_analytics": "3.0",
-                    "drupal/govcms8_ui": "1.0.0-alpha1",
-                    "drupal/govcms8_uikit_starter": "1.0-alpha2",
-                    "drupal/graphql": "3.0.0-rc2",
-                    "drupal/honeypot": "1.29",
-                    "drupal/inline_entity_form": "1.0-rc1",
-                    "drupal/linked_field": "1.1.0",
-                    "drupal/linkit": "5.0-beta8",
-                    "drupal/login_security": "1.5",
-                    "drupal/memcache": "2.0",
-                    "drupal/menu_block": "1.5",
-                    "drupal/menu_trail_by_path": "1.1",
-                    "drupal/metatag": "1.8",
-                    "drupal/modifiers": "1.2",
-                    "drupal/module_filter": "3.1",
-                    "drupal/panelizer": "4.1",
-                    "drupal/panels": "4.4.0",
-                    "drupal/paragraphs": "1.6",
-                    "drupal/password_policy": "3.0-alpha4",
-                    "drupal/pathauto": "1.3",
-                    "drupal/permissions_by_term": "2.9",
-                    "drupal/recaptcha": "2.4",
-                    "drupal/redirect": "1.3",
-                    "drupal/restui": "1.16.0",
-                    "drupal/robotstxt": "1.2",
-                    "drupal/search_api": "1.11",
-                    "drupal/search_api_solr": "2.2",
-                    "drupal/seckit": "1.1",
-                    "drupal/shield": "1.2",
-                    "drupal/simple_oauth": "3.14",
-                    "drupal/simple_sitemap": "3.0",
-                    "drupal/swiftmailer": "1.0-beta2",
-                    "drupal/token": "1.5",
-                    "drupal/update_notifications_disable": "1.0",
-                    "drupal/username_enumeration_prevention": "1.0-beta2",
-                    "drupal/video_embed_field": "2.0",
-                    "drupal/webform": "5.1",
-                    "oomphinc/composer-installers-extender": "^1.1",
-                    "php": "^7.1",
-                    "swiftmailer/swiftmailer": "5.4.12",
-                    "symfony/phpunit-bridge": "^3.4.6"
-                },
-                "conflict": {
-                    "drupal/core": "7.*",
-                    "drush/drush": "<8.1.10"
-                },
-                "require-dev": {
-                    "bex/behat-screenshot": "^1.2",
-                    "composer/composer": "^1.5",
-                    "dmore/behat-chrome-extension": "^1.1",
-                    "drupal/coder": "^8.3",
-                    "drupal/console": "^1.3",
-                    "drupal/drupal-extension": "^3.4",
-                    "drush/drush": "~9",
-                    "grasmash/drupal-security-warning": "^1.1",
-                    "jakoch/phantomjs-installer": "^2.1",
-                    "jcalderonzumba/mink-phantomjs-driver": "~0.3",
-                    "mikey179/vfsstream": "^1.6",
-                    "phing/phing": "^2.16",
-                    "phpunit/phpunit": "^4.8.35 || ^6.5",
-                    "se/selenium-server-standalone": "^3.6",
-                    "squizlabs/php_codesniffer": "^3.3"
-                },
-                "suggest": {
-                    "hirak/prestissimo": "^0.3"
-                },
-                "time": "2019-06-13T04:04:09+00:00",
-                "type": "drupal-profile",
-                "extra": {
-                    "drupal-scaffold": {
-                        "initial": {
-                            "sites/default/default.services.yml": "sites/default/services.yml",
-                            "sites/default/default.settings.php": "sites/default/settings.php"
-                        },
-                        "excludes": [
-                            "sites/development.services.yml"
-                        ]
-                    },
-                    "installer-types": [
-                        "bower-asset",
-                        "npm-asset"
-                    ],
-                    "installer-paths": {
-                        "docroot/core": [
-                            "type:drupal-core"
-                        ],
-                        "docroot/modules/contrib/{$name}": [
-                            "type:drupal-module"
-                        ],
-                        "docroot/modules/custom/{$name}": [
-                            "type:drupal-custom-module"
-                        ],
-                        "docroot/profiles/{$name}": [
-                            "type:drupal-profile"
-                        ],
-                        "docroot/themes/contrib/{$name}": [
-                            "type:drupal-theme"
-                        ],
-                        "docroot/themes/custom/{$name}": [
-                            "type:drupal-custom-theme"
-                        ],
-                        "docroot/libraries/{$name}": [
-                            "type:drupal-library",
-                            "type:bower-asset",
-                            "type:npm-asset"
-                        ],
-                        "drush/contrib/{$name}": [
-                            "type:drupal-drush"
-                        ]
-                    },
-                    "enable-patching": true,
-                    "patches": {
-                        "drupal/config_ignore": {
-                            "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-07-31/offset-error-within-2972302-13.patch"
-                        },
-                        "drupal/metatag": {
-                            "Unset link rel: shortlink, edit-form, version-history and revision, and meta name: Generator, MobileOptimized, HandheldFriendly, viewport from <head> - https://www.drupal.org/project/metatag/issues/2735195#comment-12991008": "https://www.drupal.org/files/issues/2019-02-28/metatag-unset-2735195-42.patch"
-                        },
-                        "drupal/events_log_track": {
-                            "Events Log Track breaks Entity Browser #5 - https://www.drupal.org/project/events_log_track/issues/2934036": "https://www.drupal.org/files/issues/2018-04-19/2934036-check_empty_submit-5.patch",
-                            "Entities with title longer than 50 characters - https://www.drupal.org/project/events_log_track/issues/2930817": "https://www.drupal.org/files/issues/increase-character-length-2930817-2.patch",
-                            "Event logs for change in workflows - https://www.drupal.org/project/events_log_track/issues/2974170": "https://www.drupal.org/files/issues/2018-06-26/events_log_track-add-workflows-2974170-7.patch",
-                            "Add handlers for file and media entities - https://www.drupal.org/project/events_log_track/issues/2959769": "https://www.drupal.org/files/issues/2018-06-26/events-log-track_add-file-media-2959769-9.patch",
-                            "Skip password logging during failed authentication attempt - https://www.drupal.org/project/events_log_track/issues/3027463": "https://www.drupal.org/files/issues/2019-01-22/event-log-track-auth-3027463-2.patch"
-                        },
-                        "drupal/google_analytics": {
-                            "Fatal error when there is a view with the path search/node": "https://www.drupal.org/files/issues/2018-06-18/patch_google_analytics.patch"
-                        }
-                    }
-                },
-                "autoload": {
-                    "psr-4": {
-                        "govCMS\\Core\\": "src"
-                    }
-                },
-                "notification-url": "https://packagist.org/downloads/",
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "description": "GovCMS8 Drupal Distribution",
-                "homepage": "https://www.govcms.gov.au",
-                "keywords": [
-                    "govCMS",
-                    "govCMS8"
-                ]
-            },
             "dev-feature/fix-simple-sitemap-settings": {
                 "name": "govcms/govcms",
                 "version": "dev-feature/fix-simple-sitemap-settings",
@@ -41880,6 +41685,194 @@
                     "patches": {
                         "drupal/config_ignore": {
                             "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-07-31/offset-error-within-2972302-13.patch"
+                        },
+                        "drupal/metatag": {
+                            "Unset link rel: shortlink, edit-form, version-history and revision, and meta name: Generator, MobileOptimized, HandheldFriendly, viewport from <head> - https://www.drupal.org/project/metatag/issues/2735195#comment-12991008": "https://www.drupal.org/files/issues/2019-02-28/metatag-unset-2735195-42.patch"
+                        },
+                        "drupal/events_log_track": {
+                            "Events Log Track breaks Entity Browser #5 - https://www.drupal.org/project/events_log_track/issues/2934036": "https://www.drupal.org/files/issues/2018-04-19/2934036-check_empty_submit-5.patch",
+                            "Entities with title longer than 50 characters - https://www.drupal.org/project/events_log_track/issues/2930817": "https://www.drupal.org/files/issues/increase-character-length-2930817-2.patch",
+                            "Event logs for change in workflows - https://www.drupal.org/project/events_log_track/issues/2974170": "https://www.drupal.org/files/issues/2018-06-26/events_log_track-add-workflows-2974170-7.patch",
+                            "Add handlers for file and media entities - https://www.drupal.org/project/events_log_track/issues/2959769": "https://www.drupal.org/files/issues/2018-06-26/events-log-track_add-file-media-2959769-9.patch",
+                            "Skip password logging during failed authentication attempt - https://www.drupal.org/project/events_log_track/issues/3027463": "https://www.drupal.org/files/issues/2019-01-22/event-log-track-auth-3027463-2.patch"
+                        },
+                        "drupal/google_analytics": {
+                            "Fatal error when there is a view with the path search/node": "https://www.drupal.org/files/issues/2018-06-18/patch_google_analytics.patch"
+                        }
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "govCMS\\Core\\": "src"
+                    }
+                },
+                "notification-url": "https://packagist.org/downloads/",
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "description": "GovCMS8 Drupal Distribution",
+                "homepage": "https://www.govcms.gov.au",
+                "keywords": [
+                    "govCMS",
+                    "govCMS8"
+                ]
+            },
+            "dev-release/1.0-beta7": {
+                "name": "govcms/govcms",
+                "version": "dev-release/1.0-beta7",
+                "version_normalized": "dev-release/1.0-beta7",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/govCMS/govCMS8.git",
+                    "reference": "1183422527179f64b29e3b3f9135b97fac0c2274"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/govCMS/govCMS8/zipball/1183422527179f64b29e3b3f9135b97fac0c2274",
+                    "reference": "1183422527179f64b29e3b3f9135b97fac0c2274",
+                    "shasum": ""
+                },
+                "require": {
+                    "bower-asset/chosen": "1.8.7",
+                    "bower-asset/dropzone": "5.5.0",
+                    "cweagans/composer-patches": "^1.6",
+                    "drupal-composer/drupal-scaffold": "^2.4",
+                    "drupal/admin_toolbar": "1.26",
+                    "drupal/adminimal_admin_toolbar": "1.9.0",
+                    "drupal/adminimal_theme": "1.4",
+                    "drupal/chosen": "2.6.0",
+                    "drupal/components": "1.0.0",
+                    "drupal/config_filter": "1.4",
+                    "drupal/config_ignore": "2.1",
+                    "drupal/config_perms": "1.2.0",
+                    "drupal/config_split": "1.4",
+                    "drupal/config_update": "1.6",
+                    "drupal/consumers": "1.9",
+                    "drupal/contact_storage": "1.0-beta9",
+                    "drupal/context": "4.0-beta2",
+                    "drupal/core": "8.7.3",
+                    "drupal/ctools": "3.2.0",
+                    "drupal/devel": "2.0",
+                    "drupal/diff": "1.0-rc2",
+                    "drupal/dropzonejs": "2.0.0-alpha3",
+                    "drupal/ds": "3.2",
+                    "drupal/entity_browser": "2.1",
+                    "drupal/entity_class_formatter": "1.1.0",
+                    "drupal/entity_embed": "1.0-beta2",
+                    "drupal/entity_reference_display": "1.2.0",
+                    "drupal/entity_reference_revisions": "1.6",
+                    "drupal/environment_indicator": "3.5",
+                    "drupal/events_log_track": "1.1",
+                    "drupal/facets": "1.3",
+                    "drupal/features": "3.8",
+                    "drupal/field_group": "3.0-rc1",
+                    "drupal/focal_point": "1.0-beta6",
+                    "drupal/google_analytics": "3.0",
+                    "drupal/govcms8_ui": "1.0.0-alpha1",
+                    "drupal/govcms8_uikit_starter": "1.0-alpha2",
+                    "drupal/graphql": "3.0.0-rc2",
+                    "drupal/honeypot": "1.29",
+                    "drupal/inline_entity_form": "1.0-rc1",
+                    "drupal/linked_field": "1.1.0",
+                    "drupal/linkit": "5.0-beta8",
+                    "drupal/login_security": "1.5",
+                    "drupal/memcache": "2.0",
+                    "drupal/menu_block": "1.5",
+                    "drupal/menu_trail_by_path": "1.1",
+                    "drupal/metatag": "1.8",
+                    "drupal/modifiers": "1.2",
+                    "drupal/module_filter": "3.1",
+                    "drupal/panelizer": "4.1",
+                    "drupal/panels": "4.4.0",
+                    "drupal/paragraphs": "1.6",
+                    "drupal/password_policy": "3.0-alpha4",
+                    "drupal/pathauto": "1.3",
+                    "drupal/permissions_by_term": "2.9",
+                    "drupal/recaptcha": "2.4",
+                    "drupal/redirect": "1.3",
+                    "drupal/restui": "1.16.0",
+                    "drupal/robotstxt": "1.2",
+                    "drupal/scheduled_transitions": "^1.0-rc1",
+                    "drupal/search_api": "1.11",
+                    "drupal/search_api_attachments": "1.0-beta13",
+                    "drupal/search_api_solr": "2.2",
+                    "drupal/seckit": "1.1",
+                    "drupal/shield": "1.2",
+                    "drupal/simple_oauth": "3.14",
+                    "drupal/simple_sitemap": "3.0",
+                    "drupal/swiftmailer": "1.0-beta2",
+                    "drupal/token": "1.5",
+                    "drupal/update_notifications_disable": "1.0",
+                    "drupal/username_enumeration_prevention": "1.0-beta2",
+                    "drupal/video_embed_field": "2.0",
+                    "drupal/webform": "5.1",
+                    "oomphinc/composer-installers-extender": "^1.1",
+                    "php": "^7.1",
+                    "swiftmailer/swiftmailer": "5.4.12",
+                    "symfony/phpunit-bridge": "^3.4.6"
+                },
+                "conflict": {
+                    "drupal/core": "7.*",
+                    "drush/drush": "<8.1.10"
+                },
+                "require-dev": {
+                    "grasmash/drupal-security-warning": "^1.1",
+                    "phing/phing": "^2.16"
+                },
+                "suggest": {
+                    "hirak/prestissimo": "^0.3"
+                },
+                "time": "2019-07-11T05:01:16+00:00",
+                "type": "drupal-profile",
+                "extra": {
+                    "drupal-scaffold": {
+                        "initial": {
+                            "sites/default/default.services.yml": "sites/default/services.yml",
+                            "sites/default/default.settings.php": "sites/default/settings.php"
+                        },
+                        "excludes": [
+                            "sites/development.services.yml"
+                        ]
+                    },
+                    "installer-types": [
+                        "bower-asset",
+                        "npm-asset"
+                    ],
+                    "installer-paths": {
+                        "docroot/core": [
+                            "type:drupal-core"
+                        ],
+                        "docroot/modules/contrib/{$name}": [
+                            "type:drupal-module"
+                        ],
+                        "docroot/modules/custom/{$name}": [
+                            "type:drupal-custom-module"
+                        ],
+                        "docroot/profiles/{$name}": [
+                            "type:drupal-profile"
+                        ],
+                        "docroot/themes/contrib/{$name}": [
+                            "type:drupal-theme"
+                        ],
+                        "docroot/themes/custom/{$name}": [
+                            "type:drupal-custom-theme"
+                        ],
+                        "docroot/libraries/{$name}": [
+                            "type:drupal-library",
+                            "type:bower-asset",
+                            "type:npm-asset"
+                        ],
+                        "drush/contrib/{$name}": [
+                            "type:drupal-drush"
+                        ]
+                    },
+                    "enable-patching": true,
+                    "patches": {
+                        "drupal/config_ignore": {
+                            "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-07-31/offset-error-within-2972302-13.patch"
+                        },
+                        "drupal/panelizer": {
+                            "PanelizerWizardContextForm calls parent constructor without enough arguments under CTools 3.1 - https://www.drupal.org/project/panelizer/issues/3031671": "https://www.drupal.org/files/issues/2019-04-03/3031671-8.patch"
                         },
                         "drupal/metatag": {
                             "Unset link rel: shortlink, edit-form, version-history and revision, and meta name: Generator, MobileOptimized, HandheldFriendly, viewport from <head> - https://www.drupal.org/project/metatag/issues/2735195#comment-12991008": "https://www.drupal.org/files/issues/2019-02-28/metatag-unset-2735195-42.patch"
@@ -44314,12 +44307,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/thephpleague/csv.git",
-                    "reference": "1a86ff7a44213f4ad551be40c1aa4382fdebaa4e"
+                    "reference": "da1a11bde6dffa689fe674e4ba9f126f9fabb76c"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/thephpleague/csv/zipball/1a86ff7a44213f4ad551be40c1aa4382fdebaa4e",
-                    "reference": "1a86ff7a44213f4ad551be40c1aa4382fdebaa4e",
+                    "url": "https://api.github.com/repos/thephpleague/csv/zipball/da1a11bde6dffa689fe674e4ba9f126f9fabb76c",
+                    "reference": "da1a11bde6dffa689fe674e4ba9f126f9fabb76c",
                     "shasum": ""
                 },
                 "require": {
@@ -44339,7 +44332,7 @@
                 "suggest": {
                     "ext-iconv": "Needed to ease transcoding CSV using iconv stream filters"
                 },
-                "time": "2019-07-13T21:39:19+00:00",
+                "time": "2019-07-15T10:32:43+00:00",
                 "type": "library",
                 "extra": {
                     "branch-alias": {
@@ -55740,12 +55733,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/symfony/debug.git",
-                    "reference": "740602e8b0f6bb2f78cb4548d515b152cc9bb965"
+                    "reference": "32d260af46a26fd47e95087b35ba98dd2f3a3668"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/symfony/debug/zipball/740602e8b0f6bb2f78cb4548d515b152cc9bb965",
-                    "reference": "740602e8b0f6bb2f78cb4548d515b152cc9bb965",
+                    "url": "https://api.github.com/repos/symfony/debug/zipball/32d260af46a26fd47e95087b35ba98dd2f3a3668",
+                    "reference": "32d260af46a26fd47e95087b35ba98dd2f3a3668",
                     "shasum": ""
                 },
                 "require": {
@@ -55758,7 +55751,7 @@
                 "require-dev": {
                     "symfony/http-kernel": "~2.8|~3.0|~4.0"
                 },
-                "time": "2019-07-11T18:09:53+00:00",
+                "time": "2019-07-12T08:40:08+00:00",
                 "type": "library",
                 "extra": {
                     "branch-alias": {
@@ -55911,12 +55904,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/symfony/debug.git",
-                    "reference": "6d2c091e1b74bd51a48f135dc0e0800d40dca2e7"
+                    "reference": "779eb012d2f8e3709a1384867d778046fbd17cc8"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/symfony/debug/zipball/6d2c091e1b74bd51a48f135dc0e0800d40dca2e7",
-                    "reference": "6d2c091e1b74bd51a48f135dc0e0800d40dca2e7",
+                    "url": "https://api.github.com/repos/symfony/debug/zipball/779eb012d2f8e3709a1384867d778046fbd17cc8",
+                    "reference": "779eb012d2f8e3709a1384867d778046fbd17cc8",
                     "shasum": ""
                 },
                 "require": {
@@ -55929,7 +55922,7 @@
                 "require-dev": {
                     "symfony/http-kernel": "^4.4|^5.0"
                 },
-                "time": "2019-07-11T08:51:20+00:00",
+                "time": "2019-07-13T16:55:37+00:00",
                 "type": "library",
                 "extra": {
                     "branch-alias": {
@@ -64570,12 +64563,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/symfony/http-kernel.git",
-                    "reference": "4cc579f2d415e22ee7a1bc0ebcb519aa07110b36"
+                    "reference": "4699bfe63c21f2799b80d042ad2196de91fabb2d"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/symfony/http-kernel/zipball/4cc579f2d415e22ee7a1bc0ebcb519aa07110b36",
-                    "reference": "4cc579f2d415e22ee7a1bc0ebcb519aa07110b36",
+                    "url": "https://api.github.com/repos/symfony/http-kernel/zipball/4699bfe63c21f2799b80d042ad2196de91fabb2d",
+                    "reference": "4699bfe63c21f2799b80d042ad2196de91fabb2d",
                     "shasum": ""
                 },
                 "require": {
@@ -64626,7 +64619,7 @@
                     "symfony/dependency-injection": "",
                     "symfony/var-dumper": ""
                 },
-                "time": "2019-07-12T04:45:48+00:00",
+                "time": "2019-07-14T08:01:32+00:00",
                 "type": "library",
                 "extra": {
                     "branch-alias": {
@@ -73164,12 +73157,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/symfony/translation.git",
-                    "reference": "016839b73ebbd37a8cfc971c7ceeaf9d891ce816"
+                    "reference": "2c1d800807cfaf5a2c72102f3a7452cd28a12cc0"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/symfony/translation/zipball/016839b73ebbd37a8cfc971c7ceeaf9d891ce816",
-                    "reference": "016839b73ebbd37a8cfc971c7ceeaf9d891ce816",
+                    "url": "https://api.github.com/repos/symfony/translation/zipball/2c1d800807cfaf5a2c72102f3a7452cd28a12cc0",
+                    "reference": "2c1d800807cfaf5a2c72102f3a7452cd28a12cc0",
                     "shasum": ""
                 },
                 "require": {
@@ -73196,7 +73189,7 @@
                     "symfony/config": "",
                     "symfony/yaml": ""
                 },
-                "time": "2019-07-08T08:22:53+00:00",
+                "time": "2019-07-15T07:11:40+00:00",
                 "type": "library",
                 "extra": {
                     "branch-alias": {
@@ -75082,12 +75075,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/symfony/validator.git",
-                    "reference": "e13ca48877290ca472fc9673eb04f1b22efc820e"
+                    "reference": "0cf571bf47f865c83140ac6cf8b8b7f27fa523aa"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/symfony/validator/zipball/e13ca48877290ca472fc9673eb04f1b22efc820e",
-                    "reference": "e13ca48877290ca472fc9673eb04f1b22efc820e",
+                    "url": "https://api.github.com/repos/symfony/validator/zipball/0cf571bf47f865c83140ac6cf8b8b7f27fa523aa",
+                    "reference": "0cf571bf47f865c83140ac6cf8b8b7f27fa523aa",
                     "shasum": ""
                 },
                 "require": {
@@ -75129,7 +75122,7 @@
                     "symfony/property-access": "For accessing properties within comparison constraints",
                     "symfony/yaml": ""
                 },
-                "time": "2019-07-12T11:10:16+00:00",
+                "time": "2019-07-15T07:11:50+00:00",
                 "type": "library",
                 "extra": {
                     "branch-alias": {
