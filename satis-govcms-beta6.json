@@ -6,7 +6,7 @@
         { "type": "composer", "url": "https://packages.drupal.org/8" },
         { "type": "composer", "url": "https://asset-packagist.org" },
         { "type": "vcs", "url": "https://github.com/simesy/whitelist" },
-        { "type": "vcs", "url": "https://github.com/simesy/require" }
+        { "type": "vcs", "url": "https://github.com/simesy/scaffold-tooling" }
     ],
     "require": {
         "govcms/govcms": "1.0-beta6",

@@ -1,16 +1,15 @@
 {
-    "name": "govcms/satis-beta5",
-    "homepage": "https://satis.govcms.gov.au/beta5",
+    "name": "govcms/satis-test",
+    "homepage": "https://satis.govcms.gov.au",
     "repositories": [
         { "type": "composer", "url": "https://packagist.org" },
         { "type": "composer", "url": "https://packages.drupal.org/8" },
         { "type": "composer", "url": "https://asset-packagist.org" },
-        { "type": "vcs", "url": "https://github.com/simesy/whitelist" },
-        { "type": "vcs", "url": "https://github.com/simesy/require" }
+        { "type": "vcs", "url": "https://github.com/simesy/scaffold-tooling" }
     ],
     "require": {
-        "govcms/govcms": "1.0-beta5",
-        "simesy/scaffold-tooling": "1.0.0"
+        "govcms/govcms": "1.0-beta6",
+        "simesy/scaffold-tooling": "dev-master"
     },
     "require-dependencies": true,
     "only-best-candidates": true
