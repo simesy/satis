@@ -10,8 +10,8 @@
     ],
     "require": {
         "govcms/govcms": "1.0-beta6",
-        "simesy/whitelist": "dev-beta6",
-        "simesy/scaffold-tooling": "dev-master",
+        "govcms/whitelist": "dev-beta6",
+        "govcms/scaffold-tooling": "dev-master",
         "drupal/chosen_lib": "2.6.0"
     },
     "require-dependencies": true,

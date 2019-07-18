@@ -10,8 +10,8 @@
     ],
     "require": {
         "govcms/govcms": "*",
-        "simesy/whitelist": "*",
-        "simesy/scaffold-tooling": "dev-master"
+        "govcms/whitelist": "*",
+        "govcms/scaffold-tooling": "dev-master"
     },
     "require-dependencies": true,
     "only-best-candidates": false

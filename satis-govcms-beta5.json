@@ -9,7 +9,7 @@
     ],
     "require": {
         "govcms/govcms": "1.0-beta6",
-        "simesy/scaffold-tooling": "dev-master"
+        "govcms/scaffold-tooling": "dev-master"
     },
     "require-dependencies": true,
     "only-best-candidates": true
