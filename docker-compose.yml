@@ -10,7 +10,7 @@ services:
       dockerfile: Dockerfile
     labels:
       lagoon.type: nginx
-      lagoon.deployment.strategy: Recreate
+      lagoon.deployment.strategy: Rolling
     volumes:
       - ./app:/app:delegated
     expose:
