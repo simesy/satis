@@ -5,14 +5,16 @@
         { "type": "composer", "url": "https://packagist.org" },
         { "type": "composer", "url": "https://packages.drupal.org/8" },
         { "type": "composer", "url": "https://asset-packagist.org" },
-        { "type": "vcs", "url": "https://github.com/simesy/whitelist" },
+        { "type": "vcs", "url": "https://github.com/govcms/consultation" },
+        { "type": "vcs", "url": "https://github.com/govcms/dvf" },
         { "type": "vcs", "url": "https://github.com/simesy/scaffold-tooling" }
     ],
     "require": {
-        "govcms/govcms": "*",
-        "govcms/whitelist": "*",
-        "govcms/scaffold-tooling": "dev-master"
+        "govcms/govcms": "dev-1.x",
+        "govcms/scaffold-tooling": "dev-master",
+        "govcms/consultation": "dev-8.x-1.x",
+        "drupal/dvf": "dev-develop"
     },
     "require-dependencies": true,
-    "only-best-candidates": false
+    "only-best-candidates": true
 }

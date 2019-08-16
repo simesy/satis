@@ -1,0 +1,20 @@
+{
+    "name": "govcms/satis-beta7",
+    "homepage": "https://satis.govcms.gov.au/beta7",
+    "repositories": [
+        { "type": "composer", "url": "https://packagist.org" },
+        { "type": "composer", "url": "https://packages.drupal.org/8" },
+        { "type": "composer", "url": "https://asset-packagist.org" },
+        { "type": "vcs", "url": "https://github.com/govcms/consultation" },
+        { "type": "vcs", "url": "https://github.com/govcms/dvf" },
+        { "type": "vcs", "url": "https://github.com/simesy/scaffold-tooling" }
+    ],
+    "require": {
+        "govcms/govcms": "1.0-beta7",
+        "govcms/scaffold-tooling": "dev-master",
+        "govcms/consultation": "dev-8.x-1.x",
+        "drupal/dvf": "dev-develop"
+    },
+    "require-dependencies": true,
+    "only-best-candidates": true
+}
