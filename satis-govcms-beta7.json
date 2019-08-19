@@ -1,6 +1,6 @@
 {
     "name": "govcms/satis-beta7",
-    "homepage": "https://satis.govcms.gov.au/beta7",
+    "homepage": "https://satis.govcms.gov.au",
     "repositories": [
         { "type": "composer", "url": "https://packagist.org" },
         { "type": "composer", "url": "https://packages.drupal.org/8" },
