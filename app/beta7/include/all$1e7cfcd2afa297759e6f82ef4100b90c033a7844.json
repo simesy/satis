@@ -10506,12 +10506,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/simesy/scaffold-tooling.git",
-                    "reference": "76e152bdd95775444627cccdc125b9b700596fa5"
+                    "reference": "a87c6c66d31f45e1c82393e7c4df3609d4bc1ed6"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/simesy/scaffold-tooling/zipball/76e152bdd95775444627cccdc125b9b700596fa5",
-                    "reference": "76e152bdd95775444627cccdc125b9b700596fa5",
+                    "url": "https://api.github.com/repos/simesy/scaffold-tooling/zipball/a87c6c66d31f45e1c82393e7c4df3609d4bc1ed6",
+                    "reference": "a87c6c66d31f45e1c82393e7c4df3609d4bc1ed6",
                     "shasum": ""
                 },
                 "require": {
@@ -10535,7 +10535,12 @@
                     "webmozart/path-util": "^2.3",
                     "zaporylie/composer-drupal-optimizations": "^1.0"
                 },
-                "time": "2019-08-19T06:58:06+00:00",
+                "time": "2019-08-20T07:25:57+00:00",
+                "bin": [
+                    "scripts/tests/lint",
+                    "scripts/tests/phpunit",
+                    "scripts/tests/vet"
+                ],
                 "type": "library",
                 "description": "A variety of standard config, scripts and packages to support GovCMS scaffold.",
                 "support": {

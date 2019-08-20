@@ -5850,6 +5850,52 @@
                 }
             }
         },
+        "drupal/dvf": {
+            "dev-develop": {
+                "name": "drupal/dvf",
+                "version": "dev-develop",
+                "version_normalized": "dev-develop",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/govCMS/dvf.git",
+                    "reference": "1cf757c12cf6423eed9e9e36154f5518b70d9ea9"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/govCMS/dvf/zipball/1cf757c12cf6423eed9e9e36154f5518b70d9ea9",
+                    "reference": "1cf757c12cf6423eed9e9e36154f5518b70d9ea9",
+                    "shasum": ""
+                },
+                "require": {
+                    "flow/jsonpath": "^0.4.0"
+                },
+                "time": "2019-06-28T05:53:22+00:00",
+                "type": "drupal-module",
+                "license": [
+                    "GPL-2.0+"
+                ],
+                "authors": [
+                    {
+                        "name": "Jeremy Graham",
+                        "homepage": "https://www.drupal.org/u/jez500"
+                    },
+                    {
+                        "name": "Jorge Castro",
+                        "homepage": "https://www.drupal.org/u/jorgegc"
+                    },
+                    {
+                        "name": "Toby Bellwood",
+                        "homepage": "https://www.drupal.org/u/tobybellwood"
+                    }
+                ],
+                "description": "Data Visualisation Framework makes it easy to generate visualisations from different data sources.",
+                "homepage": "https://github.com/govCMS/dvf",
+                "support": {
+                    "issues": "https://github.com/govCMS/dvf/issues",
+                    "source": "https://github.com/govCMS/dvf"
+                }
+            }
+        },
         "drupal/dynamic_entity_reference": {
             "1.7.0": {
                 "name": "drupal/dynamic_entity_reference",
@@ -10186,6 +10232,82 @@
                 ]
             }
         },
+        "flow/jsonpath": {
+            "0.4.0": {
+                "name": "flow/jsonpath",
+                "version": "0.4.0",
+                "version_normalized": "0.4.0.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/FlowCommunications/JSONPath.git",
+                    "reference": "f0222818d5c938e4ab668ab2e2c079bd51a27112"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/FlowCommunications/JSONPath/zipball/f0222818d5c938e4ab668ab2e2c079bd51a27112",
+                    "reference": "f0222818d5c938e4ab668ab2e2c079bd51a27112",
+                    "shasum": ""
+                },
+                "require": {
+                    "php": ">=5.4.0"
+                },
+                "require-dev": {
+                    "peekmo/jsonpath": "dev-master",
+                    "phpunit/phpunit": "^4.0"
+                },
+                "time": "2018-03-04T16:39:47+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-0": {
+                        "Flow\\JSONPath": "src/",
+                        "Flow\\JSONPath\\Test": "tests/"
+                    }
+                },
+                "notification-url": "https://packagist.org/downloads/",
+                "license": [
+                    "MIT"
+                ],
+                "authors": [
+                    {
+                        "name": "Stephen Frank",
+                        "email": "stephen@flowsa.com"
+                    }
+                ],
+                "description": "JSONPath implementation for parsing, searching and flattening arrays"
+            }
+        },
+        "govcms/consultation": {
+            "dev-8.x-1.x": {
+                "name": "govcms/consultation",
+                "version": "dev-8.x-1.x",
+                "version_normalized": "dev-8.x-1.x",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/govCMS/consultation.git",
+                    "reference": "f787971f5a8258ee41312fe9f5ef9074920e84bf"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/govCMS/consultation/zipball/f787971f5a8258ee41312fe9f5ef9074920e84bf",
+                    "reference": "f787971f5a8258ee41312fe9f5ef9074920e84bf",
+                    "shasum": ""
+                },
+                "time": "2019-07-31T04:50:32+00:00",
+                "type": "drupal-module",
+                "license": [
+                    "GPL-2.0"
+                ],
+                "description": "Consulation or 'Have your say'",
+                "keywords": [
+                    "drupal",
+                    "govcms"
+                ],
+                "support": {
+                    "source": "https://github.com/govCMS/consultation/tree/8.x-1.x",
+                    "issues": "https://github.com/govCMS/consultation/issues"
+                }
+            }
+        },
         "govcms/govcms": {
             "1.0.0-beta6": {
                 "name": "govcms/govcms",
@@ -10384,12 +10506,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/simesy/scaffold-tooling.git",
-                    "reference": "76e152bdd95775444627cccdc125b9b700596fa5"
+                    "reference": "a87c6c66d31f45e1c82393e7c4df3609d4bc1ed6"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/simesy/scaffold-tooling/zipball/76e152bdd95775444627cccdc125b9b700596fa5",
-                    "reference": "76e152bdd95775444627cccdc125b9b700596fa5",
+                    "url": "https://api.github.com/repos/simesy/scaffold-tooling/zipball/a87c6c66d31f45e1c82393e7c4df3609d4bc1ed6",
+                    "reference": "a87c6c66d31f45e1c82393e7c4df3609d4bc1ed6",
                     "shasum": ""
                 },
                 "require": {
@@ -10413,7 +10535,12 @@
                     "webmozart/path-util": "^2.3",
                     "zaporylie/composer-drupal-optimizations": "^1.0"
                 },
-                "time": "2019-08-19T06:58:06+00:00",
+                "time": "2019-08-20T07:25:57+00:00",
+                "bin": [
+                    "scripts/tests/lint",
+                    "scripts/tests/phpunit",
+                    "scripts/tests/vet"
+                ],
                 "type": "library",
                 "description": "A variety of standard config, scripts and packages to support GovCMS scaffold.",
                 "support": {
