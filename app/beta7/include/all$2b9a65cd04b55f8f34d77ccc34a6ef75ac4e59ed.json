@@ -10506,12 +10506,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/simesy/scaffold-tooling.git",
-                    "reference": "37fe2edac96d97e44bfac77e815d24b6d3aa9564"
+                    "reference": "40ff7b5e513c26f25ea2d951a20351d9befc096c"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/simesy/scaffold-tooling/zipball/37fe2edac96d97e44bfac77e815d24b6d3aa9564",
-                    "reference": "37fe2edac96d97e44bfac77e815d24b6d3aa9564",
+                    "url": "https://api.github.com/repos/simesy/scaffold-tooling/zipball/40ff7b5e513c26f25ea2d951a20351d9befc096c",
+                    "reference": "40ff7b5e513c26f25ea2d951a20351d9befc096c",
                     "shasum": ""
                 },
                 "require": {
@@ -10535,10 +10535,15 @@
                     "webmozart/path-util": "^2.3",
                     "zaporylie/composer-drupal-optimizations": "^1.0"
                 },
-                "time": "2019-08-20T08:31:05+00:00",
+                "time": "2019-08-20T08:43:01+00:00",
                 "bin": [
-                    "scripts/govcms-deploy",
-                    "scripts/tests/*"
+                    "scripts/tests/govcms-audit",
+                    "scripts/tests/govcms-behat",
+                    "scripts/tests/govcms-lint",
+                    "scripts/tests/govcms-lint-distro",
+                    "scripts/tests/govcms-phpunit",
+                    "scripts/tests/govcms-vet",
+                    "scripts/govcms-deploy"
                 ],
                 "type": "library",
                 "description": "A variety of standard config, scripts and packages to support GovCMS scaffold.",
