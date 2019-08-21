@@ -9,7 +9,7 @@ commands:
       #php ./bin/satis -vvv build ./satis-govcms-beta6.json ./app/beta6
       php ./bin/satis -vvv build ./satis-govcms-beta7.json ./app/beta7
       php ./bin/satis -vvv build ./satis-govcms-beta8.json ./app
-
+      ahoy changelog
   server:
     cmd: |
       php -S localhost:4680 -t ./app
