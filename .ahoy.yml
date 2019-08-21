@@ -13,3 +13,7 @@ commands:
   server:
     cmd: |
       php -S localhost:4680 -t ./app
+
+  changelog:
+    cmd: |
+      git diff app/index.html | grep "^+" | egrep -o 'https?://[^ ]+'
