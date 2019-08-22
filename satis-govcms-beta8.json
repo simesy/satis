@@ -13,7 +13,8 @@
         "govcms/govcms": "1.0-beta8",
         "govcms/scaffold-tooling": "dev-master",
         "govcms/consultation": "dev-8.x-1.x",
-        "drupal/dvf": "dev-develop"
+        "drupal/dvf": "dev-develop",
+        "drupal/entity_pilot": "~1"
     },
     "require-dependencies": true,
     "only-best-candidates": true
