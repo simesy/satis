@@ -3496,6 +3496,76 @@
             }
         },
         "drupal/chosen_lib": {
+            "2.6.0": {
+                "name": "drupal/chosen_lib",
+                "version": "2.6.0",
+                "version_normalized": "2.6.0.0",
+                "require": {
+                    "drupal/chosen": "self.version",
+                    "drupal/core": "~8.0"
+                },
+                "type": "metapackage",
+                "extra": {
+                    "branch-alias": {
+                        "dev-2.x": "2.x-dev"
+                    },
+                    "drupal": {
+                        "version": "8.x-2.6",
+                        "datestamp": "1554029581",
+                        "security-coverage": {
+                            "status": "covered",
+                            "message": "Covered by Drupal's security advisory policy"
+                        }
+                    }
+                },
+                "notification-url": "https://packages.drupal.org/8/downloads",
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Cyclodex",
+                        "homepage": "https://www.drupal.org/user/1305230"
+                    },
+                    {
+                        "name": "Dave Reid",
+                        "homepage": "https://www.drupal.org/user/53892"
+                    },
+                    {
+                        "name": "Hydra",
+                        "homepage": "https://www.drupal.org/user/647364"
+                    },
+                    {
+                        "name": "Pol",
+                        "homepage": "https://www.drupal.org/user/47194"
+                    },
+                    {
+                        "name": "aidanlis",
+                        "homepage": "https://www.drupal.org/user/502018"
+                    },
+                    {
+                        "name": "arshadcn",
+                        "homepage": "https://www.drupal.org/user/571032"
+                    },
+                    {
+                        "name": "kalman.hosszu",
+                        "homepage": "https://www.drupal.org/user/267481"
+                    },
+                    {
+                        "name": "nagy.balint",
+                        "homepage": "https://www.drupal.org/user/1763952"
+                    },
+                    {
+                        "name": "supercabbageuk",
+                        "homepage": "https://www.drupal.org/user/235438"
+                    }
+                ],
+                "description": "Add <a href=\"http://harvesthq.github.com/chosen/\">chosen</a> library definition.",
+                "homepage": "https://www.drupal.org/project/chosen",
+                "support": {
+                    "source": "https://git.drupalcode.org/project/chosen"
+                }
+            },
             "2.8.0": {
                 "name": "drupal/chosen_lib",
                 "version": "2.8.0",
@@ -10314,18 +10384,19 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/simesy/scaffold-tooling.git",
-                    "reference": "775630105800c023c096dc7f9ea55839ddae4e50"
+                    "reference": "19d6bde68b348b24cfe3a207fdce42682d451a3f"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/simesy/scaffold-tooling/zipball/775630105800c023c096dc7f9ea55839ddae4e50",
-                    "reference": "775630105800c023c096dc7f9ea55839ddae4e50",
+                    "url": "https://api.github.com/repos/simesy/scaffold-tooling/zipball/19d6bde68b348b24cfe3a207fdce42682d451a3f",
+                    "reference": "19d6bde68b348b24cfe3a207fdce42682d451a3f",
                     "shasum": ""
                 },
                 "require": {
                     "behat/behat": "^3.5",
                     "behat/gherkin": "^4.5",
                     "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                    "drupal/chosen_lib": "2.6.0",
                     "drupal/clamav": "1.1.0",
                     "drupal/coder": "^8.3",
                     "drupal/console": "^1.0.2",
@@ -10343,11 +10414,7 @@
                     "webmozart/path-util": "^2.3",
                     "zaporylie/composer-drupal-optimizations": "^1.0"
                 },
-                "conflict": {
-                    "drupal/chosen_lib": "<2.8.0",
-                    "drupal/drupal": "*"
-                },
-                "time": "2019-08-22T05:59:37+00:00",
+                "time": "2019-08-22T06:31:37+00:00",
                 "bin": [
                     "scripts/tests/govcms-audit",
                     "scripts/tests/govcms-behat",
