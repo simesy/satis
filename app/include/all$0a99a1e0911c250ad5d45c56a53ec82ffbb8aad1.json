@@ -10639,12 +10639,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/simesy/scaffold-tooling.git",
-                    "reference": "e235c681f5bb710f6c3fce1d52f5d5cb21077cdf"
+                    "reference": "47ea1c7599b755a727b9dee1c26946a7fbd8a1fd"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/simesy/scaffold-tooling/zipball/e235c681f5bb710f6c3fce1d52f5d5cb21077cdf",
-                    "reference": "e235c681f5bb710f6c3fce1d52f5d5cb21077cdf",
+                    "url": "https://api.github.com/repos/simesy/scaffold-tooling/zipball/47ea1c7599b755a727b9dee1c26946a7fbd8a1fd",
+                    "reference": "47ea1c7599b755a727b9dee1c26946a7fbd8a1fd",
                     "shasum": ""
                 },
                 "require": {
@@ -10669,7 +10669,7 @@
                     "webmozart/path-util": "^2.3",
                     "zaporylie/composer-drupal-optimizations": "^1.0"
                 },
-                "time": "2019-08-26T15:03:48+00:00",
+                "time": "2019-08-27T03:37:58+00:00",
                 "bin": [
                     "scripts/tests/govcms-audit",
                     "scripts/tests/govcms-behat",
