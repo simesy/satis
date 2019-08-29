@@ -7,7 +7,7 @@
         { "type": "composer", "url": "https://asset-packagist.org" },
         { "type": "vcs", "url": "https://github.com/govcms/consultation" },
         { "type": "vcs", "url": "https://github.com/govcms/dvf" },
-        { "type": "vcs", "url": "https://github.com/simesy/scaffold-tooling" }
+        { "type": "vcs", "url": "https://github.com/govcms/scaffold-tooling" }
     ],
     "require": {
         "govcms/govcms": "1.0-beta8",
