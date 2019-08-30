@@ -46,6 +46,59 @@
                 }
             }
         },
+        "drupal/entity_pilot": {
+            "1.0.0": {
+                "name": "drupal/entity_pilot",
+                "version": "1.0.0",
+                "version_normalized": "1.0.0.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://git.drupalcode.org/project/entity_pilot.git",
+                    "reference": "8.x-1.0"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://ftp.drupal.org/files/projects/entity_pilot-8.x-1.0.zip",
+                    "reference": "8.x-1.0",
+                    "shasum": "e2da67fc254e5e14975d57799be5aef2d22a3173"
+                },
+                "require": {
+                    "defuse/php-encryption": "~2.0",
+                    "drupal/core": "*",
+                    "drupal/dynamic_entity_reference": "~1.0|~2.0"
+                },
+                "type": "drupal-module",
+                "extra": {
+                    "branch-alias": {
+                        "dev-1.x": "1.x-dev"
+                    },
+                    "drupal": {
+                        "version": "8.x-1.0",
+                        "datestamp": "1554715085",
+                        "security-coverage": {
+                            "status": "covered",
+                            "message": "Covered by Drupal's security advisory policy"
+                        }
+                    }
+                },
+                "notification-url": "https://packages.drupal.org/8/downloads",
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Lee Rowlands",
+                        "homepage": "https://www.drupal.org/user/395439",
+                        "email": "hello@entitypilot.com"
+                    }
+                ],
+                "description": "Painless content staging for Drupal",
+                "homepage": "https://www.drupal.org/project/entity_pilot",
+                "support": {
+                    "source": "https://git.drupalcode.org/project/entity_pilot"
+                }
+            }
+        },
         "drupal/migrate_cron": {
             "1.2.0": {
                 "name": "drupal/migrate_cron",

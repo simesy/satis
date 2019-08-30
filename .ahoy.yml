@@ -4,12 +4,12 @@ commands:
 
   build:
     cmd: |
-      php ./bin/satis -vvv build ./satis-govcms-dev.json ./app/dev
       #php ./bin/satis -vvv build ./satis-govcms-beta5.json ./app/beta5
       #php ./bin/satis -vvv build ./satis-govcms-beta6.json ./app/beta6
       #php ./bin/satis -vvv build ./satis-govcms-beta7.json ./app/beta7
       #php ./bin/satis -vvv build ./satis-govcms-beta8.json ./app/beta8
       php ./bin/satis -vvv build ./satis-govcms-beta8.json ./app
+      php ./bin/satis -vvv build ./satis-govcms-.json ./app/dev
       php ./bin/satis -vvv build ./satis-govcms-whitelist.json ./app/whitelist
       ahoy changelog
   server:

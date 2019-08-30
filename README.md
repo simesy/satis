@@ -1,23 +1,36 @@
-# NAMESAREHARD Satis
+# GovCMS Packagist
 
-A Satis implementation which provides a static packagist repo from a list of whitelisted
-composer packages. It has a 
+A packagist resource for Composer projects which contains only the packages
+required to build the GovCMS distribution. All the modules available
+in this packagist have been reviewed and curated.
+
+## Usage
+
+
+
+4. By using this as your only packagist source, you can ensure your Drupal
+site is compatible with GovCMS, without having to rely on the GovCMS scaffold.
+This is useful if you have a soft requirement for a future migration, but
+for now just want to use your own Composer setup, and it will make your
+Composer builds **much** faster.
+
+
 
 ## Overview
 
-### About Satis
 
-This project is built on [composer/satis](https://github.com/composer/satis),
-and you can read the [original README](https://github.com/composer/satis/blob/master/README.md)
-about this product.
 
-Some modifications from the upstream solution should be:
 
-- remove upstream test files and such
-- add govcms-package-mirror.json
-- add .ahoy.yml
-- add .gitignore tweaks, etc
-- change Dockerfile is changed for Lagoon
+
+
+
+## Technical
+
+This project is built on [composer/satis](https://github.com/composer/satis) and
+periodically updated the /src from upstream.
+
+Run `ahoy build` to update the packages. GovCMS
+
 
 ### Usage / build
 
