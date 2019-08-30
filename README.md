@@ -4,22 +4,78 @@ A packagist resource for Composer projects which contains only the packages
 required to build the GovCMS distribution. All the modules available
 in this packagist have been reviewed and curated.
 
-## Usage
+## Benefits
 
+1. We (will soon) use this in the GovCMS distribution as a way to ensure that
+a SaaS site is a complying SaaS site. It also will allow us to loosen package
+versions in the GovCMS distribution in line with Composer best practice.
 
+2. Since Satis does the hard work choose module versions, your `composer update is
+much faster.
+
+3. By providing this satis, and a whitelist service, we will enable use to
+de-scope modules from the distribution without "hard forking" the projects from
+SaaS.
 
 4. By using this as your only packagist source, you can ensure your Drupal
 site is compatible with GovCMS, without having to rely on the GovCMS scaffold.
 This is useful if you have a soft requirement for a future migration, but
 for now just want to use your own Composer setup, and it will make your
-Composer builds **much** faster.
+Composer builds **much** faster - a default GovCMS distribution can download
+200-300 packages.
 
 
+## Usage
 
-## Overview
+The de facto usage looks like this in composer.json. If you don't set
+`packagist.org` to false then Composer will simply get newer versions
+of these modules, making the use of satis redundant. 
 
+```
+"repositories": {
+    "govcms": {
+        "type": "composer",
+        "url": "https://satis.govcms.gov.au/"
+    },
+    "packagist.org": false
+},
+```
 
+With this in place, you could emulate the GovCMS distribution
+with the following, but check out the composer.json in the
+GovCMS scaffold for a more complete picture when it comes to 
+running your project on the GovCMS platform.
 
+```
+"require": {
+    "govcms/govcms": "~1"
+}
+```
+
+### Whitelist
+
+There is an additional whitelist of modules which are not in the GovCMS
+distribution but may be available to some SaaS customers.
+
+```
+"govcms-whitelist": {
+    "type": "composer",
+    "url": "https://satis.govcms.gov.au/whitelist"
+},
+```
+
+### List of sources
+
+We build additional resources for past versions and some other uses. The key sources are:
+
+* [satis.govcms.gov.au](https://satis.govcms.gov.au) => The latest stable version.
+* [/whitelist](https://satis.govcms.gov.au/whitelist) => Additional verified packages.
+* [/beta7](https://satis.govcms.gov.au/beta7), [/beta8](https://satis.govcms.gov.au/beta8) => Specific versions.
+* [/edge](https://satis.govcms.gov.au/edge) => Latest development version.
+
+## Tips
+
+* If you need 
 
 
 
