@@ -1790,19 +1790,19 @@
             }
         },
         "cweagans/composer-patches": {
-            "1.6.6": {
+            "1.6.7": {
                 "name": "cweagans/composer-patches",
-                "version": "1.6.6",
-                "version_normalized": "1.6.6.0",
+                "version": "1.6.7",
+                "version_normalized": "1.6.7.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/cweagans/composer-patches.git",
-                    "reference": "1d89dcc730e7f42426c434b88261fcfb3bce651e"
+                    "reference": "2e6f72a2ad8d59cd7e2b729f218bf42adb14f590"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/1d89dcc730e7f42426c434b88261fcfb3bce651e",
-                    "reference": "1d89dcc730e7f42426c434b88261fcfb3bce651e",
+                    "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/2e6f72a2ad8d59cd7e2b729f218bf42adb14f590",
+                    "reference": "2e6f72a2ad8d59cd7e2b729f218bf42adb14f590",
                     "shasum": ""
                 },
                 "require": {
@@ -1813,7 +1813,7 @@
                     "composer/composer": "~1.0",
                     "phpunit/phpunit": "~4.6"
                 },
-                "time": "2018-10-24T15:51:16+00:00",
+                "time": "2019-08-29T20:11:49+00:00",
                 "type": "composer-plugin",
                 "extra": {
                     "class": "cweagans\\Composer\\Patches"
@@ -7586,7 +7586,7 @@
                     },
                     "drupal": {
                         "version": "8.x-1.9",
-                        "datestamp": "1564708406",
+                        "datestamp": "1567099985",
                         "security-coverage": {
                             "status": "covered",
                             "message": "Covered by Drupal's security advisory policy"
@@ -10632,19 +10632,19 @@
             }
         },
         "govcms/scaffold-tooling": {
-            "dev-master": {
+            "0.1.1": {
                 "name": "govcms/scaffold-tooling",
-                "version": "dev-master",
-                "version_normalized": "9999999-dev",
+                "version": "0.1.1",
+                "version_normalized": "0.1.1.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/govCMS/scaffold-tooling.git",
-                    "reference": "a9aec8e5c45baa3878eb032e3cce159065b9c59a"
+                    "reference": "bbd68a957f73b10a56d8f40135206ec10f054580"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/govCMS/scaffold-tooling/zipball/a9aec8e5c45baa3878eb032e3cce159065b9c59a",
-                    "reference": "a9aec8e5c45baa3878eb032e3cce159065b9c59a",
+                    "url": "https://api.github.com/repos/govCMS/scaffold-tooling/zipball/bbd68a957f73b10a56d8f40135206ec10f054580",
+                    "reference": "bbd68a957f73b10a56d8f40135206ec10f054580",
                     "shasum": ""
                 },
                 "require": {
@@ -10669,7 +10669,7 @@
                     "webmozart/path-util": "^2.3",
                     "zaporylie/composer-drupal-optimizations": "^1.0"
                 },
-                "time": "2019-08-29T06:10:24+00:00",
+                "time": "2019-08-30T01:28:13+00:00",
                 "bin": [
                     "scripts/tests/govcms-audit",
                     "scripts/tests/govcms-behat",
@@ -10682,7 +10682,7 @@
                 "type": "library",
                 "description": "A variety of standard config, scripts and packages to support GovCMS scaffold.",
                 "support": {
-                    "source": "https://github.com/govCMS/scaffold-tooling/tree/master",
+                    "source": "https://github.com/govCMS/scaffold-tooling/tree/0.1.1",
                     "issues": "https://github.com/govCMS/scaffold-tooling/issues"
                 }
             }
@@ -11561,15 +11561,15 @@
                 "authors": [
                     {
                         "name": "Alex Bilbie",
-                        "role": "Developer",
                         "email": "hello@alexbilbie.com",
-                        "homepage": "http://www.alexbilbie.com"
+                        "homepage": "http://www.alexbilbie.com",
+                        "role": "Developer"
                     },
                     {
                         "name": "Andy Millington",
-                        "role": "Developer",
                         "email": "andrew@noexceptions.io",
-                        "homepage": "https://www.noexceptions.io"
+                        "homepage": "https://www.noexceptions.io",
+                        "role": "Developer"
                     }
                 ],
                 "description": "A lightweight and powerful OAuth 2.0 authorization and resource server library with support for all the core specification grants. This library will allow you to secure your API with OAuth and allow your applications users to approve apps that want to access their data from your API.",
