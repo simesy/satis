@@ -19,10 +19,7 @@ SaaS.
 
 4. By using this as your only packagist source, you can ensure your Drupal
 site is compatible with GovCMS, without having to rely on the GovCMS scaffold.
-This is useful if you have a soft requirement for a future migration, but
-for now just want to use your own Composer setup, and it will make your
-Composer builds **much** faster - a default GovCMS distribution can download
-200-300 packages.
+This is useful if you have a soft requirement for a future migration.
 
 
 ## Usage
@@ -39,17 +36,6 @@ of these modules, making the use of satis redundant.
     },
     "packagist.org": false
 },
-```
-
-With this in place, you could emulate the GovCMS distribution
-with the following, but check out the composer.json in the
-GovCMS scaffold for a more complete picture when it comes to 
-running your project on the GovCMS platform.
-
-```
-"require": {
-    "govcms/govcms": "~1"
-}
 ```
 
 ### Whitelist
@@ -73,79 +59,86 @@ We build additional resources for past versions and some other uses. The key sou
 * [/beta7](https://satis.govcms.gov.au/beta7), [/beta8](https://satis.govcms.gov.au/beta8) => Specific versions.
 * [/edge](https://satis.govcms.gov.au/edge) => Latest development version.
 
-## Tips
+## Topics
 
-* If you need 
+### Use the latest version of GovCMS
 
-
-
-
-## Technical
-
-This project is built on [composer/satis](https://github.com/composer/satis) and
-periodically updated the /src from upstream.
-
-Run `ahoy build` to update the packages. GovCMS
-
-
-### Usage / build
-
-The key commands are found in .ahoy.yml - whether you want to use Ahoy or run
-them manually.
-
-The webroot of packagist repo is /app which is generated (and updated) by `ahoy build`.
-This is then committed and served statically at https://satis.govcms.gov.au
-
-To use this in your composer, add
+You can use GovCMS distribution with the following in your composer.json.
+This requires setting up your settings.php appropriate for your hosting.
 
 ```
 "repositories": {
     "govcms": {
         "type": "composer",
-        "url": "https://satis.govcms.gov.au"
-    }
+        "url": "https://satis.govcms.gov.au/"
+    },
+    "packagist.org": false
+},
+"require": {
+    "govcms/govcms": "~1"
 }
 ```
 
-You can disable the default packagist this also in the respositories section:
+### Use the GovCMS Drupal settings
+
+By requiring `govcms/scaffold-tooling` in your composer.json the standard
+settings for GovCMS, including defaults for hosting on the GovCMS platform,
+will be available in `vendor/govcms/scaffold-tooling/drupal`. See
+[settings.php](https://github.com/govCMS/govcms8-scaffold-paas/blob/develop/web/sites/default/settings.php)
+in the Drupal 8 scaffold for guidance on including these files.
+
+### Use the latest version of GovCMS
+
+You can test the upcoming version of GovCMS by pointing at /edge.
+This is something you can do locally, but if you are hosting on
+SaaS you won't be able to push these changes.
+
 ```
+"repositories": {
+    "govcms": {
+        "type": "composer",
+        "url": "https://satis.govcms.gov.au/edge/"
+    },
     "packagist.org": false
-
+},
+"require": {
+    "govcms/govcms": "~1"
+}
 ```
 
+### Use GovCMS distribution, with latest modules from Drupal.org
 
-### Road map
+This is not a service provided by the GovCMS Satis service, as we
+only support modules that have been through an internal review. If 
+you use these modules, we can't guarantee that there will be an
+upgrade path.
 
-The goals:
- 
-- Composer packagist repo which you can point to *exclusively* and build GovCMS
-SaaS or PaaS.
+You can test upcoming version of modules by manually placing them
+in `web/sites/default/modules/`. This location overrides locations like 
+`web/modules/`. We welcome these tests, in particular, please let us
+know via the issue queue if you encounter any issues.
 
-- Simple and transparent configuration - demonstrated via the base Satis product.
+### Adding modules not in GovCMS
 
-- Could provide dependency resolution with no internet access (security principle).
+If you are not hosting on the GovCMS platform, or if you are running
+PaaS site, you can add additional modules by adding Drupal packagist
+in your repositories section:
 
-- Provide a process for inclusion of new packages through PR and issue template.
+```
+  { "type": "composer", "url": "https://packages.drupal.org/8" },
+```
 
-- (To be explored) package hashing, warm cache etc.
+The GovCMS distribution limits module versions, so by doing this, or
+adding Composer packagist (by removing `"packagist.org": false`) you should
+still get the right modules for GovCMS. Additional modules you add may
+have version conflicts with GovCMS but these will become evident when 
+you run `composer update`.
 
+## Technical
 
-## Request a new package
+This project is built on [composer/satis](https://github.com/composer/satis) and
+we periodically update the /src from [Satis upstream](http://github.com/composer/satis).
 
-All packages and their dependencies defined in govcms are automatically available.
-
-For new package (eg a new Drupal module).
-
-1. create an issue with the "new package" template"
-1. Modify the package-mirror.json
-1. Create a PR with this modification against the issue
-
-Favourable features
-
-1. Security team coverage
-1. Code is maintained
-1. Functionality is admin-only
-1. Functionility does not alter content model
-1. Functionality is unique
-1. Demonstrated reduction in theme code
-
+See `ahoy` for build commands. We have commands like `build-edge` for building updated
+packagist configuration that lives in /app. There is also `ahoy server` for running
+a local server you can use as your repository source for testing.
