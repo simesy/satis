@@ -95,8 +95,8 @@ in the Drupal 8 scaffold for guidance on using these files.
 ### ... use the latest version of GovCMS
 
 You can test the upcoming version of GovCMS by pointing at /edge.
-This is something you can do locally, but if you are hosting on
-SaaS you won't be able to deploy these changes.
+SaaS customers can only do this locally, as they won't be able to
+deploy these changes.
 
 ```
 "repositories": {
