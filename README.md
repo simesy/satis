@@ -6,27 +6,27 @@ in this packagist have been reviewed and curated.
 
 ## Benefits
 
-1. We (will soon) use this in the GovCMS distribution as a way to ensure that
-a SaaS site is a complying SaaS site. It also will allow us to loosen package
-versions in the GovCMS distribution in line with Composer best practice.
+1. The limited use of this packagist ensures that a project is GovCMS platform
+compliant - particularly SaaS projects.
 
-2. Since Satis does the hard work choose module versions, your `composer update is
-much faster.
+2. Since Satis does the hard work choose module versions, your `composer update` is
+runs faster.
 
-3. By providing this satis, and a whitelist service, we will enable use to
-de-scope modules from the distribution without "hard forking" the projects from
-SaaS.
+3. By providing this packagist source, including an additional whitelist, we will
+be able to remove unpopular modules while having a way to make them still
+available if needed.
 
 4. By using this as your only packagist source, you can ensure your Drupal
 site is compatible with GovCMS, without having to rely on the GovCMS scaffold.
 This is useful if you have a soft requirement for a future migration.
 
+5. Other (government) organisations can leverage this packagist as a simple
+way to limit modules on their own projects.
 
 ## Usage
 
-The de facto usage looks like this in composer.json. If you don't set
-`packagist.org` to false then Composer will simply get newer versions
-of these modules, making the use of satis redundant. 
+The de facto usage looks like this in composer.json. There is no requirement
+to add additional sources.
 
 ```
 "repositories": {
@@ -34,8 +34,12 @@ of these modules, making the use of satis redundant.
         "type": "composer",
         "url": "https://satis.govcms.gov.au/"
     },
-    "packagist.org": false
+    "packagist.org": false <--- Required in SaaS.
 },
+"require": {
+    "govcms/govcms": "~1"
+}
+
 ```
 
 ### Whitelist
@@ -46,7 +50,7 @@ distribution but may be available to some SaaS customers.
 ```
 "govcms-whitelist": {
     "type": "composer",
-    "url": "https://satis.govcms.gov.au/whitelist"
+    "url": "https://satis.govcms.gov.au/whitelist/"
 },
 ```
 
@@ -61,18 +65,17 @@ We build additional resources for past versions and some other uses. The key sou
 
 ## Topics
 
-### Use the latest version of GovCMS
+### Use the latest release of GovCMS
 
-You can use GovCMS distribution with the following in your composer.json.
-This requires setting up your settings.php appropriate for your hosting.
+To use GovCMS distribution with the following in your composer.json.
+This also requires setting up your settings.php appropriate for your hosting.
 
 ```
 "repositories": {
     "govcms": {
         "type": "composer",
         "url": "https://satis.govcms.gov.au/"
-    },
-    "packagist.org": false
+    }
 },
 "require": {
     "govcms/govcms": "~1"
@@ -81,11 +84,11 @@ This requires setting up your settings.php appropriate for your hosting.
 
 ### Use the GovCMS Drupal settings
 
-By requiring `govcms/scaffold-tooling` in your composer.json the standard
-settings for GovCMS, including defaults for hosting on the GovCMS platform,
-will be available in `vendor/govcms/scaffold-tooling/drupal`. See
+By requiring `govcms/scaffold-tooling` in your composer.json you can 
+access GovCMS standard Drupal settings. The settings are available in
+`vendor/govcms/scaffold-tooling/drupal`. See
 [settings.php](https://github.com/govCMS/govcms8-scaffold-paas/blob/develop/web/sites/default/settings.php)
-in the Drupal 8 scaffold for guidance on including these files.
+in the Drupal 8 scaffold for guidance on using these files.
 
 ### Use the latest version of GovCMS
 
@@ -98,8 +101,7 @@ SaaS you won't be able to push these changes.
     "govcms": {
         "type": "composer",
         "url": "https://satis.govcms.gov.au/edge/"
-    },
-    "packagist.org": false
+    }
 },
 "require": {
     "govcms/govcms": "~1"
@@ -108,14 +110,14 @@ SaaS you won't be able to push these changes.
 
 ### Use GovCMS distribution, with latest modules from Drupal.org
 
-This is not a service provided by the GovCMS Satis service, as we
+This is not a service provided by the GovCMS Satis/Packagist service. We
 only support modules that have been through an internal review. If 
-you use these modules, we can't guarantee that there will be an
+you use upgraded modules, we can't guarantee that there will be an
 upgrade path.
 
-You can test upcoming version of modules by manually placing them
+You can test upcoming version of any module by manually placing them
 in `web/sites/default/modules/`. This location overrides locations like 
-`web/modules/`. We welcome these tests, in particular, please let us
+`web/modules/contrib`. We welcome these tests, in particular, please let us
 know via the issue queue if you encounter any issues.
 
 ### Adding modules not in GovCMS
