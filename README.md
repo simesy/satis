@@ -63,9 +63,9 @@ We build additional resources for past versions and some other uses. The key sou
 * [/beta7](https://satis.govcms.gov.au/beta7), [/beta8](https://satis.govcms.gov.au/beta8) => Specific versions.
 * [/edge](https://satis.govcms.gov.au/edge) => Latest development version.
 
-## Topics / How-to
+## How to ...
 
-### Use the latest release of GovCMS
+### ... use the latest release of GovCMS
 
 If you are not hosting on the GovCMS platform you can still use the GovCMS
 distribution by adding the following in your composer.json. This also requires setting
@@ -83,7 +83,7 @@ up your settings.php appropriate for your hosting.
 }
 ```
 
-### Leverage the GovCMS Drupal settings
+### ... leverage the GovCMS Drupal settings
 
 By requiring `govcms/scaffold-tooling` in your composer.json you can 
 access GovCMS standard Drupal settings. The settings are available in
@@ -92,7 +92,7 @@ access GovCMS standard Drupal settings. The settings are available in
 See [settings.php](https://github.com/govCMS/govcms8-scaffold-paas/blob/develop/web/sites/default/settings.php)
 in the Drupal 8 scaffold for guidance on using these files.
 
-### Use the latest version of GovCMS
+### ... use the latest version of GovCMS
 
 You can test the upcoming version of GovCMS by pointing at /edge.
 This is something you can do locally, but if you are hosting on
@@ -110,7 +110,7 @@ SaaS you won't be able to deploy these changes.
 }
 ```
 
-### Use GovCMS distribution, with latest modules from Drupal.org
+### ... use GovCMS distribution, with latest modules from Drupal.org
 
 There are a number of modules in GovCMS which at not the latest
 versions available. So is there a way to use the latest versions?
@@ -120,16 +120,20 @@ only support modules that have been through an internal review. If
 you use upgraded modules, we can't guarantee that there will be an
 upgrade path.
 
+Ask yourself why you need these updated modules. Is there a bug you
+could patch instead? Can you wait for GovCMS to update?
+
 If you are on PaaS, you can use an upcoming version of any module by manually
-placing it in `web/sites/default/modules/`. This location overrides locations like 
-`web/modules/contrib`. If this method helps PaaS customers keep remain close
-to a vanilla SaaS GovCMS the it may be a valuable technique for one or two modules.
+placing the whole module in `web/sites/default/modules/`. This location
+overrides locations like `web/modules/contrib`. This is not best practice
+Drupal/Composer, but if this method helps PaaS customers remain close to a
+"vanilla SaaS GovCMS" then it may be a valuable technique to add one or two modules.
 
 You can use the same method locally to test new module versions. We welcome
 these tests so please let us know via the issue queue if you
 encounter any issues.
 
-### Adding modules not in GovCMS
+### ... add modules not in GovCMS
 
 If you are not hosting on the GovCMS platform, or if you are running
 a PaaS site, you can add additional modules by adding Drupal packagist
