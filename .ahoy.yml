@@ -13,7 +13,11 @@ commands:
 
   build-whitelist:
     cmd: |
-      php ./bin/satis build ./satis-govcms-whitelist.json ./app/whitelist
+      php ./bin/satis -vvv build ./satis-govcms-whitelist.json ./app/whitelist
+
+  build-extras-webform:
+    cmd: |
+      php ./bin/satis -vvv build ./satis-govcms-extras-webform.json ./app/extras/webform
 
   server:
     cmd: |
