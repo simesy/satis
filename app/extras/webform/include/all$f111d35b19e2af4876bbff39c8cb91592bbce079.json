@@ -71,6 +71,77 @@
                 }
             }
         },
+        "drupal/key": {
+            "1.10.0": {
+                "name": "drupal/key",
+                "version": "1.10.0",
+                "version_normalized": "1.10.0.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://git.drupalcode.org/project/key.git",
+                    "reference": "8.x-1.10"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://ftp.drupal.org/files/projects/key-8.x-1.10.zip",
+                    "reference": "8.x-1.10",
+                    "shasum": "4547bf7a95972c8e84dc730936ff94718e2d9ca2"
+                },
+                "require": {
+                    "drupal/core": "~8.0"
+                },
+                "type": "drupal-module",
+                "extra": {
+                    "branch-alias": {
+                        "dev-1.x": "1.x-dev"
+                    },
+                    "drupal": {
+                        "version": "8.x-1.10",
+                        "datestamp": "1567172584",
+                        "security-coverage": {
+                            "status": "covered",
+                            "message": "Covered by Drupal's security advisory policy"
+                        }
+                    },
+                    "drush": {
+                        "services": {
+                            "drush.services.yml": "^9"
+                        }
+                    }
+                },
+                "notification-url": "https://packages.drupal.org/8/downloads",
+                "license": [
+                    "GPL-2.0+"
+                ],
+                "authors": [
+                    {
+                        "name": "Cellar Door",
+                        "homepage": "https://www.drupal.org/user/658076"
+                    },
+                    {
+                        "name": "CrashTest_",
+                        "homepage": "https://www.drupal.org/user/261457"
+                    },
+                    {
+                        "name": "nerdstein",
+                        "homepage": "https://www.drupal.org/user/1557710"
+                    },
+                    {
+                        "name": "rlhawk",
+                        "homepage": "https://www.drupal.org/user/352283"
+                    }
+                ],
+                "description": "Provides the ability to manage site-wide keys",
+                "homepage": "http://drupal.org/project/key",
+                "keywords": [
+                    "Drupal"
+                ],
+                "support": {
+                    "source": "http://cgit.drupalcode.org/key",
+                    "issues": "http://drupal.org/project/key"
+                }
+            }
+        },
         "drupal/webform_encrypt": {
             "1.0.0-alpha3": {
                 "name": "drupal/webform_encrypt",
