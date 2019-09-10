@@ -12,7 +12,8 @@
     "require": {
         "drupal/webform_encrypt": "1.0.0-alpha3",
         "drupal/encrypt": "3.0.0-rc2",
-        "drupal/key": "1.10.0"
+        "drupal/key": "1.10.0",
+        "drupal/real_aes": "2.2"
     },
     "require-dependencies": false,
     "only-best-candidates": true
