@@ -18,4 +18,4 @@ test:
     - composer create-project --stability dev --prefer-dist govcms/govcms8-project build-test
 
 before_script:
-  - php -S localhost:4680 -t ./app
+  - php -S localhost:4680 -t ./app > phpd.log 2>&1 &
