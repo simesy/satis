@@ -15,9 +15,7 @@ test:
   stage: test
 
   script:
-    - docker-compose up -d
-    - curl -l0 http://nginx:8080
+    - composer create-project --stability dev --prefer-dist govcms/govcms8-project build-test
 
 before_script:
-  - docker network prune -f && docker network create amazeeio-network
-  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  - php -S localhost:4680 -t ./app
