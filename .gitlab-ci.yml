@@ -16,6 +16,7 @@ test:
 
   script:
     - docker-compose up -d
+    - curl -l0 http://nginx:8080
 
 before_script:
   - docker network prune -f && docker network create amazeeio-network
