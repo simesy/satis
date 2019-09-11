@@ -15,7 +15,10 @@ test:
   stage: test
 
   script:
-    - composer create-project --stability dev --prefer-dist govcms/govcms8-project build-test
+    - mkdir -p workspace
+    - cp tests/govcms-latest-composer.json workspace/composer.json
+    - composer update -d workspace
+    - composer verify -d workspace
 
 before_script:
   - php -S localhost:4680 -t ./app > phpd.log 2>&1 &
