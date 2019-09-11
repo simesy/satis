@@ -1,6 +1,6 @@
 {
-    "name": "govcms/satis-dev",
-    "homepage": "https://satis.govcms.gov.au/dev",
+    "name": "govcms/satis-edge",
+    "homepage": "https://satis.govcms.gov.au/edge",
     "repositories": [
         { "type": "composer", "url": "https://packagist.org" },
         { "type": "composer", "url": "https://packages.drupal.org/8" },

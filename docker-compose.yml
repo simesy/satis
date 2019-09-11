@@ -1,6 +1,7 @@
 version: '2'
 
 services:
+
   nginx:
     networks:
       - amazeeio-network
@@ -17,6 +18,9 @@ services:
       - "8080"
     environment:
       LAGOON_LOCALDEV_URL: http://satis.docker.amazee.io
+
+  # satis:
+  #   Not needed as the container is only run on demand. See ahoy.
 
 networks:
   amazeeio-network:

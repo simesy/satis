@@ -2,27 +2,34 @@ ahoyapi: v2
 usage: CLI utilities
 commands:
 
-  build-beta8:
+  satis:
+    usage: ahoy satis packages.json build-dir
     cmd: |
-      php ./bin/satis build ./satis-govcms-beta8.json ./app
-      php ./bin/satis build ./satis-govcms-beta8.json ./app/beta8
+      docker run --rm --init -it \
+        --user $(id -u):$(id -g) \
+        --volume $(pwd):/build \
+        --volume "${COMPOSER_HOME:-$HOME/.composer}:/composer" \
+        composer/satis build -vvv "$1" /build/"$2"
+      docker run --rm --init -it \
+        --volume $(pwd):/build \
+        composer/satis /build/branding.sh "/build/$2/index.html"
+
+  build:
+    cmd: |
+      ahoy satis satis-govcms-beta8.json app
+
+  build-beta7:
+    cmd: |
+      ahoy satis satis-govcms-beta7.json app/beta7
 
   build-edge:
     cmd: |
-      php ./bin/satis build ./satis-govcms-edge.json ./app/edge
+      ahoy satis satis-govcms-edge.json app/edge
 
   build-whitelist:
     cmd: |
-      php ./bin/satis -vvv build ./satis-govcms-whitelist.json ./app/whitelist
+      ahoy satis satis-govcms-whitelist.json app/whitelist
 
-  build-extras-webform:
+  build-extras:
     cmd: |
-      php ./bin/satis -vvv build ./satis-govcms-extras-webform.json ./app/extras/webform
-
-  server:
-    cmd: |
-      php -S localhost:4680 -t ./app
-
-  changelog:
-    cmd: |
-      git diff app/index.html | grep "^+" | egrep -o 'https?://[^ ]+'
+      ahoy satis satis-govcms-extras.json app/extras
