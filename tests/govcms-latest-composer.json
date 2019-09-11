@@ -1,0 +1,60 @@
+{
+    "name": "govcms/govcms-project",
+    "description": "Vanilla",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "repositories": {
+        "govcms": {
+            "type": "composer",
+            "url": "http://localhost:4680/"
+        },
+        "packagist.org": false
+    },
+    "require": {
+        "govcms/govcms": "~1",
+        "govcms/scaffold-tooling": "~0"
+     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "secure-http": false
+    },
+    "autoload": {
+        "classmap": [
+            "scripts/ScriptHandler.php"
+        ]
+    },
+    "extra": {
+        "enable-patching": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/{$name}": [
+                "type:drupal-drush"
+            ]
+        }
+    }
+}
