@@ -22,7 +22,8 @@ test:
       cd workspace
       git checkout master
       cat composer.json
-      cat composer.json | jq --indent 4 .repositories='{"govcms":{"type":"composer","url":"http:localhost:4680"},"packagist.org":false}'
+      cat composer.json | jq --indent 4 .repositories='{"govcms":{"type":"composer","url":"http:localhost:4680"},"packagist.org":false}' | tee composer.json
+      echo "HIHI"
       cat composer.json
       composer update
 
