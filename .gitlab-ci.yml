@@ -19,7 +19,8 @@ test:
     - cp -r tests/scripts workspace/
     - cp tests/govcms-latest-composer.json workspace/composer.json
     - composer update -d workspace
-    - composer verify -d workspace
+    - composer validate -d workspace
+    - composer info govcms/govcms
 
 before_script:
   - php -S localhost:4680 -t ./app > phpd.log 2>&1 &
