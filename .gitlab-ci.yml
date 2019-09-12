@@ -16,6 +16,7 @@ test:
 
   script:
     - mkdir -p workspace
+    - cp -r tests/scripts workspace/
     - cp tests/govcms-latest-composer.json workspace/composer.json
     - composer update -d workspace
     - composer verify -d workspace
