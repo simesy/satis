@@ -21,8 +21,10 @@ test:
       git clone https://github.com/govCMS/govcms8-scaffold-paas workspace
       cd workspace
       git checkout master
-      cat composer.json
-      cat composer.json | jq --indent 4 .repositories='{"govcms":{"type":"composer","url":"http:localhost:4680"},"packagist.org":false}' | tee composer.json
+      cat composer.json \
+        | jq .repositories='{"govcms":{"type":"composer","url":"http://localhost:4680"},"packagist.org":false}' \
+        | jq .config.secure-http=false \
+        | tee composer.json
       echo "HIHI"
       cat composer.json
       composer update
