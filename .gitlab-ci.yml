@@ -23,10 +23,8 @@ test:
       git checkout master
       cat composer.json \
         | jq .repositories='{"govcms":{"type":"composer","url":"http://localhost:4680"},"packagist.org":false}' \
-        | jq .config.secure-http=false \
         | tee composer.json
-      echo "HIHI"
-      cat composer.json
+      composer config secure-http true
       composer update
 
 before_script:
