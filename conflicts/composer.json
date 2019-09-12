@@ -1,0 +1,8 @@
+{
+    "name": "govcms/satis-conflicts",
+    "type": "library",
+    "description": "Ensure...",
+    "conflict": {
+        "drupal/core": "8.7.5"
+    }
+}

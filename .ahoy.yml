@@ -3,6 +3,14 @@ usage: CLI utilities
 commands:
 
   satis:
+    cmd: |
+      docker run --rm --init -it \
+        --user $(id -u):$(id -g) \
+        --volume $(pwd):/build \
+        --volume "${COMPOSER_HOME:-$HOME/.composer}:/composer" \
+        composer/satis "$@"
+
+  satis-build:
     usage: ahoy satis packages.json build-dir
     cmd: |
       docker run --rm --init -it \
@@ -16,20 +24,20 @@ commands:
 
   build:
     cmd: |
-      ahoy satis satis-govcms-beta8.json app
+      ahoy satis-build satis-govcms-beta8.json app
 
   build-beta7:
     cmd: |
-      ahoy satis satis-govcms-beta7.json app/beta7
+      ahoy satis-build satis-govcms-beta7.json app/beta7
 
   build-edge:
     cmd: |
-      ahoy satis satis-govcms-edge.json app/edge
+      ahoy satis-build satis-govcms-edge.json app/edge
 
   build-whitelist:
     cmd: |
-      ahoy satis satis-govcms-whitelist.json app/whitelist
+      ahoy satis-build satis-govcms-whitelist.json app/whitelist
 
   build-extras:
     cmd: |
-      ahoy satis satis-govcms-extras.json app/extras
+      ahoy satis-build satis-govcms-extras.json app/extras
