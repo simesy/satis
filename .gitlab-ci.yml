@@ -16,11 +16,11 @@ test:
 
   script:
     - mkdir -p workspace
-    - cp -r tests/scripts workspace/
-    - cp tests/govcms-latest-composer.json workspace/composer.json
-    - composer update -d workspace
-    - composer validate -d workspace
-    - composer info govcms/govcms -d workspace
+    - |
+      git clone https://github.com/govCMS/govcms8-scaffold-paas workspace
+      cd workspace
+      cat composer.json | jq --indent 4 .repositories='{"govcms":{"type":"composer","url":"http:localhost:4680"},"packagist.org":false}' --unbuffered | tee composer.json | 2>&1
+      composer update
 
 before_script:
   - php -S localhost:4680 -t ./app > phpd.log 2>&1 &
