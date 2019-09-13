@@ -17,7 +17,7 @@ test:
   script:
     - mkdir -p workspace
     - |
-      set +exuo pipefail # Installing govcms from our satis.
+      set +exuo pipefail # Installing govcms using ONLY our satis.
       git clone https://github.com/govCMS/govcms8-scaffold-paas workspace
       cd workspace
       git checkout master
@@ -29,7 +29,7 @@ test:
       composer update
     - |
       set +exuo pipefail # Build the drupals.
-      cd workspace
+      pwd
       export DOCKER_HOST=tcp://localhost:2375"
       docker network prune -f && docker network create amazeeio-network
       docker login -u gitlab-ci-token -p $CI_JOB_TOKEN gitlab-registry-production.govcms.amazee.io"
@@ -37,7 +37,7 @@ test:
       docker-compose exec -T test dockerize -wait tcp://mariadb:3306 -timeout 1m"
     - |
       set +exuo pipefail # Test the drupals
-      cd workspace
+      pwd
       docker-compose exec -T cli "drush status"
 
 before_script:
