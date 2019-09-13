@@ -38,8 +38,7 @@ test:
       docker-compose exec -T cli drush si -y govcms
     - |
       set +exuo pipefail # Test the drupals
-      docker-compose exec -T cli "drush status"
-
+      docker-compose exec -T cli drush status
 
 before_script:
   - php -S localhost:4680 -t ./app > phpd.log 2>&1 &
