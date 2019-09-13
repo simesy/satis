@@ -15,7 +15,10 @@ test:
   stage: test
 
   script:
-    - mkdir -p workspace
+    - |
+      mkdir -p workspace
+      docker-compose list
+      which docker-compose
     - |
       set +exuo pipefail # Installing govcms using ONLY our satis.
       git clone https://github.com/govCMS/govcms8-scaffold-paas workspace
