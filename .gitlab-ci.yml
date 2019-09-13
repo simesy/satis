@@ -24,8 +24,8 @@ test:
       cat composer.json \
         | jq .repositories='{"govcms":{"type":"composer","url":"http://localhost:4680"},"packagist.org":false}' \
         | tee composer.json
-      composer validate
       composer update
+      composer validate
     - |
       set -x # Build the drupals.
       export DOCKER_HOST=tcp://localhost:2375
