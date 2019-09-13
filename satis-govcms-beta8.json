@@ -8,7 +8,8 @@
         { "type": "vcs", "url": "https://github.com/govcms/scaffold-tooling" }
     ],
     "require": {
-        "govcms/govcms": "1.0-beta8"
+        "govcms/govcms": "1.0-beta8",
+        "govcms/scaffold-tooling": "0.1.1"
     },
     "require-dependencies": true,
     "only-best-candidates": true

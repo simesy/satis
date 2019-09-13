@@ -23,7 +23,7 @@ test:
       git checkout master
       composer config secure-http false
       cat composer.json \
-        | jq .repositories='{"govcms":{"type":"composer","url":"http://localhost:4680"},{}"packagist.org":false}' \
+        | jq .repositories='{"govcms":{"type":"composer","url":"http://localhost:4680"},"packagist.org":false}' \
         | tee composer.json
       composer update
 
