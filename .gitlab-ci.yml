@@ -17,7 +17,6 @@ test:
   script:
     - |
       mkdir -p workspace
-      docker-compose list
       which docker-compose
     - |
       set +exuo pipefail # Installing govcms using ONLY our satis.
