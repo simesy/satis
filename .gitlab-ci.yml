@@ -21,15 +21,22 @@ test:
       git clone https://github.com/govCMS/govcms8-scaffold-paas workspace
       cd workspace
       git checkout master
-      echo "A"
       composer config secure-http false
-      echo "B"
       cat composer.json \
         | jq .repositories='{"govcms":{"type":"composer","url":"http://localhost:4680"},"packagist.org":false}' \
         | tee composer.json
-      echo "C"
       composer validate
       composer update
+    - |
+      set +exuo pipefail # Build the drupals.
+      export DOCKER_HOST=tcp://localhost:2375"
+      docker network prune -f && docker network create amazeeio-network
+      docker login -u gitlab-ci-token -p $CI_JOB_TOKEN gitlab-registry-production.govcms.amazee.io"
+      docker-compose up -d"
+      docker-compose exec -T test dockerize -wait tcp://mariadb:3306 -timeout 1m"
+    - |
+      set +exuo pipefail # Test the drupals
+      docker-compose exec -T cli "drush status"
 
 before_script:
   - php -S localhost:4680 -t ./app > phpd.log 2>&1 &
