@@ -32,7 +32,7 @@ test:
     - |
       set +exuo pipefail # Build the drupals.
       pwd
-      export DOCKER_HOST=tcp://localhost:2375"
+      export DOCKER_HOST=tcp://localhost:2375
       docker network prune -f && docker network create amazeeio-network
       docker login -u gitlab-ci-token -p $CI_JOB_TOKEN gitlab-registry-production.govcms.amazee.io"
       docker-compose up -d"
