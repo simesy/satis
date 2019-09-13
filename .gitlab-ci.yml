@@ -29,6 +29,7 @@ test:
       composer update
     - |
       set +exuo pipefail # Build the drupals.
+      cd workspace
       export DOCKER_HOST=tcp://localhost:2375"
       docker network prune -f && docker network create amazeeio-network
       docker login -u gitlab-ci-token -p $CI_JOB_TOKEN gitlab-registry-production.govcms.amazee.io"
@@ -36,6 +37,7 @@ test:
       docker-compose exec -T test dockerize -wait tcp://mariadb:3306 -timeout 1m"
     - |
       set +exuo pipefail # Test the drupals
+      cd workspace
       docker-compose exec -T cli "drush status"
 
 before_script:
