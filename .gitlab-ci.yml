@@ -21,10 +21,14 @@ test:
       git clone https://github.com/govCMS/govcms8-scaffold-paas workspace
       cd workspace
       git checkout master
+      echo "A"
       composer config secure-http false
+      echo "B"
       cat composer.json \
         | jq .repositories='{"govcms":{"type":"composer","url":"http://localhost:4680"},"packagist.org":false}' \
         | tee composer.json
+      echo "C"
+      composer validate
       composer update
 
 before_script:
