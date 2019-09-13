@@ -16,7 +16,7 @@ test:
 
   script:
     - |
-      set +exuo pipefail # Installing govcms using ONLY our satis.
+      set -x # Installing govcms using ONLY our satis.
       cd workspace
       git checkout master
       composer config secure-http false # Only needed to point to local satis.
@@ -27,7 +27,7 @@ test:
       composer validate
       composer update
     - |
-      set +exuo pipefail # Build the drupals.
+      set -x # Build the drupals.
       export DOCKER_HOST=tcp://localhost:2375
       docker network prune -f && docker network create amazeeio-network
       docker login -u gitlab-ci-token -p $CI_JOB_TOKEN gitlab-registry-production.govcms.amazee.io
@@ -37,8 +37,14 @@ test:
       docker-compose config
       docker-compose exec -T cli drush si -y govcms
     - |
-      set +exuo pipefail # Test the drupals
+      set -x # Test the drupals
       docker-compose exec -T cli drush status
+    - |
+      set -x # Can't update modules.
+      set +e
+      ERR=1 && composer require drupal/redirect 1.x-dev || ERR=$?
+      set -e
+      if [ "$ERR" -eq 0 ]; then echo "Should fail to install." && exit 1; fi
 
 before_script:
   - php -S localhost:4680 -t ./app > phpd.log 2>&1 &
