@@ -34,7 +34,9 @@ test:
       docker-compose up -d mariadb
       docker-compose up -d cli
       docker-compose ps
+      docker-compose config
       composer install
+      docker-compose exec -T cli "ls"
       docker-compose exec -T cli "/app/vendor/bin/drush site-install govcms --yes"
     - |
       set +exuo pipefail # Test the drupals
