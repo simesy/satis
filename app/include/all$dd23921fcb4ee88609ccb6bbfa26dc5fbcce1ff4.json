@@ -8727,66 +8727,6 @@
                 "support": {
                     "source": "https://git.drupalcode.org/project/redis"
                 }
-            },
-            "1.2.0": {
-                "name": "drupal/redis",
-                "version": "1.2.0",
-                "version_normalized": "1.2.0.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://git.drupalcode.org/project/redis.git",
-                    "reference": "8.x-1.2"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://ftp.drupal.org/files/projects/redis-8.x-1.2.zip",
-                    "reference": "8.x-1.2",
-                    "shasum": "6b8847a0816a6e400d495aed1e9dde4c594d6e2b"
-                },
-                "require": {
-                    "drupal/core": "~8.0"
-                },
-                "suggest": {
-                    "predis/predis": "^1.1.1"
-                },
-                "type": "drupal-module",
-                "extra": {
-                    "branch-alias": {
-                        "dev-1.x": "1.x-dev"
-                    },
-                    "drupal": {
-                        "version": "8.x-1.2",
-                        "datestamp": "1568275684",
-                        "security-coverage": {
-                            "status": "covered",
-                            "message": "Covered by Drupal's security advisory policy"
-                        }
-                    }
-                },
-                "autoload": {
-                    "psr-4": {
-                        "Drupal\\redis\\": "src"
-                    }
-                },
-                "notification-url": "https://packages.drupal.org/8/downloads",
-                "license": [
-                    "GPL-2.0"
-                ],
-                "authors": [
-                    {
-                        "name": "Berdir",
-                        "homepage": "https://www.drupal.org/user/214652"
-                    },
-                    {
-                        "name": "pounard",
-                        "homepage": "https://www.drupal.org/user/240164"
-                    }
-                ],
-                "description": "Provide a module placeholder, for using as dependency for module that needs Redis.",
-                "homepage": "https://www.drupal.org/project/redis",
-                "support": {
-                    "source": "https://git.drupalcode.org/project/redis"
-                }
             }
         },
         "drupal/restui": {
@@ -9608,82 +9548,6 @@
                         "security-coverage": {
                             "status": "not-covered",
                             "message": "Alpha releases are not covered by Drupal security advisories."
-                        }
-                    }
-                },
-                "notification-url": "https://packages.drupal.org/8/downloads",
-                "license": [
-                    "GPL-2.0+"
-                ],
-                "authors": [
-                    {
-                        "name": "BarisW",
-                        "homepage": "https://www.drupal.org/user/107229"
-                    },
-                    {
-                        "name": "axel.rutz",
-                        "homepage": "https://www.drupal.org/user/229048"
-                    },
-                    {
-                        "name": "greggles",
-                        "homepage": "https://www.drupal.org/user/36762"
-                    },
-                    {
-                        "name": "markdorison",
-                        "homepage": "https://www.drupal.org/user/346106"
-                    },
-                    {
-                        "name": "moshe weitzman",
-                        "homepage": "https://www.drupal.org/user/23"
-                    },
-                    {
-                        "name": "msonnabaum",
-                        "homepage": "https://www.drupal.org/user/75278"
-                    },
-                    {
-                        "name": "netaustin",
-                        "homepage": "https://www.drupal.org/user/199298"
-                    },
-                    {
-                        "name": "robwilmshurst",
-                        "homepage": "https://www.drupal.org/user/144488"
-                    }
-                ],
-                "description": "Provides stage_file_proxy module.",
-                "homepage": "https://www.drupal.org/project/stage_file_proxy",
-                "support": {
-                    "source": "https://git.drupalcode.org/project/stage_file_proxy"
-                }
-            },
-            "1.0.0-beta1": {
-                "name": "drupal/stage_file_proxy",
-                "version": "1.0.0-beta1",
-                "version_normalized": "1.0.0.0-beta1",
-                "source": {
-                    "type": "git",
-                    "url": "https://git.drupalcode.org/project/stage_file_proxy.git",
-                    "reference": "8.x-1.0-beta1"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://ftp.drupal.org/files/projects/stage_file_proxy-8.x-1.0-beta1.zip",
-                    "reference": "8.x-1.0-beta1",
-                    "shasum": "6609a2166509fd7cc2e593ff2efd7c44daeb0e5b"
-                },
-                "require": {
-                    "drupal/core": "~8.0"
-                },
-                "type": "drupal-module",
-                "extra": {
-                    "branch-alias": {
-                        "dev-1.x": "1.x-dev"
-                    },
-                    "drupal": {
-                        "version": "8.x-1.0-beta1",
-                        "datestamp": "1555515785",
-                        "security-coverage": {
-                            "status": "not-covered",
-                            "message": "Beta releases are not covered by Drupal security advisories."
                         }
                     }
                 },
@@ -10714,121 +10578,6 @@
                 ]
             }
         },
-        "govcms/govcms-project": {
-            "dev-master": {
-                "name": "govcms/govcms-project",
-                "version": "dev-master",
-                "version_normalized": "9999999-dev",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/govCMS/govcms8-scaffold-paas.git",
-                    "reference": "07e8537f9fd67e509b10f328b898328ba2406142"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/govCMS/govcms8-scaffold-paas/zipball/07e8537f9fd67e509b10f328b898328ba2406142",
-                    "reference": "07e8537f9fd67e509b10f328b898328ba2406142",
-                    "shasum": ""
-                },
-                "require": {
-                    "composer/installers": "^1.2",
-                    "cweagans/composer-patches": "^1.6.5",
-                    "drupal-composer/drupal-scaffold": "^2.5",
-                    "drupal/clamav": "^1.1",
-                    "drupal/console": "^1.0.2",
-                    "drupal/fast_404": "^1.0",
-                    "drupal/lagoon_logs": "^1.0",
-                    "drupal/redis": "^1.0",
-                    "drupal/stage_file_proxy": "^1.0",
-                    "drush/drush": "^9.0.0",
-                    "govcms/govcms": "*",
-                    "webflo/drupal-finder": "^1.0.0",
-                    "webmozart/path-util": "^2.3"
-                },
-                "conflict": {
-                    "drupal/drupal": "*"
-                },
-                "require-dev": {
-                    "behat/behat": "^3.5",
-                    "behat/gherkin": "^4.5",
-                    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
-                    "drupal/coder": "^8.3",
-                    "drupal/drupal-extension": "^3.4",
-                    "drupal/schema_metatag": "^1.4",
-                    "integratedexperts/behat-screenshot": "^0.7.2",
-                    "jakub-onderka/php-parallel-lint": "^1.0",
-                    "phpunit/phpunit": "6.5",
-                    "zaporylie/composer-drupal-optimizations": "^1.1"
-                },
-                "time": "2019-09-12T19:49:30+00:00",
-                "type": "project",
-                "extra": {
-                    "enable-patching": true,
-                    "patchLevel": {
-                        "drupal/core": "-p2"
-                    },
-                    "installer-types": [
-                        "bower-asset",
-                        "npm-asset"
-                    ],
-                    "installer-paths": {
-                        "web/core": [
-                            "type:drupal-core"
-                        ],
-                        "web/libraries/{$name}": [
-                            "type:drupal-library",
-                            "type:bower-asset",
-                            "type:npm-asset"
-                        ],
-                        "web/modules/contrib/{$name}": [
-                            "type:drupal-module"
-                        ],
-                        "web/profiles/contrib/{$name}": [
-                            "type:drupal-profile"
-                        ],
-                        "web/themes/contrib/{$name}": [
-                            "type:drupal-theme"
-                        ],
-                        "drush/Commands/{$name}": [
-                            "type:drupal-drush"
-                        ]
-                    },
-                    "drupal-scaffold": {
-                        "initial": {
-                            ".editorconfig": "../.editorconfig",
-                            ".gitattributes": "../.gitattributes"
-                        }
-                    }
-                },
-                "autoload": {
-                    "classmap": [
-                        "scripts/composer/ScriptHandler.php"
-                    ]
-                },
-                "scripts": {
-                    "pre-install-cmd": [
-                        "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-                    ],
-                    "pre-update-cmd": [
-                        "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-                    ],
-                    "post-install-cmd": [
-                        "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-                    ],
-                    "post-update-cmd": [
-                        "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "description": "Project template for GovCMS Drupal 8 projects with composer",
-                "support": {
-                    "source": "https://github.com/govCMS/govcms8-scaffold-paas/tree/master",
-                    "issues": "https://github.com/govCMS/govcms8-scaffold-paas/issues"
-                }
-            }
-        },
         "govcms/scaffold-tooling": {
             "dev-master": {
                 "name": "govcms/scaffold-tooling",
@@ -10837,12 +10586,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/simesy/scaffold-tooling.git",
-                    "reference": "a3644ca98fa1f0314db26759ee04da3881e98ca0"
+                    "reference": "65c76408b79f72e89cf7048188be0e8c314cdf28"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/simesy/scaffold-tooling/zipball/a3644ca98fa1f0314db26759ee04da3881e98ca0",
-                    "reference": "a3644ca98fa1f0314db26759ee04da3881e98ca0",
+                    "url": "https://api.github.com/repos/simesy/scaffold-tooling/zipball/65c76408b79f72e89cf7048188be0e8c314cdf28",
+                    "reference": "65c76408b79f72e89cf7048188be0e8c314cdf28",
                     "shasum": ""
                 },
                 "require": {
@@ -10862,13 +10611,15 @@
                     "drush/drush": "^9.0.0",
                     "integratedexperts/behat-screenshot": "^0.7.2",
                     "jakub-onderka/php-parallel-lint": "^1.0",
+                    "phar-io/manifest": "1.0.1",
+                    "phar-io/version": "1.0.1",
                     "phpmd/phpmd": "2.7.0",
                     "phpunit/phpunit": "6.5",
                     "webflo/drupal-finder": "^1.0.0",
                     "webmozart/path-util": "^2.3",
                     "zaporylie/composer-drupal-optimizations": "^1.0"
                 },
-                "time": "2019-09-13T05:04:56+00:00",
+                "time": "2019-09-13T05:22:32+00:00",
                 "bin": [
                     "scripts/tests/govcms-audit",
                     "scripts/tests/govcms-behat",
@@ -12606,6 +12357,62 @@
             }
         },
         "phar-io/manifest": {
+            "1.0.1": {
+                "name": "phar-io/manifest",
+                "version": "1.0.1",
+                "version_normalized": "1.0.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/phar-io/manifest.git",
+                    "reference": "2df402786ab5368a0169091f61a7c1e0eb6852d0"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/phar-io/manifest/zipball/2df402786ab5368a0169091f61a7c1e0eb6852d0",
+                    "reference": "2df402786ab5368a0169091f61a7c1e0eb6852d0",
+                    "shasum": ""
+                },
+                "require": {
+                    "ext-dom": "*",
+                    "ext-phar": "*",
+                    "phar-io/version": "^1.0.1",
+                    "php": "^5.6 || ^7.0"
+                },
+                "time": "2017-03-05T18:14:27+00:00",
+                "type": "library",
+                "extra": {
+                    "branch-alias": {
+                        "dev-master": "1.0.x-dev"
+                    }
+                },
+                "autoload": {
+                    "classmap": [
+                        "src/"
+                    ]
+                },
+                "notification-url": "https://packagist.org/downloads/",
+                "license": [
+                    "BSD-3-Clause"
+                ],
+                "authors": [
+                    {
+                        "name": "Arne Blankerts",
+                        "email": "arne@blankerts.de",
+                        "role": "Developer"
+                    },
+                    {
+                        "name": "Sebastian Heuer",
+                        "email": "sebastian@phpeople.de",
+                        "role": "Developer"
+                    },
+                    {
+                        "name": "Sebastian Bergmann",
+                        "email": "sebastian@phpunit.de",
+                        "role": "Developer"
+                    }
+                ],
+                "description": "Component for reading phar.io manifest information from a PHP Archive (PHAR)"
+            },
             "1.0.3": {
                 "name": "phar-io/manifest",
                 "version": "1.0.3",

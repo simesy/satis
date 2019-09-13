@@ -5,12 +5,10 @@
         { "type": "composer", "url": "https://packagist.org" },
         { "type": "composer", "url": "https://packages.drupal.org/8" },
         { "type": "composer", "url": "https://asset-packagist.org" },
-        { "type": "vcs", "url": "https://github.com/simesy/scaffold-tooling" },
-        { "type": "vcs", "url": "https://github.com/govcms/govcms8-scaffold-paas" }
+        { "type": "vcs", "url": "https://github.com/simesy/scaffold-tooling" }
     ],
     "require": {
         "govcms/govcms": "1.0-beta8",
-        "govcms/govcms-project": "dev-master",
         "govcms/scaffold-tooling": "dev-master"
     },
     "require-dependencies": true,
