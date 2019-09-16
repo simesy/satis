@@ -57,8 +57,8 @@ test:
       for f in app/include/*.json
       do
         TOOMANY=$(cat "$f" \
-          | jq '.packages | [.[] ] | .[] | [.[]] | .[] \ # flatten the packagist json
-          | .name' | sort | uniq -c | awk '{if($1>2)print$2}') # count the number of each ".name" (eg drupal/core)
+          | jq '.packages | [.[] ] | .[] | [.[]] | .[] | .name' \ # flatten the packagist json to just name.
+          | sort | uniq -c | awk '{if($1>2)print$2}') # count the number of each ".name" (eg drupal/core)
         if [[ ! -z $OUTPUT ]]; then echo "Two many packages for $TOOMANY" && exit 1; fi
       done
 
