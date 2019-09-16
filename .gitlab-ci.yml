@@ -24,6 +24,7 @@ test:
       cat composer.json \
         | jq .repositories='{"govcms":{"type":"composer","url":"http://localhost:4680"},"packagist.org":false}' \
         | tee composer.json
+      cat composer.json
       composer update
       composer validate
     - |
@@ -61,4 +62,4 @@ test:
 before_script:
   - php -S localhost:4680 -t ./app > phpd.log 2>&1 &
   - mkdir -p workspace
-  - git clone https://github.com/govCMS/govcms8-scaffold-paas workspace
+  - git clone --depth 1 https://github.com/govCMS/govcms8-scaffold-paas workspace
