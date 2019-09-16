@@ -53,13 +53,16 @@ test:
       set -e
       if [ "$ERR" -eq 0 ]; then echo "Correctly fails add bad judgement." && exit 1; fi
     - |
-      set -x # Can't add undesired module.
-      set +e
-      ERR=1 && composer require drupal/bad_judgement || ERR=$?
-      set -e
-      if [ "$ERR" -eq 0 ]; then echo "Correctly fails add bad judgement." && exit 1; fi
+      # If a package appears many times, then something is wrong with the configuration.
+      for f in app/include/*.json
+      do
+        TOOMANY=$(cat "$f" \
+          | jq '.packages | [.[] ] | .[] | [.[]] | .[] \ # flatten the packagist json
+          | .name' | sort | uniq -c | awk '{if($1>2)print$2}') # count the number of each ".name" (eg drupal/core)
+        if [[ ! -z $OUTPUT ]]; then echo "Two many packages for $TOOMANY" && exit 1; fi
+      done
 
 before_script:
   - php -S localhost:4680 -t ./app > phpd.log 2>&1 &
   - mkdir -p workspace
-  - git clone --depth 1 https://github.com/govCMS/govcms8-scaffold-paas workspace
+  - git clone --depth 1 --branch master https://github.com/govCMS/govcms8-scaffold-paas workspace
