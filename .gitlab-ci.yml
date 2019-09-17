@@ -54,8 +54,10 @@ test:
       if [ "$ERR" -eq 0 ]; then echo "Correctly fails add bad judgement." && exit 1; fi
     - |
       # If a package appears many times, then something is wrong with the configuration.
+      which jq
       for f in app/include/*.json
       do
+        echo "$f"
         # Flatten the packagist json to just name, and count the number of each ".name" (eg drupal/core).
         TOOMANY=$(cat "$f" jq '.packages | [.[] ] | .[] | [.[]] | .[] | .name' | sort | uniq -c | awk '{if($1>2)print$2}')
         if [[ ! -z $OUTPUT ]]; then echo "Two many packages for $TOOMANY" && exit 1; fi
