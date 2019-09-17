@@ -16,6 +16,18 @@ test:
 
   script:
     - |
+      # If a package appears many times, then something is wrong with the configuration.
+      which jq
+      ls app/include
+      for f in app/include/*.json
+      do
+        echo "$f"
+        tail "$f"
+        # Flatten the packagist json to just name, and count the number of each ".name" (eg drupal/core).
+        # TOOMANY=$(cat "$f" jq '.packages | [.[] ] | .[] | [.[]] | .[] | .name' | sort | uniq -c | awk '{if($1>2)print$2}')
+        # if [[ ! -z $OUTPUT ]]; then echo "Two many packages for $TOOMANY" && exit 1; fi
+      done
+    - |
       set -x # Installing govcms using ONLY our satis.
       cd workspace
       git checkout master
@@ -55,18 +67,6 @@ test:
       ERR=1 && composer require drupal/bad_judgement || ERR=$?
       set -e
       if [ "$ERR" -eq 0 ]; then echo "Correctly fails add bad judgement." && exit 1; fi
-    - |
-      # If a package appears many times, then something is wrong with the configuration.
-      which jq
-      ls app/include
-      for f in app/include/*.json
-      do
-        echo "$f"
-        tail "$f"
-        # Flatten the packagist json to just name, and count the number of each ".name" (eg drupal/core).
-        # TOOMANY=$(cat "$f" jq '.packages | [.[] ] | .[] | [.[]] | .[] | .name' | sort | uniq -c | awk '{if($1>2)print$2}')
-        # if [[ ! -z $OUTPUT ]]; then echo "Two many packages for $TOOMANY" && exit 1; fi
-      done
 
 before_script:
   - php -S localhost:4680 -t ./app > phpd.log 2>&1 &
