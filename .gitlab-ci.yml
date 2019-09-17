@@ -98,7 +98,6 @@ whitelist:
     - |
       set -x # Test that we can now add a whitelist module.
       composer require drupal/migrate_plus ~4
-      composer require drupal/migrate_plusdsfsdd ~4
 
 before_script:
   - php -S localhost:4680 -t ./app > phpd.log 2>&1 &
