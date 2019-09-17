@@ -22,6 +22,7 @@ test:
       cat composer.json
       composer config secure-http false # Only needed to point to local satis.
       # Simulate locked composer.
+      # There are a couple of extra cats here, because of an intermittent issue with composer.json getting munged.
       cat composer.json
       cat composer.json \
         | jq .repositories='{"govcms":{"type":"composer","url":"http://localhost:4680"},"packagist.org":false}' \
@@ -57,12 +58,14 @@ test:
     - |
       # If a package appears many times, then something is wrong with the configuration.
       which jq
+      ls app/include
       for f in app/include/*.json
       do
         echo "$f"
+        tail "$f"
         # Flatten the packagist json to just name, and count the number of each ".name" (eg drupal/core).
-        TOOMANY=$(cat "$f" jq '.packages | [.[] ] | .[] | [.[]] | .[] | .name' | sort | uniq -c | awk '{if($1>2)print$2}')
-        if [[ ! -z $OUTPUT ]]; then echo "Two many packages for $TOOMANY" && exit 1; fi
+        # TOOMANY=$(cat "$f" jq '.packages | [.[] ] | .[] | [.[]] | .[] | .name' | sort | uniq -c | awk '{if($1>2)print$2}')
+        # if [[ ! -z $OUTPUT ]]; then echo "Two many packages for $TOOMANY" && exit 1; fi
       done
 
 before_script:
