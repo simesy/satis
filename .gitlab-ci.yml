@@ -22,7 +22,7 @@ test:
       for f in app/include/*.json
       do
         # Flatten the packagist json to just name, and count the number of each ".name" (eg drupal/core).
-        TOOMANY=$(cat "$f" jq '.packages | [.[] ] | .[] | [.[]] | .[] | .name' | sort | uniq -c | awk '{if($1>2)print$2}')
+        TOOMANY=$(cat "$f" | jq '.packages | [.[] ] | .[] | [.[]] | .[] | .name' | sort | uniq -c | awk '{if($1>2)print$2}')
         if [[ ! -z $OUTPUT ]]; then echo "Two many packages for $TOOMANY" && exit 1; fi
       done
     - |
