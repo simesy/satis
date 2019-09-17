@@ -17,14 +17,14 @@ test:
   script:
     - |
       # If a package appears many times, then something is wrong with the configuration.
-      which jq
-      ls app/include
       for f in app/include/*.json
       do
         # Flatten the packagist json to just name, and count the number of each ".name" (eg drupal/core).
+        # This would test if any has more than 123 packages ($1>123). (Awk variable if you can...)
         TOOMANY=$(cat "$f" | jq '.packages | [.[] ] | .[] | [.[]] | .[] | .name' | sort | uniq -c | awk '{if($1>2)print$2}')
         if [[ ! -z $OUTPUT ]]; then echo "Two many packages for $TOOMANY" && exit 1; fi
       done
+      echo "No package has too many versions."
     - |
       set -x # Installing govcms using ONLY our satis.
       cd workspace
