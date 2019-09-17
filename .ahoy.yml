@@ -14,13 +14,19 @@ commands:
         --volume $(pwd):/build \
         composer/satis /build/branding.sh "/build/$2/index.html"
 
-  build:
+  build-production:
     cmd: |
-      ahoy satis satis-govcms-beta8.json app
+      LATEST=satis-govcms-beta8.json
+      ahoy satis "$LATEST" app
+      ahoy build-whitelist
 
   build-beta7:
     cmd: |
       ahoy satis satis-govcms-beta7.json app/beta7
+
+  build-beta8:
+    cmd: |
+      ahoy satis satis-govcms-beta8.json app/beta8
 
   build-edge:
     cmd: |

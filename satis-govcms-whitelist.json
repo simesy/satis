@@ -18,6 +18,7 @@
         "drupal/migrate_file": "1.1.0",
         "drupal/entity_pilot": "1.0.0"
     },
-    "require-dependencies": false,
+    "require-dependencies": true,
+    "require-dev-dependencies": true,
     "only-best-candidates": true
 }
