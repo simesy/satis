@@ -35,7 +35,7 @@ default:
       cat composer.json \
         | jq .repositories='{"govcms":{"type":"composer","url":"http://localhost:4680"},"packagist.org":false}' \
         | tee composer.json
-      [ -s composer.json ] && echo "Why are you empty (Si debugging)."
+      cat composer.json
       composer update
       composer validate
     - |
@@ -86,7 +86,7 @@ whitelist:
       cat composer.json \
         | jq .repositories='{"govcms":{"type":"composer","url":"http://localhost:4680"},"whitelist":{"type":"composer","url":"http://localhost:4680/whitelist"},"packagist.org":false}' \
         | tee composer.json
-      [ -s composer.json ] && echo "Why are you empty (Si debugging)."
+      cat composer.json
       composer update
       composer validate
     - |
