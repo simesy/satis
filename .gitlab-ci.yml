@@ -30,12 +30,12 @@ default:
       cd workspace
       git checkout master
       composer config secure-http false # Only needed to point to local satis.
-      # Simulate locked composer.
-      cat composer.json | jq '.repositories'
-      cat composer.json \
+      cp composer.json composer-copy.json
+      # Simulate locked-down composer to this new satis build.
+      cat composer-copy.json \
         | jq .repositories='{"govcms":{"type":"composer","url":"http://localhost:4680"},"packagist.org":false}' \
         | tee composer.json
-      cat composer.json
+      rm composer-copy.json
       composer update
       composer validate
     - |
@@ -81,12 +81,12 @@ whitelist:
       cd workspace
       git checkout master
       composer config secure-http false # Only needed to point to local satis.
+      cp composer.json composer-copy.json
       # Different to default by adding /whitelist.
-      cat composer.json | jq '.repositories'
-      cat composer.json \
+      cat composer-copy.json \
         | jq .repositories='{"govcms":{"type":"composer","url":"http://localhost:4680"},"whitelist":{"type":"composer","url":"http://localhost:4680/whitelist"},"packagist.org":false}' \
         | tee composer.json
-      cat composer.json
+      rm composer-copy.json
       composer update
       composer validate
     - |
