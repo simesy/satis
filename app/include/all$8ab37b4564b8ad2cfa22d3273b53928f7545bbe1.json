@@ -7507,6 +7507,75 @@
             }
         },
         "drupal/metatag": {
+            "1.10.0": {
+                "name": "drupal/metatag",
+                "version": "1.10.0",
+                "version_normalized": "1.10.0.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://git.drupalcode.org/project/metatag.git",
+                    "reference": "8.x-1.10"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.10.zip",
+                    "reference": "8.x-1.10",
+                    "shasum": "06275ae0f72cfcdbec8b8e8fd5d0863a5967bbcc"
+                },
+                "require": {
+                    "drupal/core": "*",
+                    "drupal/token": "^1.0"
+                },
+                "require-dev": {
+                    "drupal/devel": "^2.0",
+                    "drupal/metatag_dc": "*",
+                    "drupal/metatag_open_graph": "*",
+                    "drupal/page_manager": "^4.0",
+                    "drupal/redirect": "^1.0",
+                    "drupal/restui": "^1.0",
+                    "drupal/schema_metatag": "^1.0",
+                    "drupal/schema_web_page": "*"
+                },
+                "type": "drupal-module",
+                "extra": {
+                    "branch-alias": {
+                        "dev-1.x": "1.x-dev"
+                    },
+                    "drupal": {
+                        "version": "8.x-1.10",
+                        "datestamp": "1567099985",
+                        "security-coverage": {
+                            "status": "covered",
+                            "message": "Covered by Drupal's security advisory policy"
+                        }
+                    }
+                },
+                "notification-url": "https://packages.drupal.org/8/downloads",
+                "license": [
+                    "GPL-2.0+"
+                ],
+                "authors": [
+                    {
+                        "name": "See contributors",
+                        "homepage": "https://www.drupal.org/node/640498/committers",
+                        "role": "Developer"
+                    },
+                    {
+                        "name": "Dave Reid",
+                        "homepage": "https://www.drupal.org/user/53892"
+                    }
+                ],
+                "description": "Manage meta tags for all entities.",
+                "homepage": "https://www.drupal.org/project/metatag",
+                "keywords": [
+                    "Drupal",
+                    "seo"
+                ],
+                "support": {
+                    "source": "http://cgit.drupalcode.org/metatag",
+                    "issues": "http://drupal.org/project/issues/metatag"
+                }
+            },
             "1.9.0": {
                 "name": "drupal/metatag",
                 "version": "1.9.0",
@@ -7574,6 +7643,50 @@
                 "support": {
                     "source": "http://cgit.drupalcode.org/metatag",
                     "issues": "http://drupal.org/project/issues/metatag"
+                }
+            }
+        },
+        "drupal/metatag_views": {
+            "1.10.0": {
+                "name": "drupal/metatag_views",
+                "version": "1.10.0",
+                "version_normalized": "1.10.0.0",
+                "require": {
+                    "drupal/core": "*",
+                    "drupal/metatag": "self.version"
+                },
+                "type": "metapackage",
+                "extra": {
+                    "branch-alias": {
+                        "dev-1.x": "1.x-dev"
+                    },
+                    "drupal": {
+                        "version": "8.x-1.10",
+                        "datestamp": "1567099985",
+                        "security-coverage": {
+                            "status": "covered",
+                            "message": "Covered by Drupal's security advisory policy"
+                        }
+                    }
+                },
+                "notification-url": "https://packages.drupal.org/8/downloads",
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "DamienMcKenna",
+                        "homepage": "https://www.drupal.org/user/108450"
+                    },
+                    {
+                        "name": "Dave Reid",
+                        "homepage": "https://www.drupal.org/user/53892"
+                    }
+                ],
+                "description": "Provides views integration for metatags.",
+                "homepage": "https://www.drupal.org/project/metatag",
+                "support": {
+                    "source": "https://git.drupalcode.org/project/metatag"
                 }
             }
         },
@@ -8594,6 +8707,198 @@
                 "homepage": "https://www.drupal.org/project/scheduled_transitions",
                 "support": {
                     "source": "https://git.drupalcode.org/project/scheduled_transitions"
+                }
+            }
+        },
+        "drupal/schema_article": {
+            "1.4.0": {
+                "name": "drupal/schema_article",
+                "version": "1.4.0",
+                "version_normalized": "1.4.0.0",
+                "require": {
+                    "drupal/core": "~8.0",
+                    "drupal/schema_metatag": "self.version"
+                },
+                "type": "metapackage",
+                "extra": {
+                    "branch-alias": {
+                        "dev-1.x": "1.x-dev"
+                    },
+                    "drupal": {
+                        "version": "8.x-1.4",
+                        "datestamp": "1563033785",
+                        "security-coverage": {
+                            "status": "covered",
+                            "message": "Covered by Drupal's security advisory policy"
+                        }
+                    }
+                },
+                "notification-url": "https://packages.drupal.org/8/downloads",
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "KarenS",
+                        "homepage": "https://www.drupal.org/user/45874"
+                    }
+                ],
+                "description": "Adds Schema.org/Article to the JSON LD array. Creates Article, BlogPosting, SocialMediaPosting, Report, ScholarlyArticle, TechArticle or APIReference.",
+                "homepage": "https://www.drupal.org/project/schema_metatag",
+                "support": {
+                    "source": "https://git.drupalcode.org/project/schema_metatag"
+                }
+            }
+        },
+        "drupal/schema_metatag": {
+            "1.4.0": {
+                "name": "drupal/schema_metatag",
+                "version": "1.4.0",
+                "version_normalized": "1.4.0.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://git.drupalcode.org/project/schema_metatag.git",
+                    "reference": "8.x-1.4"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://ftp.drupal.org/files/projects/schema_metatag-8.x-1.4.zip",
+                    "reference": "8.x-1.4",
+                    "shasum": "5d0a677608e30a7c8ffb43d98759b19cf5be17f6"
+                },
+                "require": {
+                    "drupal/core": "~8.0",
+                    "drupal/metatag": "*"
+                },
+                "require-dev": {
+                    "drupal/metatag_views": "*",
+                    "drupal/schema_article": "*",
+                    "drupal/schema_organization": "*"
+                },
+                "type": "drupal-module",
+                "extra": {
+                    "branch-alias": {
+                        "dev-1.x": "1.x-dev"
+                    },
+                    "drupal": {
+                        "version": "8.x-1.4",
+                        "datestamp": "1563033785",
+                        "security-coverage": {
+                            "status": "covered",
+                            "message": "Covered by Drupal's security advisory policy"
+                        }
+                    }
+                },
+                "notification-url": "https://packages.drupal.org/8/downloads",
+                "license": [
+                    "GPL-2.0+"
+                ],
+                "authors": [
+                    {
+                        "name": "KarenS",
+                        "homepage": "https://www.drupal.org/user/45874"
+                    }
+                ],
+                "description": "Metatag implementation of Schema.org structured data (JSON-LD)",
+                "homepage": "https://www.drupal.org/project/schema_metatag",
+                "keywords": [
+                    "Drupal"
+                ],
+                "support": {
+                    "source": "http://cgit.drupalcode.org/schema_metatag",
+                    "issues": "https://www.drupal.org/project/issues/schema_metatag"
+                }
+            },
+            "dev-1.x": {
+                "name": "drupal/schema_metatag",
+                "version": "dev-1.x",
+                "version_normalized": "dev-1.x",
+                "source": {
+                    "type": "git",
+                    "url": "https://git.drupalcode.org/project/schema_metatag.git",
+                    "reference": "1b76c49eb064d92c41501283b277041ca32bb57c"
+                },
+                "require": {
+                    "drupal/core": "~8.0",
+                    "drupal/metatag": "*"
+                },
+                "require-dev": {
+                    "drupal/metatag_views": "*",
+                    "drupal/schema_article": "*",
+                    "drupal/schema_organization": "*"
+                },
+                "type": "drupal-module",
+                "extra": {
+                    "branch-alias": {
+                        "dev-1.x": "1.x-dev"
+                    },
+                    "drupal": {
+                        "version": "8.x-1.4+1-dev",
+                        "datestamp": "1563226981",
+                        "security-coverage": {
+                            "status": "not-covered",
+                            "message": "Dev releases are not covered by Drupal security advisories."
+                        }
+                    }
+                },
+                "notification-url": "https://packages.drupal.org/8/downloads",
+                "license": [
+                    "GPL-2.0+"
+                ],
+                "authors": [
+                    {
+                        "name": "KarenS",
+                        "homepage": "https://www.drupal.org/user/45874"
+                    }
+                ],
+                "description": "Metatag implementation of Schema.org structured data (JSON-LD)",
+                "homepage": "https://www.drupal.org/project/schema_metatag",
+                "keywords": [
+                    "Drupal"
+                ],
+                "support": {
+                    "source": "http://cgit.drupalcode.org/schema_metatag",
+                    "issues": "https://www.drupal.org/project/issues/schema_metatag"
+                }
+            }
+        },
+        "drupal/schema_organization": {
+            "1.4.0": {
+                "name": "drupal/schema_organization",
+                "version": "1.4.0",
+                "version_normalized": "1.4.0.0",
+                "require": {
+                    "drupal/core": "~8.0",
+                    "drupal/schema_metatag": "self.version"
+                },
+                "type": "metapackage",
+                "extra": {
+                    "branch-alias": {
+                        "dev-1.x": "1.x-dev"
+                    },
+                    "drupal": {
+                        "version": "8.x-1.4",
+                        "datestamp": "1563033785",
+                        "security-coverage": {
+                            "status": "covered",
+                            "message": "Covered by Drupal's security advisory policy"
+                        }
+                    }
+                },
+                "notification-url": "https://packages.drupal.org/8/downloads",
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "KarenS",
+                        "homepage": "https://www.drupal.org/user/45874"
+                    }
+                ],
+                "description": "Adds Schema.org/Organization to the JSON LD array.",
+                "homepage": "https://www.drupal.org/project/schema_metatag",
+                "support": {
+                    "source": "https://git.drupalcode.org/project/schema_metatag"
                 }
             }
         },
