@@ -2108,18 +2108,18 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/govCMS/dvf.git",
-                    "reference": "1cf757c12cf6423eed9e9e36154f5518b70d9ea9"
+                    "reference": "a5511d830edd8341c6863a7aca783ab7415e150f"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/govCMS/dvf/zipball/1cf757c12cf6423eed9e9e36154f5518b70d9ea9",
-                    "reference": "1cf757c12cf6423eed9e9e36154f5518b70d9ea9",
+                    "url": "https://api.github.com/repos/govCMS/dvf/zipball/a5511d830edd8341c6863a7aca783ab7415e150f",
+                    "reference": "a5511d830edd8341c6863a7aca783ab7415e150f",
                     "shasum": ""
                 },
                 "require": {
                     "flow/jsonpath": "^0.4.0"
                 },
-                "time": "2019-06-28T05:53:22+00:00",
+                "time": "2019-09-19T04:53:46+00:00",
                 "type": "drupal-module",
                 "license": [
                     "GPL-2.0+"
@@ -3043,14 +3043,14 @@
                 "authors": [
                     {
                         "name": "Nicholas Humfrey",
-                        "role": "Developer",
                         "email": "njh@aelius.com",
-                        "homepage": "http://www.aelius.com/njh/"
+                        "homepage": "http://www.aelius.com/njh/",
+                        "role": "Developer"
                     },
                     {
                         "name": "Alexey Zakhlestin",
-                        "role": "Developer",
-                        "email": "indeyets@gmail.com"
+                        "email": "indeyets@gmail.com",
+                        "role": "Developer"
                     }
                 ],
                 "description": "EasyRdf is a PHP library designed to make it easy to consume and produce RDF.",
