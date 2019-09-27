@@ -9,7 +9,8 @@
     ],
     "require": {
         "govcms/govcms": "1.0-beta9",
-        "govcms/scaffold-tooling": "dev-master"
+        "govcms/scaffold-tooling": "dev-master",
+        "drupal/schema_metatag": "^1.4"
     },
     "require-dependencies": true,
     "require-dev-dependencies": true,
