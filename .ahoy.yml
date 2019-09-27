@@ -16,7 +16,7 @@ commands:
 
   build-production:
     cmd: |
-      LATEST=satis-govcms-beta8.json
+      LATEST=satis-govcms-beta9.json
       ahoy satis "$LATEST" app
       ahoy build-whitelist
 
