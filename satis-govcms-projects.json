@@ -1,6 +1,6 @@
 {
-    "name": "govcms/satis-extras",
-    "homepage": "https://satis.govcms.gov.au/extras",
+    "name": "govcms/satis-projects",
+    "homepage": "https://satis.govcms.gov.au/projects",
     "repositories": [
         { "type": "vcs", "url": "https://github.com/simesy/govcms8-scaffold-paas" }
     ],
