@@ -1,0 +1,655 @@
+{
+    "packages": {
+        "govcms/govcms-project": {
+            "dev-master": {
+                "name": "govcms/govcms-project",
+                "version": "dev-master",
+                "version_normalized": "9999999-dev",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/simesy/govcms8-scaffold-paas.git",
+                    "reference": "5ec62047a91a79e57b33057070d954d5cd23ff1d"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/simesy/govcms8-scaffold-paas/zipball/5ec62047a91a79e57b33057070d954d5cd23ff1d",
+                    "reference": "5ec62047a91a79e57b33057070d954d5cd23ff1d",
+                    "shasum": ""
+                },
+                "require": {
+                    "composer/installers": "^1.2",
+                    "cweagans/composer-patches": "^1.6.5",
+                    "drupal-composer/drupal-scaffold": "^2.5",
+                    "drupal/clamav": "^1.1",
+                    "drupal/console": "^1.0.2",
+                    "drupal/fast_404": "^1.0",
+                    "drupal/lagoon_logs": "^1.0",
+                    "drupal/redis": "^1.0",
+                    "drupal/stage_file_proxy": "^1.0",
+                    "drush/drush": "^9.0.0",
+                    "govcms/govcms": "*",
+                    "webflo/drupal-finder": "^1.0.0",
+                    "webmozart/path-util": "^2.3"
+                },
+                "conflict": {
+                    "drupal/drupal": "*"
+                },
+                "require-dev": {
+                    "behat/behat": "^3.5",
+                    "behat/gherkin": "^4.5",
+                    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                    "drupal/coder": "^8.3",
+                    "drupal/drupal-extension": "^3.4",
+                    "drupal/schema_metatag": "^1.4",
+                    "integratedexperts/behat-screenshot": "^0.7.2",
+                    "jakub-onderka/php-parallel-lint": "^1.0",
+                    "phpunit/phpunit": "6.5",
+                    "zaporylie/composer-drupal-optimizations": "^1.1"
+                },
+                "time": "2019-08-14T01:10:42+00:00",
+                "type": "project",
+                "extra": {
+                    "enable-patching": true,
+                    "patchLevel": {
+                        "drupal/core": "-p2"
+                    },
+                    "installer-types": [
+                        "bower-asset",
+                        "npm-asset"
+                    ],
+                    "installer-paths": {
+                        "web/core": [
+                            "type:drupal-core"
+                        ],
+                        "web/libraries/{$name}": [
+                            "type:drupal-library",
+                            "type:bower-asset",
+                            "type:npm-asset"
+                        ],
+                        "web/modules/contrib/{$name}": [
+                            "type:drupal-module"
+                        ],
+                        "web/profiles/contrib/{$name}": [
+                            "type:drupal-profile"
+                        ],
+                        "web/themes/contrib/{$name}": [
+                            "type:drupal-theme"
+                        ],
+                        "drush/Commands/{$name}": [
+                            "type:drupal-drush"
+                        ]
+                    },
+                    "drupal-scaffold": {
+                        "initial": {
+                            ".editorconfig": "../.editorconfig",
+                            ".gitattributes": "../.gitattributes"
+                        }
+                    }
+                },
+                "autoload": {
+                    "classmap": [
+                        "scripts/composer/ScriptHandler.php"
+                    ]
+                },
+                "scripts": {
+                    "pre-install-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+                    ],
+                    "pre-update-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+                    ],
+                    "post-install-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+                    ],
+                    "post-update-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "description": "Project template for GovCMS Drupal 8 projects with composer",
+                "support": {
+                    "source": "https://github.com/simesy/govcms8-scaffold-paas/tree/master"
+                }
+            },
+            "dev-GOVCMS-3718-env-testing": {
+                "name": "govcms/govcms-project",
+                "version": "dev-GOVCMS-3718-env-testing",
+                "version_normalized": "dev-GOVCMS-3718-env-testing",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/simesy/govcms8-scaffold-paas.git",
+                    "reference": "40c1cd2b8a164c4a40916d840a30a530235d2130"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/simesy/govcms8-scaffold-paas/zipball/40c1cd2b8a164c4a40916d840a30a530235d2130",
+                    "reference": "40c1cd2b8a164c4a40916d840a30a530235d2130",
+                    "shasum": ""
+                },
+                "require": {
+                    "composer/installers": "^1.2",
+                    "cweagans/composer-patches": "^1.6.5",
+                    "drupal-composer/drupal-scaffold": "^2.5",
+                    "drupal/clamav": "^1.1",
+                    "drupal/console": "^1.0.2",
+                    "drupal/fast_404": "^1.0",
+                    "drupal/lagoon_logs": "^1.0",
+                    "drupal/redis": "^1.0",
+                    "drupal/stage_file_proxy": "^1.0",
+                    "drush/drush": "^9.0.0",
+                    "govcms/govcms": "*",
+                    "webflo/drupal-finder": "^1.0.0",
+                    "webmozart/path-util": "^2.3"
+                },
+                "conflict": {
+                    "drupal/drupal": "*"
+                },
+                "require-dev": {
+                    "behat/behat": "^3.5",
+                    "behat/gherkin": "^4.5",
+                    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                    "drupal/coder": "^8.3",
+                    "drupal/drupal-extension": "^3.4",
+                    "drupal/schema_metatag": "^1.4",
+                    "integratedexperts/behat-screenshot": "^0.7.2",
+                    "jakub-onderka/php-parallel-lint": "^1.0",
+                    "phpunit/phpunit": "6.5",
+                    "zaporylie/composer-drupal-optimizations": "^1.1"
+                },
+                "time": "2019-08-10T10:00:31+00:00",
+                "type": "project",
+                "extra": {
+                    "enable-patching": true,
+                    "patchLevel": {
+                        "drupal/core": "-p2"
+                    },
+                    "installer-types": [
+                        "bower-asset",
+                        "npm-asset"
+                    ],
+                    "installer-paths": {
+                        "web/core": [
+                            "type:drupal-core"
+                        ],
+                        "web/libraries/{$name}": [
+                            "type:drupal-library",
+                            "type:bower-asset",
+                            "type:npm-asset"
+                        ],
+                        "web/modules/contrib/{$name}": [
+                            "type:drupal-module"
+                        ],
+                        "web/profiles/contrib/{$name}": [
+                            "type:drupal-profile"
+                        ],
+                        "web/themes/contrib/{$name}": [
+                            "type:drupal-theme"
+                        ],
+                        "drush/Commands/{$name}": [
+                            "type:drupal-drush"
+                        ]
+                    },
+                    "drupal-scaffold": {
+                        "initial": {
+                            ".editorconfig": "../.editorconfig",
+                            ".gitattributes": "../.gitattributes"
+                        }
+                    }
+                },
+                "autoload": {
+                    "classmap": [
+                        "scripts/composer/ScriptHandler.php"
+                    ]
+                },
+                "scripts": {
+                    "pre-install-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+                    ],
+                    "pre-update-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+                    ],
+                    "post-install-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+                    ],
+                    "post-update-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "description": "Project template for GovCMS Drupal 8 projects with composer",
+                "support": {
+                    "source": "https://github.com/simesy/govcms8-scaffold-paas/tree/GOVCMS-3718-env-testing"
+                }
+            },
+            "dev-drush-alias-wildcard": {
+                "name": "govcms/govcms-project",
+                "version": "dev-drush-alias-wildcard",
+                "version_normalized": "dev-drush-alias-wildcard",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/simesy/govcms8-scaffold-paas.git",
+                    "reference": "7f9b6946214a6fdd7bfda26f2df83e9d347dd49e"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/simesy/govcms8-scaffold-paas/zipball/7f9b6946214a6fdd7bfda26f2df83e9d347dd49e",
+                    "reference": "7f9b6946214a6fdd7bfda26f2df83e9d347dd49e",
+                    "shasum": ""
+                },
+                "require": {
+                    "composer/installers": "^1.2",
+                    "cweagans/composer-patches": "^1.6.5",
+                    "drupal-composer/drupal-scaffold": "^2.5",
+                    "drupal/clamav": "^1.1",
+                    "drupal/console": "^1.0.2",
+                    "drupal/fast_404": "^1.0",
+                    "drupal/lagoon_logs": "^1.0",
+                    "drupal/redis": "^1.0",
+                    "drupal/stage_file_proxy": "^1.0",
+                    "drush/drush": "^9.0.0",
+                    "govcms/govcms": "*",
+                    "webflo/drupal-finder": "^1.0.0",
+                    "webmozart/path-util": "^2.3"
+                },
+                "conflict": {
+                    "drupal/drupal": "*"
+                },
+                "require-dev": {
+                    "behat/behat": "^3.5",
+                    "behat/gherkin": "^4.5",
+                    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                    "drupal/coder": "^8.3",
+                    "drupal/drupal-extension": "^3.4",
+                    "drupal/schema_metatag": "^1.4",
+                    "integratedexperts/behat-screenshot": "^0.7.2",
+                    "jakub-onderka/php-parallel-lint": "^1.0",
+                    "phpunit/phpunit": "6.5",
+                    "zaporylie/composer-drupal-optimizations": "^1.1"
+                },
+                "time": "2019-08-26T23:46:13+00:00",
+                "type": "project",
+                "extra": {
+                    "enable-patching": true,
+                    "patchLevel": {
+                        "drupal/core": "-p2"
+                    },
+                    "installer-types": [
+                        "bower-asset",
+                        "npm-asset"
+                    ],
+                    "installer-paths": {
+                        "web/core": [
+                            "type:drupal-core"
+                        ],
+                        "web/libraries/{$name}": [
+                            "type:drupal-library",
+                            "type:bower-asset",
+                            "type:npm-asset"
+                        ],
+                        "web/modules/contrib/{$name}": [
+                            "type:drupal-module"
+                        ],
+                        "web/profiles/contrib/{$name}": [
+                            "type:drupal-profile"
+                        ],
+                        "web/themes/contrib/{$name}": [
+                            "type:drupal-theme"
+                        ],
+                        "drush/Commands/{$name}": [
+                            "type:drupal-drush"
+                        ]
+                    },
+                    "drupal-scaffold": {
+                        "initial": {
+                            ".editorconfig": "../.editorconfig",
+                            ".gitattributes": "../.gitattributes"
+                        }
+                    }
+                },
+                "autoload": {
+                    "classmap": [
+                        "scripts/composer/ScriptHandler.php"
+                    ]
+                },
+                "scripts": {
+                    "pre-install-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+                    ],
+                    "pre-update-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+                    ],
+                    "post-install-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+                    ],
+                    "post-update-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "description": "Project template for GovCMS Drupal 8 projects with composer",
+                "support": {
+                    "source": "https://github.com/simesy/govcms8-scaffold-paas/tree/drush-alias-wildcard"
+                }
+            },
+            "dev-fix-builds": {
+                "name": "govcms/govcms-project",
+                "version": "dev-fix-builds",
+                "version_normalized": "dev-fix-builds",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/simesy/govcms8-scaffold-paas.git",
+                    "reference": "c9f4da6442ce2023b9e3f9af89f3feeb381b68e5"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/simesy/govcms8-scaffold-paas/zipball/c9f4da6442ce2023b9e3f9af89f3feeb381b68e5",
+                    "reference": "c9f4da6442ce2023b9e3f9af89f3feeb381b68e5",
+                    "shasum": ""
+                },
+                "require": {
+                    "composer/installers": "^1.2",
+                    "cweagans/composer-patches": "^1.6.5",
+                    "drupal-composer/drupal-scaffold": "^2.5",
+                    "drupal/clamav": "^1.1",
+                    "drupal/console": "^1.0.2",
+                    "drupal/fast_404": "^1.0",
+                    "drupal/lagoon_logs": "^1.0",
+                    "drupal/redis": "^1.0",
+                    "drupal/stage_file_proxy": "^1.0",
+                    "drush/drush": "^9.0.0",
+                    "govcms/govcms": "*",
+                    "webflo/drupal-finder": "^1.0.0",
+                    "webmozart/path-util": "^2.3"
+                },
+                "conflict": {
+                    "drupal/drupal": "*"
+                },
+                "require-dev": {
+                    "behat/behat": "^3.5",
+                    "behat/gherkin": "^4.5",
+                    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                    "drupal/coder": "^8.3",
+                    "drupal/drupal-extension": "^3.4",
+                    "drupal/schema_metatag": "^1.4",
+                    "integratedexperts/behat-screenshot": "^0.7.2",
+                    "jakub-onderka/php-parallel-lint": "^1.0",
+                    "phpunit/phpunit": "6.5",
+                    "zaporylie/composer-drupal-optimizations": "^1.1"
+                },
+                "time": "2019-08-15T10:34:00+00:00",
+                "type": "project",
+                "extra": {
+                    "enable-patching": true,
+                    "patchLevel": {
+                        "drupal/core": "-p2"
+                    },
+                    "installer-types": [
+                        "bower-asset",
+                        "npm-asset"
+                    ],
+                    "installer-paths": {
+                        "web/core": [
+                            "type:drupal-core"
+                        ],
+                        "web/libraries/{$name}": [
+                            "type:drupal-library",
+                            "type:bower-asset",
+                            "type:npm-asset"
+                        ],
+                        "web/modules/contrib/{$name}": [
+                            "type:drupal-module"
+                        ],
+                        "web/profiles/contrib/{$name}": [
+                            "type:drupal-profile"
+                        ],
+                        "web/themes/contrib/{$name}": [
+                            "type:drupal-theme"
+                        ],
+                        "drush/Commands/{$name}": [
+                            "type:drupal-drush"
+                        ]
+                    },
+                    "drupal-scaffold": {
+                        "initial": {
+                            ".editorconfig": "../.editorconfig",
+                            ".gitattributes": "../.gitattributes"
+                        }
+                    }
+                },
+                "autoload": {
+                    "classmap": [
+                        "scripts/composer/ScriptHandler.php"
+                    ]
+                },
+                "scripts": {
+                    "pre-install-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+                    ],
+                    "pre-update-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+                    ],
+                    "post-install-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+                    ],
+                    "post-update-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "description": "Project template for GovCMS Drupal 8 projects with composer",
+                "support": {
+                    "source": "https://github.com/simesy/govcms8-scaffold-paas/tree/fix-builds"
+                }
+            },
+            "dev-master-si": {
+                "name": "govcms/govcms-project",
+                "version": "dev-master-si",
+                "version_normalized": "dev-master-si",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/simesy/govcms8-scaffold-paas.git",
+                    "reference": "c696df2fdbbabc94a999fd5bced05967db0a3176"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/simesy/govcms8-scaffold-paas/zipball/c696df2fdbbabc94a999fd5bced05967db0a3176",
+                    "reference": "c696df2fdbbabc94a999fd5bced05967db0a3176",
+                    "shasum": ""
+                },
+                "require": {
+                    "composer/installers": "^1.2",
+                    "cweagans/composer-patches": "^1.6.5",
+                    "drupal-composer/drupal-scaffold": "^2.5",
+                    "drupal/clamav": "^1.1",
+                    "drupal/console": "^1.0.2",
+                    "drupal/fast_404": "^1.0",
+                    "drupal/lagoon_logs": "^1.0",
+                    "drupal/redis": "^1.0",
+                    "drupal/stage_file_proxy": "^1.0",
+                    "drush/drush": "^9.0.0",
+                    "govcms/govcms": "*",
+                    "webflo/drupal-finder": "^1.0.0",
+                    "webmozart/path-util": "^2.3"
+                },
+                "conflict": {
+                    "drupal/drupal": "*"
+                },
+                "require-dev": {
+                    "behat/behat": "^3.5",
+                    "behat/gherkin": "^4.5",
+                    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                    "drupal/coder": "^8.3",
+                    "drupal/drupal-extension": "^3.4",
+                    "drupal/schema_metatag": "^1.4",
+                    "integratedexperts/behat-screenshot": "^0.7.2",
+                    "jakub-onderka/php-parallel-lint": "^1.0",
+                    "phpunit/phpunit": "6.5",
+                    "zaporylie/composer-drupal-optimizations": "^1.1"
+                },
+                "time": "2019-08-13T01:00:13+00:00",
+                "type": "project",
+                "extra": {
+                    "enable-patching": true,
+                    "patchLevel": {
+                        "drupal/core": "-p2"
+                    },
+                    "installer-types": [
+                        "bower-asset",
+                        "npm-asset"
+                    ],
+                    "installer-paths": {
+                        "web/core": [
+                            "type:drupal-core"
+                        ],
+                        "web/libraries/{$name}": [
+                            "type:drupal-library",
+                            "type:bower-asset",
+                            "type:npm-asset"
+                        ],
+                        "web/modules/contrib/{$name}": [
+                            "type:drupal-module"
+                        ],
+                        "web/profiles/contrib/{$name}": [
+                            "type:drupal-profile"
+                        ],
+                        "web/themes/contrib/{$name}": [
+                            "type:drupal-theme"
+                        ],
+                        "drush/Commands/{$name}": [
+                            "type:drupal-drush"
+                        ]
+                    },
+                    "drupal-scaffold": {
+                        "initial": {
+                            ".editorconfig": "../.editorconfig",
+                            ".gitattributes": "../.gitattributes"
+                        }
+                    }
+                },
+                "autoload": {
+                    "classmap": [
+                        "scripts/composer/ScriptHandler.php"
+                    ]
+                },
+                "scripts": {
+                    "pre-install-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+                    ],
+                    "pre-update-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+                    ],
+                    "post-install-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+                    ],
+                    "post-update-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "description": "Project template for GovCMS Drupal 8 projects with composer",
+                "support": {
+                    "source": "https://github.com/simesy/govcms8-scaffold-paas/tree/master-si"
+                }
+            },
+            "dev-paas-wip": {
+                "name": "govcms/govcms-project",
+                "version": "dev-paas-wip",
+                "version_normalized": "dev-paas-wip",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/simesy/govcms8-scaffold-paas.git",
+                    "reference": "ba6f66f68d72215a2865608df03c2417f3a2c6cf"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/simesy/govcms8-scaffold-paas/zipball/ba6f66f68d72215a2865608df03c2417f3a2c6cf",
+                    "reference": "ba6f66f68d72215a2865608df03c2417f3a2c6cf",
+                    "shasum": ""
+                },
+                "require": {
+                    "govcms/govcms": "~1",
+                    "govcms/scaffold-tooling": "dev-master"
+                },
+                "conflict": {
+                    "drupal/drupal": "*"
+                },
+                "time": "2019-09-03T06:17:37+00:00",
+                "type": "project",
+                "extra": {
+                    "enable-patching": true,
+                    "patchLevel": {
+                        "drupal/core": "-p2"
+                    },
+                    "installer-types": [
+                        "bower-asset",
+                        "npm-asset"
+                    ],
+                    "installer-paths": {
+                        "web/core": [
+                            "type:drupal-core"
+                        ],
+                        "web/libraries/{$name}": [
+                            "type:drupal-library",
+                            "type:bower-asset",
+                            "type:npm-asset"
+                        ],
+                        "web/modules/contrib/{$name}": [
+                            "type:drupal-module"
+                        ],
+                        "web/profiles/contrib/{$name}": [
+                            "type:drupal-profile"
+                        ],
+                        "web/themes/contrib/{$name}": [
+                            "type:drupal-theme"
+                        ],
+                        "drush/Commands/{$name}": [
+                            "type:drupal-drush"
+                        ]
+                    },
+                    "drupal-scaffold": {
+                        "initial": {
+                            ".editorconfig": "../.editorconfig",
+                            ".gitattributes": "../.gitattributes"
+                        }
+                    }
+                },
+                "autoload": {
+                    "classmap": [
+                        "scripts/composer/ScriptHandler.php"
+                    ]
+                },
+                "scripts": {
+                    "pre-install-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+                    ],
+                    "pre-update-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+                    ],
+                    "post-install-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+                    ],
+                    "post-update-cmd": [
+                        "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "description": "GovCMS Drupal 8 Scaffold",
+                "support": {
+                    "source": "https://github.com/simesy/govcms8-scaffold-paas/tree/paas-wip"
+                }
+            }
+        }
+    }
+}

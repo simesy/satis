@@ -39,3 +39,8 @@ commands:
   build-extras:
     cmd: |
       ahoy satis satis-govcms-extras.json app/extras
+
+  # This is temporary until the lagoon/govcms scaffold is on packagist.
+  build-projects:
+    cmd: |
+      ahoy satis satis-govcms-projects.json app/projects
