@@ -568,12 +568,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/simesy/govcms8-scaffold-paas.git",
-                    "reference": "ba6f66f68d72215a2865608df03c2417f3a2c6cf"
+                    "reference": "4968aacae277682b4b403f30a61fa56afbfed5c6"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/simesy/govcms8-scaffold-paas/zipball/ba6f66f68d72215a2865608df03c2417f3a2c6cf",
-                    "reference": "ba6f66f68d72215a2865608df03c2417f3a2c6cf",
+                    "url": "https://api.github.com/repos/simesy/govcms8-scaffold-paas/zipball/4968aacae277682b4b403f30a61fa56afbfed5c6",
+                    "reference": "4968aacae277682b4b403f30a61fa56afbfed5c6",
                     "shasum": ""
                 },
                 "require": {
@@ -583,7 +583,7 @@
                 "conflict": {
                     "drupal/drupal": "*"
                 },
-                "time": "2019-09-03T06:17:37+00:00",
+                "time": "2019-09-30T03:56:48+00:00",
                 "type": "project",
                 "extra": {
                     "enable-patching": true,
