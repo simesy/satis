@@ -10680,6 +10680,38 @@
                     "source": "https://github.com/govCMS/require-dev/tree/1.0.0",
                     "issues": "https://github.com/govCMS/require-dev/issues"
                 }
+            },
+            "1.0.1": {
+                "name": "govcms/require-dev",
+                "version": "1.0.1",
+                "version_normalized": "1.0.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/govCMS/require-dev.git",
+                    "reference": "f844f9423e7cd65e0f6db111665a623bbd1cdb7a"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/govCMS/require-dev/zipball/f844f9423e7cd65e0f6db111665a623bbd1cdb7a",
+                    "reference": "f844f9423e7cd65e0f6db111665a623bbd1cdb7a",
+                    "shasum": ""
+                },
+                "require": {
+                    "behat/behat": "^3.5",
+                    "behat/gherkin": "^4.5",
+                    "drupal/schema_metatag": "^1.4",
+                    "integratedexperts/behat-screenshot": "^0.7.2",
+                    "jakub-onderka/php-parallel-lint": "^1.0",
+                    "phpmd/phpmd": "2.7.0",
+                    "phpunit/phpunit": "6.5"
+                },
+                "time": "2019-10-14T05:26:17+00:00",
+                "type": "library",
+                "description": "Require-dev package definition for GovCMS 8",
+                "support": {
+                    "source": "https://github.com/govCMS/require-dev/tree/1.0.1",
+                    "issues": "https://github.com/govCMS/require-dev/issues"
+                }
             }
         },
         "govcms/scaffold-tooling": {
