@@ -10,6 +10,11 @@ services:
 stages:
   - test
 
+nothing:
+  stage: test
+  script:
+    - echo "nothing"
+
 .default:
 
   stage: test
