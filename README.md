@@ -34,7 +34,7 @@ compliant - particularly SaaS projects.
 2. Since Satis does the hard work of resolving module versions, your `composer update`
 runs significantly faster.
 
-3. By providing this packagist source, including an additional saasplus whitelist, we 
+3. By providing this packagist source, including an additional whitelist, we 
 may have a way to reduce the (significant) size of the GovCMS distribution itself.
 
 4. By using this as your only packagist source, you can ensure your Drupal
@@ -57,9 +57,9 @@ to add additional sources.
         "type": "composer",
         "url": "https://satis.govcms.gov.au/"
     },
-    "saasplus": {
+    "govcms-whitelist": {
         "type": "composer",
-        "url": "https://satis.govcms.gov.au/saasplus/"
+        "url": "https://satis.govcms.gov.au/whitelist/"
     },
     "packagist.org": false
 },
@@ -75,7 +75,7 @@ to add additional sources.
 
 ### Breakdown of the above:
 
-* `saasplus` is an additional whitelist of modules which are not in the GovCMS
+* `whitelist` is an additional whitelist of modules which are not in the GovCMS
 distribution. (You may not be able to edit your composer.json to add these packages.)
 * `"packagist.org": false` prevents adding modules and packages from https://packagist.org.
 * `"~1"` allows us to keep the composer.json requirements very loose (best practice) as
