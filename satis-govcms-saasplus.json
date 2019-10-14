@@ -1,6 +1,6 @@
 {
-    "name": "govcms/satis-whitelist",
-    "homepage": "https://satis.govcms.gov.au/whitelist",
+    "name": "govcms/satis-saasplus",
+    "homepage": "https://satis.govcms.gov.au/saasplus",
     "repositories": [
         { "type": "composer", "url": "https://packagist.org" },
         { "type": "composer", "url": "https://packages.drupal.org/8" },

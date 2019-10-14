@@ -18,7 +18,13 @@ commands:
     cmd: |
       LATEST=satis-govcms-beta9.json
       ahoy satis "$LATEST" app
-      ahoy build-whitelist
+      ahoy build-saasplus
+
+  build-saasplus:
+    cmd: |
+      ahoy satis satis-govcms-saasplus.json app/saasplus
+
+  # Below are experimental. Do not deploy to production.
 
   build-beta7:
     cmd: |
@@ -31,10 +37,6 @@ commands:
   build-edge:
     cmd: |
       ahoy satis satis-govcms-edge.json app/edge
-
-  build-whitelist:
-    cmd: |
-      ahoy satis satis-govcms-whitelist.json app/whitelist
 
   build-extras:
     cmd: |
