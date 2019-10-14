@@ -10,12 +10,7 @@ services:
 stages:
   - test
 
-nothing:
-  stage: test
-  script:
-    - echo "nothing"
-
-.default:
+default:
 
   stage: test
 
@@ -68,7 +63,7 @@ nothing:
       set -e
       if [ "$ERR" -eq 0 ]; then echo "Correctly fails add bad judgement." && exit 1; fi
 
-.whitelist:
+whitelist:
 
   stage: test
 
