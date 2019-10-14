@@ -5,6 +5,27 @@ A packagist resource for Composer projects which contains only the packages
 required to build the GovCMS distribution. All the modules available
 in this packagist have been reviewed and curated.
 
+
+## Maintenance
+
+Currently, updating is manual but could be automated with new GovCMS releases.
+
+1. When there is a new version of govcms/govcms8 or govcms/require-dev, the
+Satis needs rebuilding.
+
+2. If it's a new version of the distribution, copy `satis-govcms-betaX.json`
+to a new file. Review the file.
+
+3. Review the `ahoy build-production` command in `.ahoy.yml` and update file
+references if needed.
+
+4. Run `ahoy build-production`. This will update the static satis files in /app
+
+5. Commit changes, including /app
+
+6. Git push. This will build GovCMS in Gitlab (see `.gitlab-ci.yml`).
+
+
 ## Benefits
 
 1. The limited use of this packagist ensures that a project is GovCMS platform
@@ -24,6 +45,7 @@ platform.
 5. Other (government) organisations can leverage this packagist as a simple
 way to limit modules on their own projects.
 
+
 ## Usage
 
 The de facto usage looks like this in composer.json. There is no requirement
@@ -35,10 +57,6 @@ to add additional sources.
         "type": "composer",
         "url": "https://satis.govcms.gov.au/"
     },
-    "govcms-whitelist": {
-        "type": "composer",
-        "url": "https://satis.govcms.gov.au/whitelist/"
-    },
     "packagist.org": false
 },
 "require": {
@@ -46,7 +64,7 @@ to add additional sources.
     "govcms/scaffold-tooling": "~1"
 }
 "require-dev": {
-    "govcms/scaffold-tooling-dev": "~1"
+    "govcms/require-dev": "~1"
 }
 
 ```
@@ -58,6 +76,7 @@ distribution. (You may not be able to edit your composer.json to add these packa
 * `"packagist.org": false` prevents adding modules and packages from https://packagist.org.
 * `"~1"` allows us to keep the composer.json requirements very loose (best practice) as
 Satis has done the job of constraining the versions already.
+
 
 ## How to ...
 
@@ -108,14 +127,16 @@ a PaaS site, you can add additional modules by adding Drupal packagist
 in your repositories section, assuming they don't have version conflicts
 with GovCMS.
 
-Add Drupal.org. Note that this shouldn't update the GovCMS module versions
+Note that this shouldn't update the GovCMS module versions
 because they are constrained by your govcms/govcms:~1 requirement.
 
 ```
-"drupal ": {
-    "type": "composer",
-    "url": "https://packages.drupal.org/8"
-}
+"repositories": {
+    ...
+    "drupal ": {
+        "type": "composer",
+        "url": "https://packages.drupal.org/8"
+    }
 ```
 
 Add modules as desired.
@@ -124,19 +145,33 @@ Add modules as desired.
 "require": {
     "govcms/govcms": "~1",
     "drupal/some-other-module": "~2",
+    "vanilla-ice/some-dependencies-for-my-module": "~2",
     ...,
 }
 ```
 
-You may also choose to remove`"packagist.org": false` to get non-Drupal depenencies
-of your added module.
+You can also add references to other Git repositories using [Composer vcs type]
+(https://getcomposer.org/doc/05-repositories.md#vcs).
 
-```
-"packagist.org": false
-```
+Finally, you can choose to remove`"packagist.org": false` to access all the many
+packages on [packagist.org](https://packagist.org). Remember that this *may* cause your
+composer to pick up sub-packages which are newer than what GovCMS distribution stipulates
+(which is why it's not allowed on SaaS). If you are at this point you might as well
+rearchitect with [drupal-composer/drupal-project](https://github.com/drupal-composer/drupal-project)
+as your scaffold to get a more "custom vanilla" experience.
+
 
 ## Technical
 
 This project is built on [composer/satis](https://github.com/composer/satis) using the
-docker container method. See `ahoy` for build commands, eg `ahoy build-production`
+docker container method. The following settings are important because it forces Satis
+to resolve an *ideal* set of package versions.
+
+```
+    "require-dependencies": true,
+    "require-dev-dependencies": true,
+    "only-best-candidates": true
+```
+
+See `ahoy` for build commands, eg `ahoy build-production`
 builds the all the current productionised packagists.
