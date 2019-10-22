@@ -33,19 +33,19 @@ commands:
 
   build-stable:
     cmd: |
-      ahoy satis-build satis-govcms-stable.json app
+      ahoy satis-build satis-config/govcms-stable.json app
 
   build-master:
     cmd: |
-      ahoy satis-build satis-govcms-master.json app/master
+      ahoy satis-build satis-config/govcms-master.json app/master
 
   build-develop:
     cmd: |
-      ahoy satis-build satis-govcms-develop.json app/develop
+      ahoy satis-build satis-config/govcms-develop.json app/develop
 
   build-whitelist:
     cmd: |
-      ahoy satis-build satis-govcms-whitelist.json app/whitelist
+      ahoy satis-build satis-config/govcms-whitelist.json app/whitelist
 
   server:
     cmd: |
