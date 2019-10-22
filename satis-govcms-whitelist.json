@@ -1,6 +1,6 @@
 {
-    "name": "govcms/satis-saasplus",
-    "homepage": "https://satis.govcms.gov.au/saasplus",
+    "name": "govcms/satis-whitelist",
+    "homepage": "https://satis.govcms.gov.au/whitelist",
     "repositories": [
         { "type": "composer", "url": "https://packagist.org" },
         { "type": "composer", "url": "https://packages.drupal.org/8" },
@@ -18,7 +18,7 @@
         "drupal/migrate_file": "1.1.0",
         "drupal/entity_pilot": "1.0.0"
     },
-    "require-dependencies": true,
-    "require-dev-dependencies": true,
+    "require-dependencies": false,
+    "require-dev-dependencies": false,
     "only-best-candidates": true
 }

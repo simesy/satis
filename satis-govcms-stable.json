@@ -1,5 +1,5 @@
 {
-    "name": "govcms/satis-beta9",
+    "name": "govcms/satis-stable",
     "homepage": "https://satis.govcms.gov.au",
     "repositories": [
         { "type": "composer", "url": "https://packagist.org" },
@@ -10,10 +10,14 @@
     ],
     "require": {
         "govcms/govcms": "1.0-beta9",
-        "govcms/scaffold-tooling": "~1",
-        "govcms/require-dev": "~1"
+        "govcms/scaffold-tooling": "1.0.0",
+        "govcms/require-dev": "1.0.1"
     },
     "require-dependencies": true,
     "require-dev-dependencies": true,
-    "only-best-candidates": true
+    "only-best-candidates": true,
+    "blacklist": {
+        "drupal/entity_reference_revisions": ">1.6",
+        "drupal/core": ">8.7.7"
+    }
 }

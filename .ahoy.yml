@@ -3,6 +3,15 @@ usage: CLI utilities
 commands:
 
   satis:
+    usage: ahoy satis ARGS
+    cmd: |
+      docker run --rm --init -it \
+        --user $(id -u):$(id -g) \
+        --volume $(pwd):/build \
+        --volume "${COMPOSER_HOME:-$HOME/.composer}:/composer" \
+        composer/satis "$@"
+
+  satis-build:
     usage: ahoy satis packages.json build-dir
     cmd: |
       docker run --rm --init -it \
@@ -14,35 +23,30 @@ commands:
         --volume $(pwd):/build \
         composer/satis /build/branding.sh "/build/$2/index.html"
 
-  build-production:
+  build-all-production:
     cmd: |
-      LATEST=satis-govcms-beta9.json
-      ahoy satis "$LATEST" app
+      # @todo - inject versions into stable.
+      ahoy build-stable
+      ahoy build-master
+      ahoy build-develop
       ahoy build-whitelist
+
+  build-stable:
+    cmd: |
+      ahoy satis-build satis-govcms-stable.json app
+
+  build-master:
+    cmd: |
+      ahoy satis-build satis-govcms-master.json app/master
+
+  build-develop:
+    cmd: |
+      ahoy satis-build satis-govcms-develop.json app/develop
 
   build-whitelist:
     cmd: |
-      ahoy satis satis-govcms-whitelist.json app/whitelist
+      ahoy satis-build satis-govcms-whitelist.json app/whitelist
 
-  # Below are experimental. Do not deploy to production.
-
-  build-beta7:
+  server:
     cmd: |
-      ahoy satis satis-govcms-beta7.json app/beta7
-
-  build-beta8:
-    cmd: |
-      ahoy satis satis-govcms-beta8.json app/beta8
-
-  build-edge:
-    cmd: |
-      ahoy satis satis-govcms-edge.json app/edge
-
-  build-extras:
-    cmd: |
-      ahoy satis satis-govcms-extras.json app/extras
-
-  # This is temporary until the lagoon/govcms scaffold is on packagist.
-  build-projects:
-    cmd: |
-      ahoy satis satis-govcms-projects.json app/projects
+      PHP -S localhost:4686 -t app
