@@ -6,9 +6,7 @@ commands:
     usage: ahoy satis ARGS
     cmd: |
       docker run --rm --init -it \
-        --user $(id -u):$(id -g) \
         --volume $(pwd):/build \
-        --volume "${COMPOSER_HOME:-$HOME/.composer}:/composer" \
         composer/satis "$@"
 
   satis-build:
@@ -17,7 +15,6 @@ commands:
       docker run --rm --init -it \
         --user $(id -u):$(id -g) \
         --volume $(pwd):/build \
-        --volume "${COMPOSER_HOME:-$HOME/.composer}:/composer" \
         composer/satis build -vvv "$1" /build/"$2"
       docker run --rm --init -it \
         --volume $(pwd):/build \

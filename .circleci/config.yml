@@ -1,0 +1,80 @@
+version: 2
+jobs:
+
+  build:
+    docker:
+      - image: composer/satis
+    environment:
+      SATIS: /satis/bin/satis
+      WORKDIR: /tmp/satis-build/app
+    steps:
+      - checkout
+      - run:
+          name: Build all satis repos.
+          command: |
+            # Read-only access to github. @todo replace with GovCMS generated one at https://circleci.com/gh/govCMS/satis/edit#env-vars
+            # https://blog.simplytestable.com/creating-and-using-a-github-oauth-token-with-travis-and-composer/
+            mkdir /composer && echo "{\"github-oauth\":{\"github.com\":\""${GITHUB_READ_ONLY_OAUTH}"\"}}" > /composer/auth.json
+            # When an upstream package changes, no assumptions about which satis config references it; build all.
+            "${SATIS}" build satis-config/govcms-stable.json "${WORKDIR}"
+            ./branding/branding.sh "${WORKDIR}"
+            "${SATIS}" build satis-config/govcms-develop.json "${WORKDIR}"/develop
+            ./branding/branding.sh "${WORKDIR}"/develop
+            "${SATIS}" build satis-config/govcms-master.json "${WORKDIR}"/master
+            ./branding/branding.sh "${WORKDIR}"/master
+            "${SATIS}" build satis-config/govcms-whitelist.json "${WORKDIR}"/whitelist
+            ./branding/branding.sh "${WORKDIR}"/whitelist
+            cp ./branding/logo.svg ./branding/favicon.png "${WORKDIR}"
+      - persist_to_workspace:
+          root: /tmp/satis-build
+          paths:
+            - .
+
+  deploy:
+    docker:
+      - image: quay.io/govcms/govcms-ci
+    environment:
+      WORKDIR: /tmp/satis-build/app
+    steps:
+      - checkout
+      - attach_workspace:
+          at: /tmp/satis-build
+      - run:
+          name: Update github develop branch.
+          command: |
+            # Currently just testing a push to a test branch.
+            git checkout -b test-"${CIRCLE_SHA1}"
+            rm -Rf app
+            cp -Rf "${WORKDIR}" .
+            git add app
+            git config --global user.email "govhosting@finance.gov.au"
+            git config --global user.name "GovCMS service account"
+            # Insecure proof of concept. Key removed between testing.
+            # @todo use ssh key fingerprint https://github.com/integratedexperts/drupal-dev/blob/8.x/.circleci/config.yml#L127
+            git remote set-url origin https://simesy:"${GITHUB_READ_WRITE_TOKEN}"@github.com/govCMS/satis.git
+            git commit -m"[skip ci] test-commit"
+            git push origin test-"${CIRCLE_SHA1}"
+
+workflows:
+  version: 2
+  update:
+    jobs:
+      - build:
+          filters:
+            tags:
+              ignore: /.*/
+            branches:
+              only:
+                - upstream_changes
+                - develop
+
+      - deploy:
+          filters:
+            tags:
+              ignore: /.*/
+            branches:
+              only:
+                - upstream_changes
+                - develop
+          requires:
+            - build
