@@ -30,6 +30,34 @@ jobs:
           paths:
             - .
 
+  test:
+    docker:
+      - image: quay.io/govcms/govcms-ci
+    environment:
+      SATIS_BUILD: /tmp/satis-build/app
+      GOVCMS_SCAFFOLD: /tmp/govcms-build
+    steps:
+      - checkout
+      - attach_workspace:
+          at: /tmp/satis-build
+      - run:
+          name: Test that GovCMS can be built
+          command: |
+            php -S localhost:4141 -t "${SATIS_BUILD}" > /tmp/phpd.log 2>&1 &
+            composer create-project govcms/govcms8-scaffold-paas "${GOVCMS_SCAFFOLD}"
+            cd "${GOVCMS_SCAFFOLD}"
+            for branch in {"","develop","master"}; do
+              echo "--> Test build GovCMS against http://localhost:4141/${branch}"
+              rm -R vendor && rm composer.lock
+              composer config secure-http false
+              composer config repositories.govcms composer http://localhost:4141/"${branch}"
+              if [ "${branch}" = "master" ] || [ "${branch}" = "develop" ] ; then
+                composer require govcms/govcms:1.x govcms/require-dev:dev-"${branch}" govcms/scaffold-tooling:dev-"${branch}"
+              fi
+              composer -n update
+              composer validate
+            done
+
   deploy:
     docker:
       - image: quay.io/govcms/govcms-ci
@@ -67,8 +95,7 @@ workflows:
               only:
                 - upstream_changes
                 - develop
-
-      - deploy:
+      - test:
           filters:
             tags:
               ignore: /.*/
@@ -78,3 +105,13 @@ workflows:
                 - develop
           requires:
             - build
+      - deploy:
+          filters:
+            tags:
+              ignore: /.*/
+            branches:
+              only:
+                - upstream_changes
+                - develop
+          requires:
+            - test

@@ -7,6 +7,7 @@ commands:
     cmd: |
       docker run --rm --init -it \
         --volume $(pwd):/build \
+        --volume "${COMPOSER_HOME:-$HOME/.composer}:/composer" \
         composer/satis "$@"
 
   satis-build:
@@ -15,14 +16,14 @@ commands:
       docker run --rm --init -it \
         --user $(id -u):$(id -g) \
         --volume $(pwd):/build \
+        --volume "${COMPOSER_HOME:-$HOME/.composer}:/composer" \
         composer/satis build -vvv "$1" /build/"$2"
       docker run --rm --init -it \
         --volume $(pwd):/build \
-        composer/satis /build/branding.sh "/build/$2/index.html"
+        composer/satis /build/branding/branding.sh "/build/$2"
 
   build-all-production:
     cmd: |
-      # @todo - inject versions into stable.
       ahoy build-stable
       ahoy build-master
       ahoy build-develop
