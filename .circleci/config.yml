@@ -1,4 +1,18 @@
-version: 2
+version: 2.1
+parameters:
+  trigger-project:
+    type: string
+    default: ""
+  trigger-url:
+    type: string
+    default: ""
+  trigger-sha:
+    type: string
+    default: ""
+  trigger-description:
+    type: string
+    default: "A Satis build was triggered for an unknown reason."
+
 jobs:
 
   build:
@@ -6,7 +20,7 @@ jobs:
       - image: composer/satis
     environment:
       SATIS: /satis/bin/satis
-      WORKDIR: /tmp/satis-build/app
+      SATIS_BUILD: /tmp/satis-build/app
     steps:
       - checkout
       - run:
@@ -16,15 +30,15 @@ jobs:
             # https://blog.simplytestable.com/creating-and-using-a-github-oauth-token-with-travis-and-composer/
             mkdir /composer && echo "{\"github-oauth\":{\"github.com\":\""${GITHUB_READ_ONLY_OAUTH}"\"}}" > /composer/auth.json
             # When an upstream package changes, no assumptions about which satis config references it; build all.
-            "${SATIS}" build satis-config/govcms-stable.json "${WORKDIR}"
-            ./branding/branding.sh "${WORKDIR}"
-            "${SATIS}" build satis-config/govcms-develop.json "${WORKDIR}"/develop
-            ./branding/branding.sh "${WORKDIR}"/develop
-            "${SATIS}" build satis-config/govcms-master.json "${WORKDIR}"/master
-            ./branding/branding.sh "${WORKDIR}"/master
-            "${SATIS}" build satis-config/govcms-whitelist.json "${WORKDIR}"/whitelist
-            ./branding/branding.sh "${WORKDIR}"/whitelist
-            cp ./branding/logo.svg ./branding/favicon.png "${WORKDIR}"
+            "${SATIS}" build satis-config/govcms-stable.json "${SATIS_BUILD}"
+            ./branding/branding.sh "${SATIS_BUILD}"
+            "${SATIS}" build satis-config/govcms-develop.json "${SATIS_BUILD}"/develop
+            ./branding/branding.sh "${SATIS_BUILD}"/develop
+            "${SATIS}" build satis-config/govcms-master.json "${SATIS_BUILD}"/master
+            ./branding/branding.sh "${SATIS_BUILD}"/master
+            "${SATIS}" build satis-config/govcms-whitelist.json "${SATIS_BUILD}"/whitelist
+            ./branding/branding.sh "${SATIS_BUILD}"/whitelist
+            cp ./branding/logo.svg ./branding/favicon.png "${SATIS_BUILD}"
       - persist_to_workspace:
           root: /tmp/satis-build
           paths:
@@ -62,7 +76,7 @@ jobs:
     docker:
       - image: quay.io/govcms/govcms-ci
     environment:
-      WORKDIR: /tmp/satis-build/app
+      SATIS_BUILD: /tmp/satis-build/app
     steps:
       - checkout
       - attach_workspace:
@@ -73,7 +87,7 @@ jobs:
             # Currently just testing a push to a test branch.
             git checkout -b test-"${CIRCLE_SHA1}"
             rm -Rf app
-            cp -Rf "${WORKDIR}" .
+            cp -Rf "${SATIS_BUILD}" .
             git add app
             git config --global user.email "govhosting@finance.gov.au"
             git config --global user.name "GovCMS service account"
@@ -84,7 +98,7 @@ jobs:
             git push origin test-"${CIRCLE_SHA1}"
 
 workflows:
-  version: 2
+  version: 2.1
   update:
     jobs:
       - build:
