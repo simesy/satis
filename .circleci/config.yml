@@ -107,7 +107,6 @@ workflows:
               ignore: /.*/
             branches:
               only:
-                - upstream_changes
                 - develop
       - test:
           filters:
@@ -115,7 +114,6 @@ workflows:
               ignore: /.*/
             branches:
               only:
-                - upstream_changes
                 - develop
           requires:
             - build
@@ -125,7 +123,6 @@ workflows:
               ignore: /.*/
             branches:
               only:
-                - upstream_changes
                 - develop
           requires:
             - test
