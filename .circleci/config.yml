@@ -1,0 +1,131 @@
+version: 2.1
+parameters:
+  trigger-project:
+    type: string
+    default: ""
+  trigger-url:
+    type: string
+    default: ""
+  trigger-sha:
+    type: string
+    default: ""
+  trigger-description:
+    type: string
+    default: "A Satis build was triggered for an unknown reason."
+
+jobs:
+
+  build:
+    docker:
+      - image: composer/satis
+    environment:
+      SATIS: /satis/bin/satis
+      SATIS_BUILD: /tmp/satis-build/app
+    steps:
+      - checkout
+      - run:
+          name: Build all satis repos.
+          command: |
+            # Read-only access to github. @todo replace with GovCMS generated one at https://circleci.com/gh/govCMS/satis/edit#env-vars
+            # https://blog.simplytestable.com/creating-and-using-a-github-oauth-token-with-travis-and-composer/
+            mkdir /composer && echo "{\"github-oauth\":{\"github.com\":\""${GITHUB_READ_ONLY_OAUTH}"\"}}" > /composer/auth.json
+            # When an upstream package changes, no assumptions about which satis config references it; build all.
+            "${SATIS}" build satis-config/govcms-stable.json "${SATIS_BUILD}"
+            ./branding/branding.sh "${SATIS_BUILD}"
+            "${SATIS}" build satis-config/govcms-develop.json "${SATIS_BUILD}"/develop
+            ./branding/branding.sh "${SATIS_BUILD}"/develop
+            "${SATIS}" build satis-config/govcms-master.json "${SATIS_BUILD}"/master
+            ./branding/branding.sh "${SATIS_BUILD}"/master
+            "${SATIS}" build satis-config/govcms-whitelist.json "${SATIS_BUILD}"/whitelist
+            ./branding/branding.sh "${SATIS_BUILD}"/whitelist
+            cp ./branding/logo.svg ./branding/favicon.png "${SATIS_BUILD}"
+      - persist_to_workspace:
+          root: /tmp/satis-build
+          paths:
+            - .
+
+  test:
+    docker:
+      - image: quay.io/govcms/govcms-ci
+    environment:
+      SATIS_BUILD: /tmp/satis-build/app
+      GOVCMS_SCAFFOLD: /tmp/govcms-build
+    steps:
+      - checkout
+      - attach_workspace:
+          at: /tmp/satis-build
+      - run:
+          name: Test that GovCMS can be built
+          command: |
+            php -S localhost:4141 -t "${SATIS_BUILD}" > /tmp/phpd.log 2>&1 &
+            composer create-project govcms/govcms8-scaffold-paas "${GOVCMS_SCAFFOLD}"
+            cd "${GOVCMS_SCAFFOLD}"
+            for branch in {"","develop","master"}; do
+              echo "--> Test build GovCMS against http://localhost:4141/${branch}"
+              rm -R vendor && rm composer.lock
+              composer config secure-http false
+              composer config repositories.govcms composer http://localhost:4141/"${branch}"
+              if [ "${branch}" = "master" ] || [ "${branch}" = "develop" ] ; then
+                composer require govcms/govcms:1.x govcms/require-dev:dev-"${branch}" govcms/scaffold-tooling:dev-"${branch}"
+              fi
+              composer -n update
+              composer validate
+            done
+
+  deploy:
+    docker:
+      - image: quay.io/govcms/govcms-ci
+    environment:
+      SATIS_BUILD: /tmp/satis-build/app
+    steps:
+      - checkout
+      - attach_workspace:
+          at: /tmp/satis-build
+      - run:
+          name: Update github develop branch.
+          command: |
+            # Currently just testing a push to a test branch.
+            git checkout -b test-"${CIRCLE_SHA1}"
+            rm -Rf app
+            cp -Rf "${SATIS_BUILD}" .
+            git add app
+            git config --global user.email "govhosting@finance.gov.au"
+            git config --global user.name "GovCMS service account"
+            # Insecure proof of concept. Key removed between testing.
+            # @todo use ssh key fingerprint https://github.com/integratedexperts/drupal-dev/blob/8.x/.circleci/config.yml#L127
+            git remote set-url origin https://simesy:"${GITHUB_READ_WRITE_TOKEN}"@github.com/govCMS/satis.git
+            git commit -m"[skip ci] test-commit"
+            git push origin test-"${CIRCLE_SHA1}"
+
+workflows:
+  version: 2.1
+  update:
+    jobs:
+      - build:
+          filters:
+            tags:
+              ignore: /.*/
+            branches:
+              only:
+                - upstream_changes
+                - develop
+      - test:
+          filters:
+            tags:
+              ignore: /.*/
+            branches:
+              only:
+                - upstream_changes
+                - develop
+          requires:
+            - build
+      - deploy:
+          filters:
+            tags:
+              ignore: /.*/
+            branches:
+              only:
+                - upstream_changes
+                - develop
+          requires:
+            - test
