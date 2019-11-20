@@ -1,5 +1,6 @@
-version: '2'
+# This is purely for Lagoon.
 
+version: '2'
 services:
 
   nginx:
