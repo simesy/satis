@@ -68,6 +68,8 @@ jobs:
               if [ "${branch}" = "master" ] || [ "${branch}" = "develop" ] ; then
                 composer require govcms/govcms:1.x govcms/require-dev:dev-"${branch}" govcms/scaffold-tooling:dev-"${branch}"
               fi
+              composer require govcms/dvf
+              composer require drupal/consultation
               composer -n update
               composer validate
             done
