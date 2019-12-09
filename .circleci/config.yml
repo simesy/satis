@@ -29,7 +29,7 @@ jobs:
             # Default to testing against the committed satis data.
             # This should happen on manual pushes/merges.
             mkdir -p "${SATIS_BUILD}"
-            cp -R app "${SATIS_BUILD}"
+            cp -R app/* "${SATIS_BUILD}"
             ls "${SATIS_BUILD}"
 
             # Remaining code is for automating satis rebuilds, currently disabled.
