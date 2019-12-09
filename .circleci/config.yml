@@ -26,6 +26,13 @@ jobs:
       - run:
           name: Build all satis repos.
           command: |
+            # Default to testing against the committed satis data.
+            # This should happen on manual pushes/merges.
+            cp -R app /tmp/satis-build/app
+
+            # Remaining code is for automating satis rebuilds, currently disabled.
+            exit 0
+
             # Read-only access to github. @todo replace with GovCMS generated one at https://circleci.com/gh/govCMS/satis/edit#env-vars
             # https://blog.simplytestable.com/creating-and-using-a-github-oauth-token-with-travis-and-composer/
             mkdir /composer && echo "{\"github-oauth\":{\"github.com\":\""${GITHUB_READ_ONLY_OAUTH}"\"}}" > /composer/auth.json
@@ -73,7 +80,7 @@ jobs:
                 composer require govcms/govcms:1.x govcms/require-dev:dev-"${branch}" govcms/scaffold-tooling:dev-"${branch}"
               fi
               cat composer.json | jq .require
-              composer -n update
+              composer -n -vvv update
               composer validate
             done
 
