@@ -28,7 +28,8 @@ jobs:
           command: |
             # Default to testing against the committed satis data.
             # This should happen on manual pushes/merges.
-            cp -R app /tmp/satis-build/app
+            mkdir -p "${SATIS_BUILD}"
+            cp -R app "${SATIS_BUILD}"
 
             # Remaining code is for automating satis rebuilds, currently disabled.
             exit 0
