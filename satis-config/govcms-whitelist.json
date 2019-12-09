@@ -6,12 +6,12 @@
         { "type": "composer", "url": "https://packages.drupal.org/8" },
         { "type": "composer", "url": "https://asset-packagist.org" },
         { "type": "vcs", "url": "https://github.com/govcms/consultation" },
-        { "type": "vcs", "url": "https://github.com/govcms/dvf" },
-        { "type": "vcs", "url": "https://github.com/govcms/scaffold-tooling" }
+        { "type": "vcs", "url": "https://github.com/govcms/dvf" }
     ],
     "require": {
         "govcms/consultation": "dev-8.x-1.x",
         "drupal/dvf": "dev-develop",
+        "flow/jsonpath": "0.4.0",
         "drupal/migrate_cron": "1.2.0",
         "drupal/migrate_plus": "4.1.0",
         "drupal/migrate_tools": "4.1.0",
