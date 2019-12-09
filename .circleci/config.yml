@@ -24,30 +24,31 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build all satis repos.
+          name: Default is satis from committed code.
           command: |
-            # Default to testing against the committed satis data.
-            # This should happen on manual pushes/merges.
             mkdir -p "${SATIS_BUILD}"
             cp -R app/* "${SATIS_BUILD}"
             ls "${SATIS_BUILD}"
 
-            # Remaining code is for automating satis rebuilds, currently disabled.
-            exit 0
-
-            # Read-only access to github. @todo replace with GovCMS generated one at https://circleci.com/gh/govCMS/satis/edit#env-vars
-            # https://blog.simplytestable.com/creating-and-using-a-github-oauth-token-with-travis-and-composer/
-            mkdir /composer && echo "{\"github-oauth\":{\"github.com\":\""${GITHUB_READ_ONLY_OAUTH}"\"}}" > /composer/auth.json
-            # When an upstream package changes, no assumptions about which satis config references it; build all.
-            "${SATIS}" build satis-config/govcms-stable.json "${SATIS_BUILD}"
-            ./branding/branding.sh "${SATIS_BUILD}"
-            "${SATIS}" build satis-config/govcms-develop.json "${SATIS_BUILD}"/develop
-            ./branding/branding.sh "${SATIS_BUILD}"/develop
-            "${SATIS}" build satis-config/govcms-master.json "${SATIS_BUILD}"/master
-            ./branding/branding.sh "${SATIS_BUILD}"/master
-            "${SATIS}" build satis-config/govcms-whitelist.json "${SATIS_BUILD}"/whitelist
-            ./branding/branding.sh "${SATIS_BUILD}"/whitelist
-            cp ./branding/logo.svg ./branding/favicon.png "${SATIS_BUILD}"
+      - run:
+          name: Rebuild satis if this is the upstream_changes branch.
+          command: |
+            # @todo, can a step have pre-branch configuration??
+            if [ "${CIRCLE_BRANCH}" = "upstream_changes" ] ; then
+              # Read-only access to github. @todo replace with GovCMS generated one at https://circleci.com/gh/govCMS/satis/edit#env-vars
+              # https://blog.simplytestable.com/creating-and-using-a-github-oauth-token-with-travis-and-composer/
+              mkdir /composer && echo "{\"github-oauth\":{\"github.com\":\""${GITHUB_READ_ONLY_OAUTH}"\"}}" > /composer/auth.json
+              # When an upstream package changes, no assumptions about which satis config references it; build all.
+              "${SATIS}" build satis-config/govcms-stable.json "${SATIS_BUILD}"
+              ./branding/branding.sh "${SATIS_BUILD}"
+              "${SATIS}" build satis-config/govcms-develop.json "${SATIS_BUILD}"/develop
+              ./branding/branding.sh "${SATIS_BUILD}"/develop
+              "${SATIS}" build satis-config/govcms-master.json "${SATIS_BUILD}"/master
+              ./branding/branding.sh "${SATIS_BUILD}"/master
+              "${SATIS}" build satis-config/govcms-whitelist.json "${SATIS_BUILD}"/whitelist
+              ./branding/branding.sh "${SATIS_BUILD}"/whitelist
+              cp ./branding/logo.svg ./branding/favicon.png "${SATIS_BUILD}"
+            fi
       - persist_to_workspace:
           root: /tmp/satis-build
           paths:
@@ -116,33 +117,13 @@ workflows:
   update:
     jobs:
       - build:
-          filters:
-            tags:
-              ignore: /.*/
-            branches:
-              only:
-                - upstream_changes
-                - fixing-satis-test
-                - develop
       - test:
-          filters:
-            tags:
-              ignore: /.*/
-            branches:
-              only:
-                - upstream_changes
-                - fixing-satis-test
-                - develop
           requires:
             - build
       - deploy:
           filters:
-            tags:
-              ignore: /.*/
             branches:
               only:
                 - upstream_changes
-                - fixing-satis-test
-                - develop
           requires:
             - test
