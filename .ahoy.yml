@@ -47,4 +47,4 @@ commands:
 
   server:
     cmd: |
-      PHP -S localhost:4686 -t app
+      PHP -S localhost:4141 -t app
