@@ -6036,66 +6036,6 @@
                     "issues": "http://drupal.org/project/dynamic_entity_reference",
                     "irc": "irc://irc.freenode.org/drupal-contribute"
                 }
-            },
-            "1.8.0": {
-                "name": "drupal/dynamic_entity_reference",
-                "version": "1.8.0",
-                "version_normalized": "1.8.0.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://git.drupalcode.org/project/dynamic_entity_reference.git",
-                    "reference": "8.x-1.8"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://ftp.drupal.org/files/projects/dynamic_entity_reference-8.x-1.8.zip",
-                    "reference": "8.x-1.8",
-                    "shasum": "97c6f9fb0652343eab24443e8e4ed9a33037db53"
-                },
-                "require": {
-                    "drupal/core": "*"
-                },
-                "type": "drupal-module",
-                "extra": {
-                    "branch-alias": {
-                        "dev-1.x": "1.x-dev"
-                    },
-                    "drupal": {
-                        "version": "8.x-1.8",
-                        "datestamp": "1575458288",
-                        "security-coverage": {
-                            "status": "covered",
-                            "message": "Covered by Drupal's security advisory policy"
-                        }
-                    }
-                },
-                "notification-url": "https://packages.drupal.org/8/downloads",
-                "license": [
-                    "GPL-2.0+"
-                ],
-                "authors": [
-                    {
-                        "name": "Lee Rowlands",
-                        "homepage": "https://www.drupal.org/u/larowlan",
-                        "role": "Maintainer"
-                    },
-                    {
-                        "name": "Jibran Ijaz",
-                        "homepage": "https://www.drupal.org/u/jibran",
-                        "role": "Maintainer"
-                    },
-                    {
-                        "name": "larowlan",
-                        "homepage": "https://www.drupal.org/user/395439"
-                    }
-                ],
-                "description": "Provides a field that allows an entity-reference field to reference more than one entity type.",
-                "homepage": "http://drupal.org/project/dynamic_entity_reference",
-                "support": {
-                    "source": "http://cgit.drupalcode.org/dynamic_entity_reference",
-                    "issues": "http://drupal.org/project/dynamic_entity_reference",
-                    "irc": "irc://irc.freenode.org/drupal-contribute"
-                }
             }
         },
         "drupal/embed": {
@@ -7873,75 +7813,6 @@
             }
         },
         "drupal/metatag": {
-            "1.10.0": {
-                "name": "drupal/metatag",
-                "version": "1.10.0",
-                "version_normalized": "1.10.0.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://git.drupalcode.org/project/metatag.git",
-                    "reference": "8.x-1.10"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.10.zip",
-                    "reference": "8.x-1.10",
-                    "shasum": "06275ae0f72cfcdbec8b8e8fd5d0863a5967bbcc"
-                },
-                "require": {
-                    "drupal/core": "*",
-                    "drupal/token": "^1.0"
-                },
-                "require-dev": {
-                    "drupal/devel": "^2.0",
-                    "drupal/metatag_dc": "*",
-                    "drupal/metatag_open_graph": "*",
-                    "drupal/page_manager": "^4.0",
-                    "drupal/redirect": "^1.0",
-                    "drupal/restui": "^1.0",
-                    "drupal/schema_metatag": "^1.0",
-                    "drupal/schema_web_page": "*"
-                },
-                "type": "drupal-module",
-                "extra": {
-                    "branch-alias": {
-                        "dev-1.x": "1.x-dev"
-                    },
-                    "drupal": {
-                        "version": "8.x-1.10",
-                        "datestamp": "1567099985",
-                        "security-coverage": {
-                            "status": "covered",
-                            "message": "Covered by Drupal's security advisory policy"
-                        }
-                    }
-                },
-                "notification-url": "https://packages.drupal.org/8/downloads",
-                "license": [
-                    "GPL-2.0+"
-                ],
-                "authors": [
-                    {
-                        "name": "See contributors",
-                        "homepage": "https://www.drupal.org/node/640498/committers",
-                        "role": "Developer"
-                    },
-                    {
-                        "name": "Dave Reid",
-                        "homepage": "https://www.drupal.org/user/53892"
-                    }
-                ],
-                "description": "Manage meta tags for all entities.",
-                "homepage": "https://www.drupal.org/project/metatag",
-                "keywords": [
-                    "Drupal",
-                    "seo"
-                ],
-                "support": {
-                    "source": "http://cgit.drupalcode.org/metatag",
-                    "issues": "http://drupal.org/project/issues/metatag"
-                }
-            },
             "1.9.0": {
                 "name": "drupal/metatag",
                 "version": "1.9.0",
@@ -9230,82 +9101,6 @@
                     "issues": "https://www.drupal.org/project/issues/search_api",
                     "irc": "irc://irc.freenode.org/drupal-search-api"
                 }
-            },
-            "1.15.0": {
-                "name": "drupal/search_api",
-                "version": "1.15.0",
-                "version_normalized": "1.15.0.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://git.drupalcode.org/project/search_api.git",
-                    "reference": "8.x-1.15"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.15.zip",
-                    "reference": "8.x-1.15",
-                    "shasum": "12c13141adb6b687fe36781ac9269a49ef810323"
-                },
-                "require": {
-                    "drupal/core": "^8.6"
-                },
-                "conflict": {
-                    "drupal/search_api_solr": "2.* || 3.0 || 3.1"
-                },
-                "require-dev": {
-                    "drupal/language_fallback_fix": "@dev",
-                    "drupal/search_api_autocomplete": "@dev",
-                    "drupal/search_api_db": "*"
-                },
-                "suggest": {
-                    "drupal/facets": "Adds the ability to create faceted searches.",
-                    "drupal/search_api_autocomplete": "Allows adding autocomplete suggestions to search fields.",
-                    "drupal/search_api_solr": "Adds support for using Apache Solr as a backend."
-                },
-                "type": "drupal-module",
-                "extra": {
-                    "branch-alias": {
-                        "dev-1.x": "1.x-dev"
-                    },
-                    "drupal": {
-                        "version": "8.x-1.15",
-                        "datestamp": "1573122785",
-                        "security-coverage": {
-                            "status": "covered",
-                            "message": "Covered by Drupal's security advisory policy"
-                        }
-                    },
-                    "drush": {
-                        "services": {
-                            "drush.services.yml": "^9"
-                        }
-                    }
-                },
-                "notification-url": "https://packages.drupal.org/8/downloads",
-                "license": [
-                    "GPL-2.0+"
-                ],
-                "authors": [
-                    {
-                        "name": "Thomas Seidl",
-                        "homepage": "https://www.drupal.org/u/drunken-monkey"
-                    },
-                    {
-                        "name": "Nick Veenhof",
-                        "homepage": "https://www.drupal.org/u/nick_vh"
-                    },
-                    {
-                        "name": "See other contributors",
-                        "homepage": "https://www.drupal.org/node/790418/committers"
-                    }
-                ],
-                "description": "Provides a generic framework for modules offering search capabilities.",
-                "homepage": "https://www.drupal.org/project/search_api",
-                "support": {
-                    "source": "http://git.drupal.org/project/search_api.git",
-                    "issues": "https://www.drupal.org/project/issues/search_api",
-                    "irc": "irc://irc.freenode.org/drupal-search-api"
-                }
             }
         },
         "drupal/search_api_attachments": {
@@ -10523,6 +10318,62 @@
             }
         },
         "fabpot/goutte": {
+            "v3.2.3": {
+                "name": "fabpot/goutte",
+                "version": "v3.2.3",
+                "version_normalized": "3.2.3.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/FriendsOfPHP/Goutte.git",
+                    "reference": "3f0eaf0a40181359470651f1565b3e07e3dd31b8"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/FriendsOfPHP/Goutte/zipball/3f0eaf0a40181359470651f1565b3e07e3dd31b8",
+                    "reference": "3f0eaf0a40181359470651f1565b3e07e3dd31b8",
+                    "shasum": ""
+                },
+                "require": {
+                    "guzzlehttp/guzzle": "^6.0",
+                    "php": ">=5.5.0",
+                    "symfony/browser-kit": "~2.1|~3.0|~4.0",
+                    "symfony/css-selector": "~2.1|~3.0|~4.0",
+                    "symfony/dom-crawler": "~2.1|~3.0|~4.0"
+                },
+                "require-dev": {
+                    "symfony/phpunit-bridge": "^3.3 || ^4"
+                },
+                "time": "2018-06-29T15:13:57+00:00",
+                "type": "application",
+                "extra": {
+                    "branch-alias": {
+                        "dev-master": "3.2-dev"
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Goutte\\": "Goutte"
+                    },
+                    "exclude-from-classmap": [
+                        "Goutte/Tests"
+                    ]
+                },
+                "notification-url": "https://packagist.org/downloads/",
+                "license": [
+                    "MIT"
+                ],
+                "authors": [
+                    {
+                        "name": "Fabien Potencier",
+                        "email": "fabien@symfony.com"
+                    }
+                ],
+                "description": "A simple PHP Web Scraper",
+                "homepage": "https://github.com/FriendsOfPHP/Goutte",
+                "keywords": [
+                    "scraper"
+                ]
+            },
             "v3.3.0": {
                 "name": "fabpot/goutte",
                 "version": "v3.3.0",
@@ -12225,6 +12076,71 @@
                 ]
             }
         },
+        "nyholm/psr7": {
+            "1.2.1": {
+                "name": "nyholm/psr7",
+                "version": "1.2.1",
+                "version_normalized": "1.2.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/Nyholm/psr7.git",
+                    "reference": "55ff6b76573f5b242554c9775792bd59fb52e11c"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/Nyholm/psr7/zipball/55ff6b76573f5b242554c9775792bd59fb52e11c",
+                    "reference": "55ff6b76573f5b242554c9775792bd59fb52e11c",
+                    "shasum": ""
+                },
+                "require": {
+                    "php": "^7.1",
+                    "php-http/message-factory": "^1.0",
+                    "psr/http-factory": "^1.0",
+                    "psr/http-message": "^1.0"
+                },
+                "provide": {
+                    "psr/http-factory-implementation": "1.0",
+                    "psr/http-message-implementation": "1.0"
+                },
+                "require-dev": {
+                    "http-interop/http-factory-tests": "dev-master",
+                    "php-http/psr7-integration-tests": "dev-master",
+                    "phpunit/phpunit": "^7.5"
+                },
+                "time": "2019-09-05T13:24:16+00:00",
+                "type": "library",
+                "extra": {
+                    "branch-alias": {
+                        "dev-master": "1.0-dev"
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Nyholm\\Psr7\\": "src/"
+                    }
+                },
+                "notification-url": "https://packagist.org/downloads/",
+                "license": [
+                    "MIT"
+                ],
+                "authors": [
+                    {
+                        "name": "Tobias Nyholm",
+                        "email": "tobias.nyholm@gmail.com"
+                    },
+                    {
+                        "name": "Martijn van der Ven",
+                        "email": "martijn@vanderven.se"
+                    }
+                ],
+                "description": "A fast PHP7 implementation of PSR-7",
+                "homepage": "http://tnyholm.se",
+                "keywords": [
+                    "psr-17",
+                    "psr-7"
+                ]
+            }
+        },
         "oomphinc/composer-installers-extender": {
             "v1.1.2": {
                 "name": "oomphinc/composer-installers-extender",
@@ -12892,6 +12808,59 @@
                     "phing",
                     "task",
                     "tool"
+                ]
+            }
+        },
+        "php-http/message-factory": {
+            "v1.0.2": {
+                "name": "php-http/message-factory",
+                "version": "v1.0.2",
+                "version_normalized": "1.0.2.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/php-http/message-factory.git",
+                    "reference": "a478cb11f66a6ac48d8954216cfed9aa06a501a1"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/php-http/message-factory/zipball/a478cb11f66a6ac48d8954216cfed9aa06a501a1",
+                    "reference": "a478cb11f66a6ac48d8954216cfed9aa06a501a1",
+                    "shasum": ""
+                },
+                "require": {
+                    "php": ">=5.4",
+                    "psr/http-message": "^1.0"
+                },
+                "time": "2015-12-19T14:08:53+00:00",
+                "type": "library",
+                "extra": {
+                    "branch-alias": {
+                        "dev-master": "1.0-dev"
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Http\\Message\\": "src/"
+                    }
+                },
+                "notification-url": "https://packagist.org/downloads/",
+                "license": [
+                    "MIT"
+                ],
+                "authors": [
+                    {
+                        "name": "Márk Sági-Kazár",
+                        "email": "mark.sagikazar@gmail.com"
+                    }
+                ],
+                "description": "Factory interfaces for PSR-7 HTTP Message",
+                "homepage": "http://php-http.org",
+                "keywords": [
+                    "factory",
+                    "http",
+                    "message",
+                    "stream",
+                    "uri"
                 ]
             }
         },
@@ -13654,6 +13623,61 @@
                     "container-interface",
                     "container-interop",
                     "psr"
+                ]
+            }
+        },
+        "psr/http-factory": {
+            "1.0.1": {
+                "name": "psr/http-factory",
+                "version": "1.0.1",
+                "version_normalized": "1.0.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/php-fig/http-factory.git",
+                    "reference": "12ac7fcd07e5b077433f5f2bee95b3a771bf61be"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/php-fig/http-factory/zipball/12ac7fcd07e5b077433f5f2bee95b3a771bf61be",
+                    "reference": "12ac7fcd07e5b077433f5f2bee95b3a771bf61be",
+                    "shasum": ""
+                },
+                "require": {
+                    "php": ">=7.0.0",
+                    "psr/http-message": "^1.0"
+                },
+                "time": "2019-04-30T12:38:16+00:00",
+                "type": "library",
+                "extra": {
+                    "branch-alias": {
+                        "dev-master": "1.0.x-dev"
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Psr\\Http\\Message\\": "src/"
+                    }
+                },
+                "notification-url": "https://packagist.org/downloads/",
+                "license": [
+                    "MIT"
+                ],
+                "authors": [
+                    {
+                        "name": "PHP-FIG",
+                        "homepage": "http://www.php-fig.org/"
+                    }
+                ],
+                "description": "Common interfaces for PSR-7 HTTP message factories",
+                "keywords": [
+                    "factory",
+                    "http",
+                    "message",
+                    "psr",
+                    "psr-17",
+                    "psr-7",
+                    "request",
+                    "response"
                 ]
             }
         },
@@ -15525,6 +15549,60 @@
                 "description": "Symfony CssSelector Component",
                 "homepage": "https://symfony.com"
             },
+            "v4.4.1": {
+                "name": "symfony/css-selector",
+                "version": "v4.4.1",
+                "version_normalized": "4.4.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/symfony/css-selector.git",
+                    "reference": "64acec7e0d67125e9f4656c68d4a38a42ab5a0b7"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/symfony/css-selector/zipball/64acec7e0d67125e9f4656c68d4a38a42ab5a0b7",
+                    "reference": "64acec7e0d67125e9f4656c68d4a38a42ab5a0b7",
+                    "shasum": ""
+                },
+                "require": {
+                    "php": "^7.1.3"
+                },
+                "time": "2019-10-12T00:35:04+00:00",
+                "type": "library",
+                "extra": {
+                    "branch-alias": {
+                        "dev-master": "4.4-dev"
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Symfony\\Component\\CssSelector\\": ""
+                    },
+                    "exclude-from-classmap": [
+                        "/Tests/"
+                    ]
+                },
+                "notification-url": "https://packagist.org/downloads/",
+                "license": [
+                    "MIT"
+                ],
+                "authors": [
+                    {
+                        "name": "Fabien Potencier",
+                        "email": "fabien@symfony.com"
+                    },
+                    {
+                        "name": "Jean-François Simon",
+                        "email": "jeanfrancois.simon@sensiolabs.com"
+                    },
+                    {
+                        "name": "Symfony Community",
+                        "homepage": "https://symfony.com/contributors"
+                    }
+                ],
+                "description": "Symfony CssSelector Component",
+                "homepage": "https://symfony.com"
+            },
             "v5.0.1": {
                 "name": "symfony/css-selector",
                 "version": "v5.0.1",
@@ -17026,6 +17104,72 @@
                 ],
                 "description": "Symfony PHPUnit Bridge",
                 "homepage": "https://symfony.com"
+            },
+            "v4.4.1": {
+                "name": "symfony/phpunit-bridge",
+                "version": "v4.4.1",
+                "version_normalized": "4.4.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/symfony/phpunit-bridge.git",
+                    "reference": "724497102bfdb2ffcde576c5d3ef872040cb3632"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/724497102bfdb2ffcde576c5d3ef872040cb3632",
+                    "reference": "724497102bfdb2ffcde576c5d3ef872040cb3632",
+                    "shasum": ""
+                },
+                "require": {
+                    "php": ">=5.5.9"
+                },
+                "conflict": {
+                    "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0"
+                },
+                "suggest": {
+                    "symfony/error-handler": "For tracking deprecated interfaces usages at runtime with DebugClassLoader"
+                },
+                "time": "2019-11-28T13:33:56+00:00",
+                "bin": [
+                    "bin/simple-phpunit"
+                ],
+                "type": "symfony-bridge",
+                "extra": {
+                    "branch-alias": {
+                        "dev-master": "4.4-dev"
+                    },
+                    "thanks": {
+                        "name": "phpunit/phpunit",
+                        "url": "https://github.com/sebastianbergmann/phpunit"
+                    }
+                },
+                "autoload": {
+                    "files": [
+                        "bootstrap.php"
+                    ],
+                    "psr-4": {
+                        "Symfony\\Bridge\\PhpUnit\\": ""
+                    },
+                    "exclude-from-classmap": [
+                        "/Tests/"
+                    ]
+                },
+                "notification-url": "https://packagist.org/downloads/",
+                "license": [
+                    "MIT"
+                ],
+                "authors": [
+                    {
+                        "name": "Nicolas Grekas",
+                        "email": "p@tchwork.com"
+                    },
+                    {
+                        "name": "Symfony Community",
+                        "homepage": "https://symfony.com/contributors"
+                    }
+                ],
+                "description": "Symfony PHPUnit Bridge",
+                "homepage": "https://symfony.com"
             }
         },
         "symfony/polyfill-ctype": {
@@ -17676,6 +17820,72 @@
             }
         },
         "symfony/psr-http-message-bridge": {
+            "v1.2.0": {
+                "name": "symfony/psr-http-message-bridge",
+                "version": "v1.2.0",
+                "version_normalized": "1.2.0.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/symfony/psr-http-message-bridge.git",
+                    "reference": "9ab9d71f97d5c7d35a121a7fb69f74fee95cd0ad"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/symfony/psr-http-message-bridge/zipball/9ab9d71f97d5c7d35a121a7fb69f74fee95cd0ad",
+                    "reference": "9ab9d71f97d5c7d35a121a7fb69f74fee95cd0ad",
+                    "shasum": ""
+                },
+                "require": {
+                    "php": "^7.1",
+                    "psr/http-message": "^1.0",
+                    "symfony/http-foundation": "^3.4 || ^4.0"
+                },
+                "require-dev": {
+                    "nyholm/psr7": "^1.1",
+                    "symfony/phpunit-bridge": "^3.4.20 || ^4.0",
+                    "zendframework/zend-diactoros": "^1.4.1 || ^2.0"
+                },
+                "suggest": {
+                    "nyholm/psr7": "For a super lightweight PSR-7/17 implementation"
+                },
+                "time": "2019-03-11T18:22:33+00:00",
+                "type": "symfony-bridge",
+                "extra": {
+                    "branch-alias": {
+                        "dev-master": "1.2-dev"
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Symfony\\Bridge\\PsrHttpMessage\\": ""
+                    },
+                    "exclude-from-classmap": [
+                        "/Tests/"
+                    ]
+                },
+                "notification-url": "https://packagist.org/downloads/",
+                "license": [
+                    "MIT"
+                ],
+                "authors": [
+                    {
+                        "name": "Symfony Community",
+                        "homepage": "http://symfony.com/contributors"
+                    },
+                    {
+                        "name": "Fabien Potencier",
+                        "email": "fabien@symfony.com"
+                    }
+                ],
+                "description": "PSR HTTP message bridge",
+                "homepage": "http://symfony.com",
+                "keywords": [
+                    "http",
+                    "http-message",
+                    "psr-17",
+                    "psr-7"
+                ]
+            },
             "v1.3.0": {
                 "name": "symfony/psr-http-message-bridge",
                 "version": "v1.3.0",
@@ -19246,6 +19456,74 @@
                 ],
                 "description": "PSR HTTP Message implementations",
                 "homepage": "https://github.com/zendframework/zend-diactoros",
+                "keywords": [
+                    "http",
+                    "psr",
+                    "psr-7"
+                ]
+            },
+            "2.2.1": {
+                "name": "zendframework/zend-diactoros",
+                "version": "2.2.1",
+                "version_normalized": "2.2.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/zendframework/zend-diactoros.git",
+                    "reference": "de5847b068362a88684a55b0dbb40d85986cfa52"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/de5847b068362a88684a55b0dbb40d85986cfa52",
+                    "reference": "de5847b068362a88684a55b0dbb40d85986cfa52",
+                    "shasum": ""
+                },
+                "require": {
+                    "php": "^7.1",
+                    "psr/http-factory": "^1.0",
+                    "psr/http-message": "^1.0"
+                },
+                "provide": {
+                    "psr/http-factory-implementation": "1.0",
+                    "psr/http-message-implementation": "1.0"
+                },
+                "require-dev": {
+                    "ext-curl": "*",
+                    "ext-dom": "*",
+                    "ext-libxml": "*",
+                    "http-interop/http-factory-tests": "^0.5.0",
+                    "php-http/psr7-integration-tests": "dev-master",
+                    "phpunit/phpunit": "^7.0.2",
+                    "zendframework/zend-coding-standard": "~1.0.0"
+                },
+                "time": "2019-11-13T19:16:13+00:00",
+                "type": "library",
+                "extra": {
+                    "branch-alias": {
+                        "dev-master": "2.1.x-dev",
+                        "dev-develop": "2.2.x-dev",
+                        "dev-release-1.8": "1.8.x-dev"
+                    }
+                },
+                "autoload": {
+                    "files": [
+                        "src/functions/create_uploaded_file.php",
+                        "src/functions/marshal_headers_from_sapi.php",
+                        "src/functions/marshal_method_from_sapi.php",
+                        "src/functions/marshal_protocol_version_from_sapi.php",
+                        "src/functions/marshal_uri_from_sapi.php",
+                        "src/functions/normalize_server.php",
+                        "src/functions/normalize_uploaded_files.php",
+                        "src/functions/parse_cookie_header.php"
+                    ],
+                    "psr-4": {
+                        "Zend\\Diactoros\\": "src/"
+                    }
+                },
+                "notification-url": "https://packagist.org/downloads/",
+                "license": [
+                    "BSD-3-Clause"
+                ],
+                "description": "PSR HTTP Message implementations",
                 "keywords": [
                     "http",
                     "psr",
