@@ -11,12 +11,14 @@
     "require": {
         "govcms/govcms": "1.x-dev",
         "govcms/scaffold-tooling": "dev-develop",
-        "govcms/require-dev": "dev-develop"
+        "govcms/require-dev": "dev-develop",
+        "fabpot/goutte": "3.2.3",
+        "symfony/psr-http-message-bridge": "1.2.0"
     },
     "require-dependencies": true,
     "require-dev-dependencies": true,
     "only-best-candidates": true,
     "blacklist": {
-        "drupal/entity_reference_revisions": ">1.6"
+        "DISABLED_drupal/entity_reference_revisions": ">1.6"
     }
 }
