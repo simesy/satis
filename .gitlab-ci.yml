@@ -1,0 +1,8 @@
+---
+stages:
+  - deploy
+
+deploy:
+  script:
+    - echo "Tests and build runs on https://circleci.com/gh/govCMS/satis. This file retained for deployments on Lagoon."
+  stage: deploy
