@@ -9,12 +9,15 @@
         { "type": "vcs", "url": "https://github.com/govcms/require-dev" }
     ],
     "require": {
-        "govcms/govcms": "1.0.0",
+        "govcms/govcms": "1.1.0",
         "govcms/scaffold-tooling": "1.0.0",
         "govcms/require-dev": "1.0.1",
         "fabpot/goutte": "3.2.3"
     },
     "require-dependencies": true,
     "require-dev-dependencies": true,
-    "only-best-candidates": true
+    "only-best-candidates": true,
+    "blacklist": {
+        "drupal/core": "<8.8.1 || >8.8.1"
+    }
 }
