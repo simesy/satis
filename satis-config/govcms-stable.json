@@ -12,7 +12,8 @@
         "govcms/govcms": "1.1.0",
         "govcms/scaffold-tooling": "1.0.0",
         "govcms/require-dev": "1.0.1",
-        "fabpot/goutte": "3.2.3"
+        "fabpot/goutte": "3.2.3",
+        "consolidation/robo": "1.4.6"
     },
     "require-dependencies": true,
     "require-dev-dependencies": true,
