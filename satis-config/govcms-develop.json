@@ -20,5 +20,4 @@
     "require-dependencies": true,
     "require-dev-dependencies": true,
     "only-best-candidates": true
-    }
 }
