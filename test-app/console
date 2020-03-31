@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Console\BuildCommand;
+
+$app = new Application('Build GovCMS Satis', 'v1.0.0');
+
+new BuildCommand();
+
+
+$app->add(new BuildCommand());
+$app->run();

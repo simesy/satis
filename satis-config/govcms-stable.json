@@ -9,25 +9,11 @@
         { "type": "vcs", "url": "https://github.com/govcms/require-dev" }
     ],
     "require": {
-        "govcms/govcms": "1.1.0",
+        "govcms/govcms": "1.1.1",
         "govcms/scaffold-tooling": "1.0.0",
-        "govcms/require-dev": "1.0.1",
-        "fabpot/goutte": "3.2.3",
-        "consolidation/robo": "1.4.6"
+        "govcms/require-dev": "1.0.1"
     },
     "require-dependencies": true,
     "require-dev-dependencies": true,
-    "only-best-candidates": true,
-    "blacklist": {
-        "drupal/core": "<8.8.1 || >8.8.1",
-        "drupal/chosen": "<2.6.0 || >2.6.0",
-        "drupal/chosen_lib": "<2.6.0 || >2.6.0",
-        "drupal/config_filter": "<1.4.0 || >1.4.0",
-        "drupal/consumers": "<1.9.0 || >1.9.0",
-        "drupal/dynamic_entity_reference": "<1.7.0 || >1.7.0",
-        "drupal/entity_reference_revisions": "<1.6.0 || >1.6.0",
-        "drupal/metatag": "<1.9.0 || >1.9.0",
-        "drupal/search_api": "<1.11.0 || >1.11.0",
-        "drupal/token": "<1.5.0 || >1.5.0"
-    }
+    "only-best-candidates": true
 }

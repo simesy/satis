@@ -20,7 +20,7 @@ commands:
         composer/satis build -vvv "$1" /build/"$2"
       docker run --rm --init -it \
         --volume $(pwd):/build \
-        composer/satis /build/branding/branding.sh "/build/$2"
+        composer/satis /build/scripts/branding.sh "/build/$2"
 
   build:
     usage: Build everything in /app

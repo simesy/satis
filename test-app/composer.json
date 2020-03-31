@@ -1,0 +1,17 @@
+{
+    "name": "govcms/satis-whitelist",
+    "description": "Build a constrained from satis config.",
+    "type": "project",
+    "require": {
+        "composer/satis": "^2.0@dev",
+        "symfony/console": "^5.1@dev"
+    },
+    "license": "GPL3",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Console\\": "src"
+        },
+        "classmap": ["src"]
+    }
+}

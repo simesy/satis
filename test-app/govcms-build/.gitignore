@@ -1,0 +1,2 @@
+# Lock is build when composer is built.
+composer.lock
