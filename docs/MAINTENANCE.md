@@ -5,6 +5,7 @@
 There are four satis servers which are built from four config files (in ./satis-config).
 These can be used in the "repositories" section of composer.json.
 
+|   |   |   |
 | --- | --- | --- |
 | `STABLE` | govcms-stable.json | https://satis.govcms.gov.au/ |
 | `MASTER` | govcms-master.json | https://satis.govcms.gov.au/master |
