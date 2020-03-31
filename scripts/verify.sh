@@ -13,20 +13,22 @@ cd "${GOVCMS_SCAFFOLD}"
 composer config secure-http false
 
 for branch in {"","develop","master"}; do
-    echo -e "\n\n\n--> Test build GovCMS against http://localhost:4141/${branch}\n\n\n"
+    echo -e "\033[1;35m\n--> Test building GovCMS against http://localhost:4141/${branch}\033[0m"
 
     # Ensure no conflicts with composer update.
     rm -Rf vendor && rm -Rf web/core && rm -Rf web/modules/contrib/* && rm -Rf web/profiles/* rm composer.lock
 
     # Replace satis.govcms.gov.au with local build.
     composer config repositories.govcms composer http://localhost:4141/"${branch}"
-    composer config repositories
+    echo -e "\033[1;35m--> Repositories updated...\033[0m"
+    composer config repositories | jq .
 
     # Point to the appropriate versions.
     if [ "${branch}" = "master" ] || [ "${branch}" = "develop" ] ; then
-        composer require govcms/govcms:1.x govcms/require-dev:dev-"${branch}" govcms/scaffold-tooling:dev-"${branch}"
+       echo -e "\033[1;35m--> Updating package refereces to '${branch}' branch \033[0m"
+       composer require govcms/govcms:1.x govcms/require-dev:dev-"${branch}" govcms/scaffold-tooling:dev-"${branch}"
     fi
 
-    composer -n -vvv update
+    composer -n update
     composer validate
 done
