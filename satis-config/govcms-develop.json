@@ -6,16 +6,13 @@
         { "type": "composer", "url": "https://packages.drupal.org/8" },
         { "type": "composer", "url": "https://asset-packagist.org" },
         { "type": "vcs", "url": "https://github.com/govcms/scaffold-tooling" },
-        { "type": "vcs", "url": "https://github.com/govcms/require-dev" },
-        { "type": "vcs", "url": "https://github.com/tobybellwood/patchset" }
+        { "type": "vcs", "url": "https://github.com/govcms/require-dev" }
     ],
     "require": {
         "govcms/govcms": "1.x-dev",
         "govcms/scaffold-tooling": "dev-develop",
         "govcms/require-dev": "dev-develop",
-        "govcms/patchset": "dev-master",
-        "fabpot/goutte": "3.2.3",
-        "consolidation/robo": "1.4.6"
+        "consolidation/log": "1.1.1"
     },
     "require-dependencies": true,
     "require-dev-dependencies": true,
