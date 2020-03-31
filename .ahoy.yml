@@ -20,7 +20,7 @@ commands:
         composer/satis build -vvv "$1" /build/"$2"
       docker run --rm --init -it \
         --volume $(pwd):/build \
-        composer/satis /build/branding/branding.sh "/build/$2"
+        composer/satis /build/scripts/branding.sh "/build/$2"
 
   build:
     usage: Build everything in /app
@@ -50,10 +50,21 @@ commands:
     cmd: |
       ahoy satis-build satis-config/govcms-whitelist.json app/whitelist
 
+  check-dupes:
+    usage: Check if there are duplicate packages in stable or master
+    cmd: |
+      SATIS_BUILD=app ./scripts/check-dupes.sh
+      SATIS_BUILD=app ./scripts/check-dupes.sh master
+
+  check-missing:
+    usage: Identify missing packages if 'ahoy verify' has failures
+    cmd: |
+      SATIS_BUILD=app ./scripts/check-missing.sh
+
   verify:
     usage: Locally run the same tests that would run in circle.
     cmd: |
-      SATIS_BUILD=app ./verify.sh
+      SATIS_BUILD=app ./scripts/verify.sh
 
   server:
     usage: Make satis available on localhost:4142
