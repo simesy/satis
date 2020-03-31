@@ -14,7 +14,7 @@ fi
 for file in "${dir}"/include/*.json
 do
     # Get a list of projects that returned multiple packages.
-    problems=$(cat "${file}" | jq -r '.packages | [.[] ] | .[] | [.[]] | .[] | .name' | sort | uniq -c | awk '{if($1>1)print$2}')
+    problems=$(cat "${file}" | jq -r '.packages | [.[] ] | .[] | [.[]] | .[] | .name' | sort | uniq -c | awk '{if($1>1)print$2}' | grep 'drupal\|govcms')
 
     if [ -n "$problems" ]; then
         echo -e "\033[1;35m"
