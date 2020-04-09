@@ -43,7 +43,7 @@ This will update the `./app/master` directory.
 
 4. Run `ahoy debug-master` - follow instructions.
 
-5. Re-run `ahoy build-master` (repeat above steps if needed).
+5. Re-run `ahoy build-master` and `ahoy verify-master` (ie. repeat the above steps as needed).
 
 ## Update DEVELOP
 
@@ -61,7 +61,7 @@ update MASTER, just replace `master` with `develop`.
 
 4. Run `ahoy debug-develop` - follow instructions.
 
-5. Re-run `ahoy build-develop` (repeat above steps if needed).
+5. Re-run `ahoy build-develop` and `ahoy verify-develop` (ie. repeat the above steps as needed).
 
 ## Update STABLE
 
@@ -84,7 +84,7 @@ There is only one extra step (step 2).
 
 5. Run `ahoy debug-stable` - follow instructions.
 
-6. Re-run `ahoy build-stable` (repeat above steps if needed).
+6. Re-run `ahoy build-stable` and `ahoy verify-stable` (ie. repeat the above steps as needed).
 
 ## Steps to update WHITELIST
 
