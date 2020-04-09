@@ -14,14 +14,13 @@ fi
 for file in "${dir}"/include/*.json
 do
     # Get a list of projects that returned multiple packages.
-    problems=$(cat "${file}" | jq -r '.packages | [.[] ] | .[] | [.[]] | .[] | .name' | sort | uniq -c | awk '{if($1>1)print$2}' | grep 'drupal\|govcms')
+    problems=$(cat "${file}" | jq -r '.packages | [.[] ] | .[] | [.[]] | .[] | .name' | sort -V | uniq -c | awk '{if($1>1)print$2}' | grep 'drupal\|govcms')
 
     if [ -n "$problems" ]; then
         echo -e "\033[1;35m"
         echo "Template blacklist for ${config}"
-        echo "You need to remove the lines that the govcms distribution needs."
-        echo "(Usually blacklist the newer version, but you have to eye ball each one.)"
-        echo "Then update the ${config} config file."
+        echo "You need to blacklist the undesirable version, usually the newer version,"
+        echo "and then update the ./satis-config/${config} config file."
         echo "Re-run ahoy build and verify.sh after modifying satis config."
         echo -e "\033[0m"
 

@@ -50,23 +50,54 @@ commands:
     cmd: |
       ahoy satis-build satis-config/govcms-whitelist.json app/whitelist
 
-  check-dupes:
-    usage: Check if there are duplicate packages in stable or master
-    cmd: |
-      SATIS_BUILD=app ./scripts/check-dupes.sh
-      SATIS_BUILD=app ./scripts/check-dupes.sh master
-
-  check-missing:
-    usage: Identify missing packages if 'ahoy verify' has failures
-    cmd: |
-      SATIS_BUILD=app ./scripts/check-missing.sh
-
   verify:
     usage: Locally run the same tests that would run in circle.
     cmd: |
+      ahoy verify-stable
+      ahoy verify-master
+      ahoy verify-develop
+
+  verify-stable:
+    usage: Verify the stable satis.
+    cmd: |
       SATIS_BUILD=app ./scripts/verify.sh
+
+  verify-master:
+    usage: Verify the stable satis.
+    cmd: |
+      SATIS_BUILD=app ./scripts/verify.sh master
+
+  verify-develop:
+    usage: Verify the stable satis.
+    cmd: |
+      SATIS_BUILD=app ./scripts/verify.sh develop
+
+  debug:
+    usage: Get clear information about satis issues.
+    cmd: |
+      ahoy debug-stable
+      ahoy debug-master
+      ahoy debug-develop
+
+  debug-stable:
+    usage: Verify the stable satis.
+    cmd: |
+      SATIS_BUILD=app ./scripts/check-missing.sh
+      SATIS_BUILD=app ./scripts/check-dupes.sh
+
+  debug-master:
+    usage: Verify the stable satis.
+    cmd: |
+      SATIS_BUILD=app ./scripts/check-missing.sh master
+      SATIS_BUILD=app ./scripts/check-dupes.sh master
+
+  debug-develop:
+    usage: Verify the stable satis.
+    cmd: |
+      SATIS_BUILD=app ./scripts/check-missing.sh develop
+      SATIS_BUILD=app ./scripts/check-dupes.sh develop
 
   server:
     usage: Make satis available on localhost:4142
     cmd: |
-      PHP -S localhost:4142 -t app
+      PHP -S localhost:4143 -t app

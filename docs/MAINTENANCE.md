@@ -23,56 +23,77 @@ for deployment tokens. In the meantime it has been found that manual interventio
 Updating `STABLE` should be done when there is a new point release of GovCMS.
 
 Updating `MASTER` and `DEVELOP` should be done when the `master` and `develop`
-branches of [govcms/govcms8](/hey) (also [scaffold-tooling](/hey) and [require-dev](/hey)).
+branches are updated on
+ * [govcms/govcms8](https://github.com/govCMS/govcms8)
+ * [scaffold-tooling](https://github.com/govCMS/scaffold-tooling)
+ * [require-dev](https://github.com/govCMS/require-dev)
+  
+## Update MASTER
 
-## Steps to update STABLE
+This will update the `./app/master` directory.
 
-These are the steps to update `STABLE` - which becomes satis.govcms.gov.au once
-the code is merged to master on github. Normally you will build all the satis repos
-at once (`ahoy build` after updating config files) but this describes in more detail how
-to just build `STABLE`.
+1. Clean `./satis-config/govcms-master.json` by removing:
 
-1. Edit `satis-config/govcms-stable.json`.
-  a. remove packages in `require` other than 'govcms/govcms', 'govcms/scaffold-tooling', 'govcms/require-dev'.
-  b. remove the blacklist section
-  c. update the package versions in `require` section to the latest releases
+    * extra packages from `require` - only leave the first three `govcms/*` packages
+    * the `blacklist` section - remove completely
 
-2. Run `ahoy build-stable` to update /app.
+2. Run `ahoy build-master` to update /app.
 
-3. Run `ahoy verify` which confirms that a govcms project can build on this satis.
+3. Run `ahoy verify-master` - it will likely fail.
 
-4. Run `ahoy check-missing` and `ahoy check-dupes` (see next section).
+4. Run `ahoy debug-master` - follow instructions.
 
-5. Commit all changes including `/app`, which are the hosted files.
+5. Re-run `ahoy build-master` (repeat above steps if needed).
 
-6. Make a PR to master on github.com/govcms/satis. Once this is merged it will trigger
-quay.io to rebuild the hosted image (see docker-compose.yml).
+## Update DEVELOP
 
-## Two things that will go wrong
+This will update the `./app/develop` directory. Repeat the exact steps you followed to
+update MASTER, just replace `master` with `develop`.
 
-The Satis strategy is a little different to how Satis is supposed to work because
-it tries to resolve only one version of each govcms, Drupal and each Drupal module.
+1. Clean `./satis-config/govcms-develop.json` by removing:
 
-The first problem is duplicate packages - additional versions of project which we
-don't want. The script `ahoy check-dupes` will offer some candidates to add to a
-`blackist` section of the satis config.
+    * extra packages from `require` - only leave the first three `govcms/*` packages
+    * the `blacklist` section - remove completely
 
-The second problem is missing packages. `ahoy verify` will report problems. The 
-script `ahoy check-missing` will analyse a build and suggest additional projects
-and versions.
+2. Run `ahoy build-develop` to update /app.
 
-Both these commands should output enough information to resolve any problems. 
+3. Run `ahoy verify-develop` - it will likely fail.
 
-## Steps to update MASTER and DEVELOP
+4. Run `ahoy debug-develop` - follow instructions.
 
-These steps are similar to `STABLE`, however you don't need to do step 1.c because
-versions refer to branches.
+5. Re-run `ahoy build-develop` (repeat above steps if needed).
 
-Run `ahoy build-master` or `ahoy build-develop` to build them into `./app/master` and `./app/develop`
+## Update STABLE
+
+This will update the `./app` directory. You are repeating the steps you followed to
+update MASTER, just replace `master` with `stable`.
+
+There is only one extra step (step 2).
+
+
+1. Clean `./satis-config/govcms-stable.json` by removing:
+
+    * extra packages from `require` - only leave the first three `govcms/*` packages
+    * the `blacklist` section - remove completely
+
+2. *ONLY FOR STABLE* update the package versions for the `govcms/*` versions to the latest versions.
+
+3. Run `ahoy build-stable` to update /app.
+
+4. Run `ahoy verify-stable` - it will likely fail.
+
+5. Run `ahoy debug-stable` - follow instructions.
+
+6. Re-run `ahoy build-stable` (repeat above steps if needed).
 
 ## Steps to update WHITELIST
 
-This is a hassle free one because it doesn't calculate dependencies.
+This is a hassle free one because it doesn't calculate dependencies. Run `ahoy build-whitelist`.
+
+## Push
+
+Once you have updated all branches, create a PR to https://github.com/govcms/satis. Once this is merged it will trigger
+quay.io to rebuild the an image (see docker-compose.yml).
 
 ## Technical notes
 
