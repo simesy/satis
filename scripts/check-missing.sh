@@ -7,6 +7,13 @@ GOVCMS_BUILD="${GOVCMS_BUILD:-/tmp/satis-check-missing}"
 BRANCH="${1:-}"
 rm -Rf "${GOVCMS_BUILD}"
 
+if [ ! -n "${1+set}" ] ; then
+    config="govcms-stable.json"
+else
+    config="govcms-${1}.json"
+fi
+echo -e "\033[1;35m--> Check missing packages for ${config}  \033[0m"
+
 # Set up a working project and satis server.
 php -S localhost:4142 -t "${SATIS_BUILD}" > /tmp/phpd.log 2>&1 &
 composer create-project --no-install govcms/govcms8-scaffold-paas "${GOVCMS_BUILD}"

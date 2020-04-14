@@ -28,6 +28,14 @@ branches are updated on
  * [scaffold-tooling](https://github.com/govCMS/scaffold-tooling)
  * [require-dev](https://github.com/govCMS/require-dev)
   
+
+## Running the automated scripts
+
+Each of the `ahoy build` `ahoy check-dupes` `ahoy verify` and `ahoy debug` commands can
+accept any of the current versions (stable, master or develop) as a parameter. Providing no
+parameter is equivalent to `stable`.  There is also a `-all` variant to these commands that
+will run the process for all branches. 
+
 ## Update MASTER
 
 This will update the `./app/master` directory.
@@ -37,13 +45,13 @@ This will update the `./app/master` directory.
     * extra packages from `require` - only leave the first three `govcms/*` packages
     * the `blacklist` section - remove completely
 
-2. Run `ahoy build-master` to update /app.
+2. Run `ahoy build master` to update /app.
 
-3. Run `ahoy verify-master` - it will likely fail.
+3. Run `ahoy verify master` - it will likely fail.
 
-4. Run `ahoy debug-master` - follow instructions.
+4. Run `ahoy debug master` - follow instructions.
 
-5. Re-run `ahoy build-master` and `ahoy verify-master` (ie. repeat the above steps as needed).
+5. Re-run `ahoy build master` and `ahoy verify master` (ie. repeat the above steps as needed).
 
 ## Update DEVELOP
 
@@ -55,13 +63,13 @@ update MASTER, just replace `master` with `develop`.
     * extra packages from `require` - only leave the first three `govcms/*` packages
     * the `blacklist` section - remove completely
 
-2. Run `ahoy build-develop` to update /app.
+2. Run `ahoy build develop` to update /app.
 
-3. Run `ahoy verify-develop` - it will likely fail.
+3. Run `ahoy verify develop` - it will likely fail.
 
-4. Run `ahoy debug-develop` - follow instructions.
+4. Run `ahoy debug develop` - follow instructions.
 
-5. Re-run `ahoy build-develop` and `ahoy verify-develop` (ie. repeat the above steps as needed).
+5. Re-run `ahoy build develop` and `ahoy verify develop` (ie. repeat the above steps as needed).
 
 ## Update STABLE
 
@@ -78,17 +86,22 @@ There is only one extra step (step 2).
 
 2. *ONLY FOR STABLE* update the package versions for the `govcms/*` versions to the latest versions.
 
-3. Run `ahoy build-stable` to update /app.
+3. Run `ahoy build stable` to update /app.
 
-4. Run `ahoy verify-stable` - it will likely fail.
+4. Run `ahoy verify stable` - it will likely fail.
 
-5. Run `ahoy debug-stable` - follow instructions.
+5. Run `ahoy debug stable` - follow instructions.
 
-6. Re-run `ahoy build-stable` and `ahoy verify-stable` (ie. repeat the above steps as needed).
+6. Re-run `ahoy build stable` and `ahoy verify stable` (ie. repeat the above steps as needed).
 
 ## Steps to update WHITELIST
 
 This is a hassle free one because it doesn't calculate dependencies. Run `ahoy build-whitelist`.
+
+## Additional troubleshooting steps
+
+To quickly see if there are any duplicates in your package.json files, `ahoy check-dupes { stable|master|develop }`.
+
 
 ## Push
 
