@@ -10,6 +10,7 @@ else
     dir="${SATIS_BUILD}/${1}"
     config="govcms-${1}.json"
 fi
+echo -e "\033[1;35m--> Checking duplicate packages for ${config}  \033[0m"
 
 for file in "${dir}"/include/*.json
 do
@@ -30,6 +31,8 @@ do
             cat $file | jq -r '.packages | .["'"${project}"'"] | to_entries[] | "    \"\(.value.name)\": \"\(.key)\","'
         done
         echo '}'
+    else
+        echo -e "\033[1;35m--> No duplicates found!  \033[0m"
     fi
 
 done

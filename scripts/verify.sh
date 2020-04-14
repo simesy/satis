@@ -5,8 +5,15 @@ set -euo pipefail
 GOVCMS_SCAFFOLD="${GOVCMS_SCAFFOLD:-/tmp/govcms-build}"
 SATIS_BUILD="${SATIS_BUILD:-/tmp/satis-build/app}"
 BRANCH="${1:-}"
-
 rm -Rf "${GOVCMS_SCAFFOLD}"
+
+if [ ! -n "${1+set}" ] ; then
+    config="govcms-stable.json"
+else
+    config="govcms-${1}.json"
+fi
+echo -e "\033[1;35m--> Verifying packages for ${config}  \033[0m"
+
 
 php -S localhost:4141 -t "${SATIS_BUILD}" > /tmp/phpd.log 2>&1 &
 composer create-project --no-install govcms/govcms8-scaffold-paas "${GOVCMS_SCAFFOLD}"
