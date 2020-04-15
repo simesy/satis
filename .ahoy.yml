@@ -17,7 +17,7 @@ commands:
         --user $(id -u):$(id -g) \
         --volume $(pwd):/build \
         --volume "${COMPOSER_HOME:-$HOME/.composer}:/composer" \
-        composer/satis build -vvv "$1" /build/"$2"
+        composer/satis build "$1" /build/"$2"
       docker run --rm --init -it \
         --volume $(pwd):/build \
         composer/satis /build/scripts/branding.sh "/build/$2"
@@ -36,9 +36,9 @@ commands:
   build-all:
     usage: Build all satis package lists
     cmd: |
-      ahoy build-stable
-      ahoy build-master
-      ahoy build-develop
+      ahoy build stable
+      ahoy build master
+      ahoy build develop
       ahoy build-whitelist
 
   build-whitelist:
