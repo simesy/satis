@@ -33,8 +33,8 @@ composer config repositories | jq .
 # Point to the appropriate versions.
 if [ "${BRANCH}" = "master" ] || [ "${BRANCH}" = "develop" ] ; then
    echo -e "\033[1;35m--> Updating package refereces to '${BRANCH}' branch \033[0m"
-   composer require govcms/govcms:1.x govcms/require-dev:dev-"${BRANCH}" govcms/scaffold-tooling:dev-"${BRANCH}"
+   composer require --quiet --no-suggest govcms/govcms:1.x govcms/require-dev:dev-"${BRANCH}" govcms/scaffold-tooling:dev-"${BRANCH}"
 fi
 
-composer -n update
+composer -n update --quiet --no-suggest
 composer validate
