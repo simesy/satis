@@ -12,8 +12,9 @@ if [ ! -n "${1+set}" ] ; then
 else
     config="govcms-${1}.json"
 fi
-echo -e "\033[1;35m--> Verifying packages for ${config}  \033[0m"
+GOVCMS_VERSION=$(cat ./satis-config/${config} | jq -r '.require."govcms/govcms"')
 
+echo -e "\033[1;35m--> Verifying packages for ${config} - govcms/govcms: ${GOVCMS_VERSION}  \033[0m"
 
 php -S localhost:4141 -t "${SATIS_BUILD}" > /tmp/phpd.log 2>&1 &
 composer create-project --no-install govcms/govcms8-scaffold-paas "${GOVCMS_SCAFFOLD}"
@@ -31,9 +32,9 @@ echo -e "\033[1;35m--> Repositories updated...\033[0m"
 composer config repositories | jq .
 
 # Point to the appropriate versions.
-if [ "${BRANCH}" = "master" ] || [ "${BRANCH}" = "develop" ] ; then
+if [ "${BRANCH}" = "master" ] || [ "${BRANCH}" = "develop" ] ; then   
    echo -e "\033[1;35m--> Updating package refereces to '${BRANCH}' branch \033[0m"
-   composer require govcms/govcms:1.x govcms/require-dev:dev-"${BRANCH}" govcms/scaffold-tooling:dev-"${BRANCH}"
+   composer require govcms/govcms:"${GOVCMS_VERSION}" govcms/require-dev:dev-"${BRANCH}" govcms/scaffold-tooling:dev-"${BRANCH}"
 fi
 
 composer -n update

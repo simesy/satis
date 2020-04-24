@@ -12,7 +12,9 @@ if [ ! -n "${1+set}" ] ; then
 else
     config="govcms-${1}.json"
 fi
-echo -e "\033[1;35m--> Check missing packages for ${config}  \033[0m"
+GOVCMS_VERSION=$(cat ./satis-config/${config} | jq -r '.require."govcms/govcms"')
+
+echo -e "\033[1;35m--> Check missing packages for ${config} - govcms/govcms: ${GOVCMS_VERSION}  \033[0m"
 
 # Set up a working project and satis server.
 php -S localhost:4142 -t "${SATIS_BUILD}" > /tmp/phpd.log 2>&1 &
@@ -29,7 +31,7 @@ cp composer.json composer-copy.json && cat composer-copy.json \
 if [ "${BRANCH}" = "master" ] || [ "${BRANCH}" = "develop" ] ; then
     echo -e "\033[1;35m--> Updating govcms packages to their '${BRANCH}' versions \033[0m"
     composer config prefer-stable false
-    COMPOSER_MEMORY_LIMIT=-1 composer require --quiet --no-suggest govcms/govcms:1.x govcms/require-dev:dev-"${BRANCH}" govcms/scaffold-tooling:dev-"${BRANCH}"
+    COMPOSER_MEMORY_LIMIT=-1 composer require --quiet --no-suggest govcms/govcms:${GOVCMS_VERSION} govcms/require-dev:dev-"${BRANCH}" govcms/scaffold-tooling:dev-"${BRANCH}"
 fi
 echo -e "\033[1;35m--> Please wait for composer update  \033[0m"
 COMPOSER_MEMORY_LIMIT=-1 composer update --no-suggest --quiet
