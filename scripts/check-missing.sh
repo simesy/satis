@@ -22,6 +22,9 @@ composer create-project --no-install govcms/govcms8-scaffold-paas "${GOVCMS_BUIL
 cd "${GOVCMS_BUILD}"
 composer config secure-http false
 
+# Ensure no conflicts with composer update.
+rm -Rf vendor && rm -Rf web/core && rm -Rf web/modules/contrib/* && rm -Rf web/profiles/* rm composer.lock
+
 # Install raw govcms with standard repositories avaiable to us.
 # This is a bit messy, `composer config repositories` is (at this time) flexible when controlling "packagist.org":false etc, and also jq is not an in-place editor.
 cp composer.json composer-copy.json && cat composer-copy.json \
@@ -30,8 +33,8 @@ cp composer.json composer-copy.json && cat composer-copy.json \
 # Point composer.json the appropriate branch versions if testing develop or master.
 if [ "${BRANCH}" = "master" ] || [ "${BRANCH}" = "develop" ] ; then
     echo -e "\033[1;35m--> Updating govcms packages to their '${BRANCH}' versions \033[0m"
-    composer config prefer-stable false
-    COMPOSER_MEMORY_LIMIT=-1 composer require --quiet --no-suggest govcms/govcms:${GOVCMS_VERSION} govcms/require-dev:dev-"${BRANCH}" govcms/scaffold-tooling:dev-"${BRANCH}"
+    composer config prefer-stable true
+    COMPOSER_MEMORY_LIMIT=-1 composer require --no-suggest govcms/govcms:${GOVCMS_VERSION} govcms/require-dev:dev-"${BRANCH}" govcms/scaffold-tooling:dev-"${BRANCH}"
 fi
 echo -e "\033[1;35m--> Please wait for composer update  \033[0m"
 COMPOSER_MEMORY_LIMIT=-1 composer update --no-suggest --quiet
