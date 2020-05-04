@@ -9,7 +9,7 @@
         { "type": "vcs", "url": "https://github.com/govcms/require-dev" }
     ],
     "require": {
-        "govcms/govcms": "dev-release/1.2.0",
+        "govcms/govcms": "dev-develop",
         "govcms/scaffold-tooling": "dev-develop",
         "govcms/require-dev": "dev-develop",
         "consolidation/log": "1.1.1",
