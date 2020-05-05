@@ -31,14 +31,14 @@ jobs:
             mkdir /composer && echo "{\"github-oauth\":{\"github.com\":\""${GITHUB_READ_ONLY_OAUTH}"\"}}" > /composer/auth.json
             # When an upstream package changes, no assumptions about which satis config references it; build all.
             "${SATIS}" build satis-config/govcms-stable.json "${SATIS_BUILD}"
-            ./branding/branding.sh "${SATIS_BUILD}"
+            ./scripts/branding.sh "${SATIS_BUILD}"
             "${SATIS}" build satis-config/govcms-develop.json "${SATIS_BUILD}"/develop
-            ./branding/branding.sh "${SATIS_BUILD}"/develop
+            ./scripts/branding.sh "${SATIS_BUILD}"/develop
             "${SATIS}" build satis-config/govcms-master.json "${SATIS_BUILD}"/master
-            ./branding/branding.sh "${SATIS_BUILD}"/master
+            ./scripts/branding.sh "${SATIS_BUILD}"/master
             "${SATIS}" build satis-config/govcms-whitelist.json "${SATIS_BUILD}"/whitelist
-            ./branding/branding.sh "${SATIS_BUILD}"/whitelist
-            cp ./branding/logo.svg ./branding/favicon.png "${SATIS_BUILD}"
+            ./scripts/branding.sh "${SATIS_BUILD}"/whitelist
+            cp ./scripts/logo.svg ./scripts/favicon.png "${SATIS_BUILD}"
       - persist_to_workspace:
           root: /tmp/satis-build
           paths:
