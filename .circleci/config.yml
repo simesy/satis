@@ -26,19 +26,8 @@ jobs:
       - run:
           name: Build all satis repos.
           command: |
-            # Read-only access to github. @todo replace with GovCMS generated one at https://circleci.com/gh/govCMS/satis/edit#env-vars
-            # https://blog.simplytestable.com/creating-and-using-a-github-oauth-token-with-travis-and-composer/
-            mkdir /composer && echo "{\"github-oauth\":{\"github.com\":\""${GITHUB_READ_ONLY_OAUTH}"\"}}" > /composer/auth.json
-            # When an upstream package changes, no assumptions about which satis config references it; build all.
-            "${SATIS}" build satis-config/govcms-stable.json "${SATIS_BUILD}"
-            ./scripts/branding.sh "${SATIS_BUILD}"
-            "${SATIS}" build satis-config/govcms-develop.json "${SATIS_BUILD}"/develop
-            ./scripts/branding.sh "${SATIS_BUILD}"/develop
-            "${SATIS}" build satis-config/govcms-master.json "${SATIS_BUILD}"/master
-            ./scripts/branding.sh "${SATIS_BUILD}"/master
-            "${SATIS}" build satis-config/govcms-whitelist.json "${SATIS_BUILD}"/whitelist
-            ./scripts/branding.sh "${SATIS_BUILD}"/whitelist
-            cp ./scripts/logo.svg ./scripts/favicon.png "${SATIS_BUILD}"
+            # If satis build was automated, it would happen here.
+            exit 0
       - persist_to_workspace:
           root: /tmp/satis-build
           paths:
@@ -48,7 +37,7 @@ jobs:
     docker:
       - image: quay.io/govcms/govcms-ci
     environment:
-      SATIS_BUILD: /tmp/satis-build/app
+      SATIS_BUILD: app
       GOVCMS_SCAFFOLD: /tmp/govcms-build
     steps:
       - checkout
@@ -67,6 +56,11 @@ jobs:
               composer config repositories.govcms composer http://localhost:4141/"${branch}"
               if [ "${branch}" = "master" ] || [ "${branch}" = "develop" ] ; then
                 composer require govcms/govcms:1.x govcms/require-dev:dev-"${branch}" govcms/scaffold-tooling:dev-"${branch}"
+              else
+                VERSION_GOVCMS=$(cat ./satis-config/govcms-stable.json | jq -r '.require | .["govcms/govcms"]')
+                VERSION_TOOLING=$(cat ./satis-config/govcms-stable.json | jq -r '.require | .["govcms/scaffold-tooling"]')
+                VERSION_DEV=$(cat ./satis-config/govcms-stable.json | jq -r '.require | .["govcms/require-dev"]')
+                composer require govcms/govcms:"${VERSION_GOVCMS}" govcms/require-dev:dev-"${VERSION_DEV}" govcms/scaffold-tooling:dev-"${VERSION_TOOLING}"
               fi
               composer -n update
               composer validate
@@ -84,6 +78,9 @@ jobs:
       - run:
           name: Update github develop branch.
           command: |
+            # If builds were automated, this would push the new satis back to git.
+            exit 1
+
             # Currently just testing a push to a test branch.
             git checkout -b test-"${CIRCLE_SHA1}"
             rm -Rf app
