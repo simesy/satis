@@ -35,7 +35,7 @@ cp composer.json composer-copy.json && cat composer-copy.json \
   | jq .repositories='{"drupal":{"type":"composer","url": "https://packages.drupal.org/8"},"custom":{"type":"path","url":"custom/composer"},"govcms":{"type":"composer","url":"http://localhost:4142/'"${BRANCH}"'"}}' \
   | tee composer.json > /dev/null
 
-# @todd: remove once govcms/govcms no longer requires "symfony/event-dispatcher:v4.3.11 as v3.4.35" which only works at the root composer.json level.
+# @todo: remove once govcms/govcms no longer requires "symfony/event-dispatcher:v4.3.11 as v3.4.35" which only works at the root composer.json level.
 composer require --no-update symfony/event-dispatcher:"v4.3.11 as v3.4.35"
 
 # Force the scaffold to point to the configured versions.

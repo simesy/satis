@@ -36,7 +36,7 @@ composer config repositories.govcms composer http://localhost:4141/"${BRANCH}"
 echo -e "\033[1;35m--> Repositories updated...\033[0m"
 composer config repositories | jq .
 
-# @todd: remove once govcms/govcms no longer requires "symfony/event-dispatcher:v4.3.11 as v3.4.35" which only works at the root composer.json level.
+# @todo: remove once govcms/govcms no longer requires "symfony/event-dispatcher:v4.3.11 as v3.4.35" which only works at the root composer.json level.
 composer require --no-update symfony/event-dispatcher:"v4.3.11 as v3.4.35"
 
 # Force the scaffold to point to the configured versions.
