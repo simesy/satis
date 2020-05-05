@@ -12,13 +12,17 @@ if [ ! -n "${1+set}" ] ; then
 else
     config="govcms-${1}.json"
 fi
-GOVCMS_VERSION=$(cat ./satis-config/${config} | jq -r '.require."govcms/govcms"')
+GOVCMS_VERSION=$(cat ./satis-config/${config} | jq -r '.require | .["govcms/govcms"]')
+# Versions needed for stable testing.
+GOVCMS_VERSION_SCAFFOLD_TOOLING=$(cat ./satis-config/"${config}" | jq -r '.require | .["govcms/scaffold-tooling"]')
+GOVCMS_VERSION_REQUIRE_DEV=$(cat ./satis-config/"${config}" | jq -r '.require | .["govcms/require-dev"]')
 
-echo -e "\033[1;35m--> Check missing packages for ${config} - govcms/govcms: ${GOVCMS_VERSION}  \033[0m"
+echo -e "\033[1;35m--> Check missing packages for ${config} (govcms/govcms:${GOVCMS_VERSION}) \033[0m"
 
 # Set up a working project and satis server.
 php -S localhost:4142 -t "${SATIS_BUILD}" > /tmp/phpd.log 2>&1 &
-composer create-project --no-install govcms/govcms8-scaffold-paas "${GOVCMS_BUILD}"
+composer create-project --no-install --quiet govcms/govcms8-scaffold-paas "${GOVCMS_BUILD}"
+
 cd "${GOVCMS_BUILD}"
 composer config secure-http false
 
@@ -30,17 +34,23 @@ rm -Rf vendor && rm -Rf web/core && rm -Rf web/modules/contrib/* && rm -Rf web/p
 cp composer.json composer-copy.json && cat composer-copy.json \
   | jq .repositories='{"drupal":{"type":"composer","url": "https://packages.drupal.org/8"},"custom":{"type":"path","url":"custom/composer"},"govcms":{"type":"composer","url":"http://localhost:4142/'"${BRANCH}"'"}}' \
   | tee composer.json > /dev/null
-# Point composer.json the appropriate branch versions if testing develop or master.
+
+# @todo: remove once govcms/govcms no longer requires "symfony/event-dispatcher:v4.3.11 as v3.4.35" which only works at the root composer.json level.
+composer require --no-update symfony/event-dispatcher:"v4.3.11 as v3.4.35"
+
+# Force the scaffold to point to the configured versions.
+echo -e "\033[1;35m--> Updating scaffold packages to use the ${config} versions \033[0m"
 if [ "${BRANCH}" = "master" ] || [ "${BRANCH}" = "develop" ] ; then
-    echo -e "\033[1;35m--> Updating govcms packages to their '${BRANCH}' versions \033[0m"
     composer config prefer-stable true
-    COMPOSER_MEMORY_LIMIT=-1 composer require --no-suggest govcms/govcms:${GOVCMS_VERSION} govcms/require-dev:dev-"${BRANCH}" govcms/scaffold-tooling:dev-"${BRANCH}"
+    COMPOSER_MEMORY_LIMIT=-1 composer require --quiet --no-suggest govcms/govcms:${GOVCMS_VERSION} govcms/require-dev:dev-"${BRANCH}" govcms/scaffold-tooling:dev-"${BRANCH}"
+else
+    COMPOSER_MEMORY_LIMIT=-1 composer require --quiet --no-suggest govcms/govcms:${GOVCMS_VERSION} govcms/require-dev:"${GOVCMS_VERSION_REQUIRE_DEV}" govcms/scaffold-tooling:"${GOVCMS_VERSION_SCAFFOLD_TOOLING}"
 fi
+
 echo -e "\033[1;35m--> Please wait for composer update  \033[0m"
 COMPOSER_MEMORY_LIMIT=-1 composer update --no-suggest --quiet
 
 composer info
-composer why govcms/govcms
 
 # Get a list of the package versions that `composer update` resolved via normal repositories.
 target_list=$(composer info --format=json | jq -r '.installed[] | "\(.name) \(.version)"' | sort)
