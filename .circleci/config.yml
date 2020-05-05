@@ -93,6 +93,7 @@ jobs:
             git remote set-url origin https://simesy:"${GITHUB_READ_WRITE_TOKEN}"@github.com/govCMS/satis.git
             git commit -m"[skip ci] test-commit"
             git push origin test-"${CIRCLE_SHA1}"
+            
 
 workflows:
   version: 2.1
