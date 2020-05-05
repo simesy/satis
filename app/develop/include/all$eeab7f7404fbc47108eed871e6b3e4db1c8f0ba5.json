@@ -11672,19 +11672,19 @@
             }
         },
         "govcms/govcms": {
-            "dev-release/1.2.0": {
+            "1.x-dev": {
                 "name": "govcms/govcms",
-                "version": "dev-release/1.2.0",
-                "version_normalized": "dev-release/1.2.0",
+                "version": "1.x-dev",
+                "version_normalized": "1.9999999.9999999.9999999-dev",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/govCMS/govCMS8.git",
-                    "reference": "57942319826115530d7b83b9c871ffa791c73445"
+                    "reference": "dc7260110e391788b1c227b5cb2d8d71a451498f"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/govCMS/govCMS8/zipball/57942319826115530d7b83b9c871ffa791c73445",
-                    "reference": "57942319826115530d7b83b9c871ffa791c73445",
+                    "url": "https://api.github.com/repos/govCMS/govCMS8/zipball/dc7260110e391788b1c227b5cb2d8d71a451498f",
+                    "reference": "dc7260110e391788b1c227b5cb2d8d71a451498f",
                     "shasum": ""
                 },
                 "require": {
@@ -11788,7 +11788,7 @@
                 "suggest": {
                     "hirak/prestissimo": "^0.3"
                 },
-                "time": "2020-04-20T08:18:08+00:00",
+                "time": "2020-04-27T23:21:27+00:00",
                 "type": "drupal-profile",
                 "extra": {
                     "drupal-scaffold": {
