@@ -82,7 +82,6 @@ jobs:
               fi
               cat composer.json | jq .require
               composer -n --quiet --no-suggest --no-scripts update
-              composer validate
               composer info | grep ^govcms
             done
 
