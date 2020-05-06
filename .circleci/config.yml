@@ -28,7 +28,6 @@ jobs:
             # If satis build was automated, it would happen here. Currently just copy the committed /app to the build directory.
             mkdir -p "${SATIS_BUILD}"
             cp -R app "${SATIS_BUILD}"
-            ls app
       - persist_to_workspace:
           root: /tmp/satis-build
           paths:
@@ -47,6 +46,8 @@ jobs:
       - run:
           name: Test that GovCMS can be built
           command: |
+            ls "${SATIS_BUILD}"
+
             # Get package versions required for testing stable release.
             VERSION_GOVCMS=$(cat ./satis-config/govcms-stable.json | jq -r '.require | .["govcms/govcms"]')
             VERSION_TOOLING=$(cat ./satis-config/govcms-stable.json | jq -r '.require | .["govcms/scaffold-tooling"]')
