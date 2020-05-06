@@ -63,13 +63,13 @@ jobs:
               composer config secure-http false
               composer config repositories.govcms composer http://localhost:4141/"${branch}"
               if [ "${branch}" = "master" ] || [ "${branch}" = "develop" ] ; then
-                composer require --quiet \
+                composer require \
                     govcms/govcms:1.x
                     govcms/scaffold-tooling:dev-"${branch}" \
                     govcms/require-dev:dev-"${branch}"
               else
                 echo -e "--> Stable versions: \n     - govcms/govcms:${VERSION_GOVCMS} \n     - govcms/scaffold-tooling:${VERSION_TOOLING} \n     - govcms/require-dev:${VERSION_DEV}"
-                composer require --quiet \
+                composer require \
                     govcms/govcms:"${VERSION_GOVCMS}" \
                     govcms/scaffold-tooling:"${VERSION_TOOLING}" \
                     govcms/require-dev:"${VERSION_DEV}"
