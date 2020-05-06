@@ -63,13 +63,11 @@ jobs:
               composer config secure-http false
               composer config repositories.govcms composer http://localhost:4141/"${branch}"
               if [ "${branch}" = "master" ] || [ "${branch}" = "develop" ] ; then
-                echo "A"
                 composer require --no-update \
-                    govcms/govcms:1.x
+                    govcms/govcms:1.x \
                     govcms/scaffold-tooling:dev-"${branch}" \
                     govcms/require-dev:dev-"${branch}" \
                     symfony/event-dispatcher:"v4.3.11 as v3.4.35" # @todo: remove once govcms/govcms no longer requires "symfony/event-dispatcher:v4.3.11 as v3.4.35" which only works at the root composer.json level.
-                echo "B"
               else
                 echo -e "--> Stable versions: \n     - govcms/govcms:${VERSION_GOVCMS} \n     - govcms/scaffold-tooling:${VERSION_TOOLING} \n     - govcms/require-dev:${VERSION_DEV}"
                 composer require --no-update \
@@ -78,9 +76,7 @@ jobs:
                     govcms/require-dev:"${VERSION_DEV}" \
                     symfony/event-dispatcher:"v4.3.11 as v3.4.35" # @todo: remove once govcms/govcms no longer requires "symfony/event-dispatcher:v4.3.11 as v3.4.35" which only works at the root composer.json level.
               fi
-                echo "C"
               cat composer.json | jq .require
-                echo "D"
               composer -n update
               composer validate
             done
