@@ -53,7 +53,7 @@ jobs:
 
             echo "--> Starting satis web server"
             php -S localhost:4141 -t "${SATIS_BUILD}" > /tmp/phpd.log 2>&1 &
-            echo "--> Cloning govcms8-scaffold-paas into "${GOVCMS_SCAFFOLD}"
+            echo "--> Cloning govcms8-scaffold-paas into ${GOVCMS_SCAFFOLD}"
             composer create-project --no-install --quiet govcms/govcms8-scaffold-paas "${GOVCMS_SCAFFOLD}"
             cd "${GOVCMS_SCAFFOLD}"
 
