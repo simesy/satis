@@ -23,10 +23,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build all satis repos.
+          name: Build or prepare satis /app
           command: |
-            # If satis build was automated, it would happen here. Just copy the committed app to the build directory.
-            cp -Rf app "${SATIS_BUILD}"
+            # If satis build was automated, it would happen here. Currently just copy the committed /app to the build directory.
+            mkdir -p "${SATIS_BUILD}"
+            cp -R app "${SATIS_BUILD}"
       - persist_to_workspace:
           root: /tmp/satis-build
           paths:
