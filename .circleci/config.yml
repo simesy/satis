@@ -102,10 +102,6 @@ workflows:
           filters:
             tags:
               ignore: /.*/
-            branches:
-              only:
-                - upstream_changes
-                - develop
       - test:
           filters:
             tags:
