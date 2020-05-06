@@ -51,13 +51,15 @@ jobs:
             VERSION_TOOLING=$(cat ./satis-config/govcms-stable.json | jq -r '.require | .["govcms/scaffold-tooling"]')
             VERSION_DEV=$(cat ./satis-config/govcms-stable.json | jq -r '.require | .["govcms/require-dev"]')
 
+            echo "--> Starting satis web server"
             php -S localhost:4141 -t "${SATIS_BUILD}" > /tmp/phpd.log 2>&1 &
+            echo "--> Cloning govcms8-scaffold-paas into "${GOVCMS_SCAFFOLD}"
             composer create-project --no-install --quiet govcms/govcms8-scaffold-paas "${GOVCMS_SCAFFOLD}"
             cd "${GOVCMS_SCAFFOLD}"
 
             for branch in {"","develop","master"}; do
               echo "--> Test build GovCMS against http://localhost:4141/${branch}"
-              rm -R vendor && rm composer.lock
+              rm -fR vendor && rm -f composer.lock
               composer config secure-http false
               composer config repositories.govcms composer http://localhost:4141/"${branch}"
               if [ "${branch}" = "master" ] || [ "${branch}" = "develop" ] ; then
