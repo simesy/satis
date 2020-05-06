@@ -46,8 +46,6 @@ jobs:
       - run:
           name: Test that GovCMS can be built
           command: |
-            ls "${SATIS_BUILD}"
-
             # Get package versions required for testing stable release.
             VERSION_GOVCMS=$(cat ./satis-config/govcms-stable.json | jq -r '.require | .["govcms/govcms"]')
             VERSION_TOOLING=$(cat ./satis-config/govcms-stable.json | jq -r '.require | .["govcms/scaffold-tooling"]')
@@ -70,10 +68,11 @@ jobs:
                     govcms/scaffold-tooling:dev-"${branch}" \
                     govcms/require-dev:dev-"${branch}"
               else
+                echo -e "--> Stable versions: \n     - govcms/govcms:${VERSION_GOVCMS} \n     - govcms/scaffold-tooling:${VERSION_TOOLING} \n     - govcms/require-dev:${VERSION_DEV}"
                 composer require --quiet \
                     govcms/govcms:"${VERSION_GOVCMS}" \
-                    govcms/scaffold-tooling:dev-"${VERSION_TOOLING}" \
-                    govcms/require-dev:dev-"${VERSION_DEV}"
+                    govcms/scaffold-tooling:"${VERSION_TOOLING}" \
+                    govcms/require-dev:"${VERSION_DEV}"
               fi
               composer -n --quiet update
               composer validate
