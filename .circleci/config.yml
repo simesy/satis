@@ -46,6 +46,11 @@ jobs:
       - run:
           name: Test that GovCMS can be built
           command: |
+            # Get package versions required for testing stable release.
+            VERSION_GOVCMS=$(cat ./satis-config/govcms-stable.json | jq -r '.require | .["govcms/govcms"]')
+            VERSION_TOOLING=$(cat ./satis-config/govcms-stable.json | jq -r '.require | .["govcms/scaffold-tooling"]')
+            VERSION_DEV=$(cat ./satis-config/govcms-stable.json | jq -r '.require | .["govcms/require-dev"]')
+
             php -S localhost:4141 -t "${SATIS_BUILD}" > /tmp/phpd.log 2>&1 &
             composer create-project govcms/govcms8-scaffold-paas "${GOVCMS_SCAFFOLD}"
             cd "${GOVCMS_SCAFFOLD}"
@@ -57,9 +62,6 @@ jobs:
               if [ "${branch}" = "master" ] || [ "${branch}" = "develop" ] ; then
                 composer require govcms/govcms:1.x govcms/require-dev:dev-"${branch}" govcms/scaffold-tooling:dev-"${branch}"
               else
-                VERSION_GOVCMS=$(cat ./satis-config/govcms-stable.json | jq -r '.require | .["govcms/govcms"]')
-                VERSION_TOOLING=$(cat ./satis-config/govcms-stable.json | jq -r '.require | .["govcms/scaffold-tooling"]')
-                VERSION_DEV=$(cat ./satis-config/govcms-stable.json | jq -r '.require | .["govcms/require-dev"]')
                 composer require govcms/govcms:"${VERSION_GOVCMS}" govcms/require-dev:dev-"${VERSION_DEV}" govcms/scaffold-tooling:dev-"${VERSION_TOOLING}"
               fi
               composer -n update
