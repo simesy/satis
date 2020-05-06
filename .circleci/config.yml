@@ -25,8 +25,8 @@ jobs:
       - run:
           name: Build all satis repos.
           command: |
-            # If satis build was automated, it would happen here.
-            exit 0
+            # If satis build was automated, it would happen here. Just copy the committed app to the build directory.
+            cp -Rf app "${SATIS_BUILD}"
       - persist_to_workspace:
           root: /tmp/satis-build
           paths:
@@ -36,7 +36,7 @@ jobs:
     docker:
       - image: quay.io/govcms/govcms-ci
     environment:
-      SATIS_BUILD: app
+      SATIS_BUILD: /tmp/satis-build/app
       GOVCMS_SCAFFOLD: /tmp/govcms-build
     steps:
       - checkout
